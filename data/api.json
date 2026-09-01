@@ -1,131 +1,1034 @@
 {
-  "generatedFrom": "routes/restapi and mounted public API routes",
-  "count": 25,
+  "generatedFrom": "supplied BizManage source snapshot",
+  "count": 146,
+  "permissions": {
+    "Public": "No API credential required by the route.",
+    "API User": "Any authenticated API identity, still subject to policy, operation, table, feature, and usage checks.",
+    "Admin": "API identity with role admin or root.",
+    "Root": "API identity with role root."
+  },
   "endpoints": [
     {
-      "method": "ALL",
-      "endpoint": "/restapi/open-ping",
-      "purpose": "Check whether the server is reachable; no API key required."
-    },
-    {
-      "method": "ALL",
-      "endpoint": "/restapi/ping",
-      "purpose": "Check an authenticated API connection."
-    },
-    {
-      "method": "POST",
-      "endpoint": "/restapi/crud/:table/:op",
-      "purpose": "Run an allowed CRUD operation using the API user permissions."
+      "method": "GET",
+      "endpoint": "/restapi/admin",
+      "purpose": "Read or run admin.",
+      "permission": "Admin",
+      "impact": "Read only"
     },
     {
       "method": "GET",
-      "endpoint": "/restapi/projects/update-status/:project/:status",
-      "purpose": "Change a project status."
-    },
-    {
-      "method": "POST",
-      "endpoint": "/restapi/payments/save-payment-method",
-      "purpose": "Save a reusable payment method through the configured gateway."
-    },
-    {
-      "method": "POST",
-      "endpoint": "/restapi/payments/charge-payment-method",
-      "purpose": "Charge a saved payment method."
+      "endpoint": "/restapi/admin/cache/expire-table/:table",
+      "purpose": "Read or run admin → cache → expire table.",
+      "permission": "Admin",
+      "impact": "Production configuration"
     },
     {
       "method": "GET",
-      "endpoint": "/restapi/payments/gateways",
-      "purpose": "List payment gateways available to the API user."
+      "endpoint": "/restapi/admin/cache/expire/:type/:key",
+      "purpose": "Read or run admin → cache → expire.",
+      "permission": "Admin",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/create",
+      "purpose": "Read or run admin → create.",
+      "permission": "Root",
+      "impact": "Production configuration"
     },
     {
       "method": "POST",
-      "endpoint": "/restapi/payments/create-subscription",
-      "purpose": "Create a subscription."
+      "endpoint": "/restapi/admin/create",
+      "purpose": "Create, update, or run admin → create.",
+      "permission": "Root",
+      "impact": "Production configuration"
     },
     {
       "method": "GET",
-      "endpoint": "/restapi/payments/cancel-subscription/:id",
-      "purpose": "Cancel a subscription."
+      "endpoint": "/restapi/admin/custom-pages",
+      "purpose": "Read or run admin → custom pages.",
+      "permission": "Admin",
+      "impact": "Read only"
     },
     {
       "method": "GET",
-      "endpoint": "/restapi/payments/resume-subscription/:id",
-      "purpose": "Resume a subscription."
+      "endpoint": "/restapi/admin/custom-pages/all",
+      "purpose": "Read or run admin → custom pages → all.",
+      "permission": "Admin",
+      "impact": "Read only"
     },
     {
       "method": "POST",
-      "endpoint": "/restapi/payments/import-subscription",
-      "purpose": "Import an existing gateway subscription."
+      "endpoint": "/restapi/admin/custom-pages/by-url",
+      "purpose": "Create, update, or run admin → custom pages → by url.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/custom-pages/by-url/:url",
+      "purpose": "Read or run admin → custom pages → by url.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/custom-pages/cp-editor/:id",
+      "purpose": "Read or run admin → custom pages → cp editor.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/custom-pages/get-content/:id",
+      "purpose": "Read or run admin → custom pages → get content.",
+      "permission": "Admin",
+      "impact": "Read only"
     },
     {
       "method": "POST",
-      "endpoint": "/restapi/payments/update-subscription-payment-method/:id",
-      "purpose": "Replace a subscription payment method."
+      "endpoint": "/restapi/admin/custom-pages/page-data",
+      "purpose": "Create, update, or run admin → custom pages → page data.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/custom-pages/publish/:id",
+      "purpose": "Read or run admin → custom pages → publish.",
+      "permission": "Admin",
+      "impact": "Publishes content"
     },
     {
       "method": "POST",
-      "endpoint": "/restapi/sms/send",
-      "purpose": "Queue an SMS message."
+      "endpoint": "/restapi/admin/custom-pages/update-content/:id",
+      "purpose": "Create, update, or run admin → custom pages → update content.",
+      "permission": "Admin",
+      "impact": "Writes data"
     },
     {
       "method": "GET",
-      "endpoint": "/restapi/sms/conversations",
-      "purpose": "List SMS conversations."
+      "endpoint": "/restapi/admin/custom-text",
+      "purpose": "Read or run admin → custom text.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/custom-text",
+      "purpose": "Create, update, or run admin → custom text.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/custom-text/:id",
+      "purpose": "Delete admin → custom text.",
+      "permission": "Admin",
+      "impact": "Destructive"
     },
     {
       "method": "GET",
-      "endpoint": "/restapi/sms/conversation/:conversation_key",
-      "purpose": "Read one SMS conversation."
+      "endpoint": "/restapi/admin/get-logged-in-users",
+      "purpose": "Read or run admin → get logged in users.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/recycle-bin/:group_id",
+      "purpose": "Delete admin → recycle bin.",
+      "permission": "Admin",
+      "impact": "Destructive"
     },
     {
       "method": "GET",
-      "endpoint": "/restapi/sms/gateways",
-      "purpose": "List configured SMS gateways."
+      "endpoint": "/restapi/admin/recycle-bin/force-delete/:id",
+      "purpose": "Read or run admin → recycle bin → force delete.",
+      "permission": "Admin",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/recycle-bin/records/:group_id",
+      "purpose": "Read or run admin → recycle bin → records.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/recycle-bin/restore/:group_id",
+      "purpose": "Read or run admin → recycle bin → restore.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/recycle-bin/view/:name",
+      "purpose": "Read or run admin → recycle bin → view.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/recycle-bin/views",
+      "purpose": "Read or run admin → recycle bin → views.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/sessions",
+      "purpose": "Read or run admin → sessions.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/sessions/:ref",
+      "purpose": "Delete admin → sessions.",
+      "permission": "Admin",
+      "impact": "Destructive"
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/restapi/admin/sessions/:ref",
+      "purpose": "Update admin → sessions.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/ai-gateways",
+      "purpose": "Read or run admin → tools → ai gateways.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/ai-gateways",
+      "purpose": "Create, update, or run admin → tools → ai gateways.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/tools/ai-gateways/:id",
+      "purpose": "Delete admin → tools → ai gateways.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/ai-gateways/:id/models",
+      "purpose": "Read or run admin → tools → ai gateways → models.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/ai-gateways/:id/models",
+      "purpose": "Create, update, or run admin → tools → ai gateways → models.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/ai-gateways/set-defaults",
+      "purpose": "Create, update, or run admin → tools → ai gateways → set defaults.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/ai-gateways/systems",
+      "purpose": "Read or run admin → tools → ai gateways → systems.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/ai-skills",
+      "purpose": "Read or run admin → tools → ai skills.",
+      "permission": "Root",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/ai-skills",
+      "purpose": "Create, update, or run admin → tools → ai skills.",
+      "permission": "Root",
+      "impact": "Writes data"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/tools/ai-skills/:id",
+      "purpose": "Delete admin → tools → ai skills.",
+      "permission": "Root",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/files/fetch-redis",
+      "purpose": "Read or run admin → tools → files → fetch redis.",
+      "permission": "Root",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/files/sync-file/:id",
+      "purpose": "Read or run admin → tools → files → sync file.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/files/sync-files",
+      "purpose": "Read or run admin → tools → files → sync files.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/files/to-upload",
+      "purpose": "Read or run admin → tools → files → to upload.",
+      "permission": "Root",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/ip-wb-list",
+      "purpose": "Read or run admin → tools → ip wb list.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "PATCH",
+      "endpoint": "/restapi/admin/tools/ip-wb-list",
+      "purpose": "Update admin → tools → ip wb list.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/ip-wb-list",
+      "purpose": "Create, update, or run admin → tools → ip wb list.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/tools/ip-wb-list/:id",
+      "purpose": "Delete admin → tools → ip wb list.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/mail-domains",
+      "purpose": "Read or run admin → tools → mail domains.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/mail-domains",
+      "purpose": "Create, update, or run admin → tools → mail domains.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/payment-gateways",
+      "purpose": "Read or run admin → tools → payment gateways.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/payment-gateways",
+      "purpose": "Create, update, or run admin → tools → payment gateways.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/tools/payment-gateways/:id",
+      "purpose": "Delete admin → tools → payment gateways.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/payment-gateways/set-defaults",
+      "purpose": "Create, update, or run admin → tools → payment gateways → set defaults.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/payment-gateways/systems",
+      "purpose": "Read or run admin → tools → payment gateways → systems.",
+      "permission": "Root",
+      "impact": "Production configuration"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/run-db-migrations",
+      "purpose": "Read or run admin → tools → run db migrations.",
+      "permission": "Root",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/tools/sms-gateways",
+      "purpose": "Read or run admin → tools → sms gateways.",
+      "permission": "Admin",
+      "impact": "Communication"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/sms-gateways",
+      "purpose": "Create, update, or run admin → tools → sms gateways.",
+      "permission": "Admin",
+      "impact": "Communication"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/admin/tools/sms-gateways/:id",
+      "purpose": "Delete admin → tools → sms gateways.",
+      "permission": "Admin",
+      "impact": "Communication"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/admin/tools/toggle-recieve-emails",
+      "purpose": "Create, update, or run admin → tools → toggle recieve emails.",
+      "permission": "Root",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/admin/users",
+      "purpose": "Read or run admin → users.",
+      "permission": "Admin",
+      "impact": "Read only"
     },
     {
       "method": "POST",
       "endpoint": "/restapi/ai/ask",
-      "purpose": "Generate a text answer."
-    },
-    {
-      "method": "POST",
-      "endpoint": "/restapi/ai/generate-json",
-      "purpose": "Generate schema-constrained JSON."
-    },
-    {
-      "method": "POST",
-      "endpoint": "/restapi/ai/tools/run",
-      "purpose": "Run an AI request with approved read-only CRM tools."
+      "purpose": "Generate a text answer.",
+      "permission": "API User",
+      "impact": "Writes data"
     },
     {
       "method": "POST",
       "endpoint": "/restapi/ai/files",
-      "purpose": "Upload a temporary text-like file for AI use."
+      "purpose": "Upload a temporary text-like file for AI use.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/ai/generate-json",
+      "purpose": "Generate schema-constrained JSON.",
+      "permission": "API User",
+      "impact": "Writes data"
     },
     {
       "method": "GET",
       "endpoint": "/restapi/ai/requests",
-      "purpose": "Read AI request logs allowed to the API user."
+      "purpose": "Read or run ai → requests.",
+      "permission": "Admin",
+      "impact": "Read only"
     },
     {
       "method": "POST",
       "endpoint": "/restapi/ai/skills/relevant",
-      "purpose": "Find AI skills relevant to a request."
-    },
-    {
-      "method": "GET",
-      "endpoint": "/restapi/users/invite-user/:id",
-      "purpose": "Send an invitation to an existing user record."
+      "purpose": "Create, update, or run ai → skills → relevant.",
+      "permission": "Admin",
+      "impact": "Writes data"
     },
     {
       "method": "POST",
-      "endpoint": "/restapi/secure/encrypt",
-      "purpose": "Encrypt a value using the instance encryption service."
+      "endpoint": "/restapi/ai/tools/run",
+      "purpose": "Run AI with approved read-only CRM tools.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/be-scripts/delete/:id",
+      "purpose": "Create, update, or run be scripts → delete.",
+      "permission": "API User",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/force-cancel-task",
+      "purpose": "Read or run be scripts → force cancel task.",
+      "permission": "Admin",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/force-reset-pool",
+      "purpose": "Read or run be scripts → force reset pool.",
+      "permission": "Root",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/get-script-content/:id",
+      "purpose": "Read or run be scripts → get script content.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/list",
+      "purpose": "Read or run be scripts → list.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/pool-info",
+      "purpose": "Read or run be scripts → pool info.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/regenerate-token/:id",
+      "purpose": "Read or run be scripts → regenerate token.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/be-scripts/register/:script_name",
+      "purpose": "Create, update, or run be scripts → register.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/run/:script_name",
+      "purpose": "Read or run be scripts → run.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/be-scripts/run/:script_name",
+      "purpose": "Create, update, or run be scripts → run.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/be-scripts/script",
+      "purpose": "Create, update, or run be scripts → script.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/be-scripts/script-by-internal-name",
+      "purpose": "Create, update, or run be scripts → script by internal name.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/be-scripts/script-code/:id",
+      "purpose": "Create, update, or run be scripts → script code.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/be-scripts/script-editor/:id",
+      "purpose": "Read or run be scripts → script editor.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/c-reports/by-name",
+      "purpose": "Create, update, or run c reports → by name.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/c-reports/create",
+      "purpose": "Create, update, or run c reports → create.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/delete/:id",
+      "purpose": "Read or run c reports → delete.",
+      "permission": "Admin",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/duplicate/:id",
+      "purpose": "Read or run c reports → duplicate.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/editor/:id",
+      "purpose": "Read or run c reports → editor.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/get-details/:id",
+      "purpose": "Read or run c reports → get details.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/get-one/:id",
+      "purpose": "Read or run c reports → get one.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/get-schema/:id",
+      "purpose": "Read or run c reports → get schema.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/list",
+      "purpose": "Read or run c reports → list.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/list-with-sql",
+      "purpose": "Read or run c reports → list with sql.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/c-reports/query/:id",
+      "purpose": "Read or run c reports → query.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/c-reports/update/:id",
+      "purpose": "Create, update, or run c reports → update.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/crud/:table/:op",
+      "purpose": "Run a generic CRUD operation subject to table, operation, and API-user permissions.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/custom-pages",
+      "purpose": "Read or run custom pages.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/custom-pages/all",
+      "purpose": "Read or run custom pages → all.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/custom-pages/by-url",
+      "purpose": "Create, update, or run custom pages → by url.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/custom-pages/by-url/:url",
+      "purpose": "Read or run custom pages → by url.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/custom-pages/cp-editor/:id",
+      "purpose": "Read or run custom pages → cp editor.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/custom-pages/get-content/:id",
+      "purpose": "Read or run custom pages → get content.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/custom-pages/page-data",
+      "purpose": "Create, update, or run custom pages → page data.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/custom-pages/publish/:id",
+      "purpose": "Read or run custom pages → publish.",
+      "permission": "Admin",
+      "impact": "Publishes content"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/custom-pages/update-content/:id",
+      "purpose": "Create, update, or run custom pages → update content.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization",
+      "purpose": "Create, update, or run customization.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/customization/:id",
+      "purpose": "Delete customization.",
+      "permission": "Admin",
+      "impact": "Destructive"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/action",
+      "purpose": "Create, update, or run customization → action.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/action/:table_name/:action_name",
+      "purpose": "Read or run customization → action.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/actions/:table_name",
+      "purpose": "Read or run customization → actions.",
+      "permission": "Admin",
+      "impact": "Read only"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/customization/actions/reset/:table_name",
+      "purpose": "Delete customization → actions → reset.",
+      "permission": "Admin",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/calc-types",
+      "purpose": "Read or run customization → calc types.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/data-by-internal-name",
+      "purpose": "Create, update, or run customization → data by internal name.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/field-by-internal-name",
+      "purpose": "Create, update, or run customization → field by internal name.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/fields/:table",
+      "purpose": "Read or run customization → fields.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/get-map-model/:table",
+      "purpose": "Read or run customization → get map model.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/get-model/:table",
+      "purpose": "Read or run customization → get model.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/get-sub-views/:view",
+      "purpose": "Read or run customization → get sub views.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/get-view-model/:table",
+      "purpose": "Read or run customization → get view model.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/get-view/:table",
+      "purpose": "Read or run customization → get view.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/rels/get-children/:table",
+      "purpose": "Read or run customization → rels → get children.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/reset-view/:table",
+      "purpose": "Read or run customization → reset view.",
+      "permission": "API User",
+      "impact": "Destructive"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/restapi/customization/rules/:id",
+      "purpose": "Delete customization → rules.",
+      "permission": "Admin",
+      "impact": "Destructive"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/rules/:table",
+      "purpose": "Read or run customization → rules.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/rules/:table",
+      "purpose": "Create, update, or run customization → rules.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/set-address-settings/:table",
+      "purpose": "Create, update, or run customization → set address settings.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/set-search",
+      "purpose": "Create, update, or run customization → set search.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/set-sub-view/:view/:gridName",
+      "purpose": "Create, update, or run customization → set sub view.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/set-unique",
+      "purpose": "Create, update, or run customization → set unique.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/customization/tables",
+      "purpose": "Read or run customization → tables.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/view",
+      "purpose": "Create, update, or run customization → view.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/customization/view-by-internal-name",
+      "purpose": "Create, update, or run customization → view by internal name.",
+      "permission": "Admin",
+      "impact": "Writes data"
+    },
+    {
+      "method": "ALL",
+      "endpoint": "/restapi/open-ping",
+      "purpose": "Check server reachability without authentication.",
+      "permission": "Public",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/payments/cancel-subscription/:id",
+      "purpose": "Read or run payments → cancel subscription.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/charge-payment-method",
+      "purpose": "Charge a saved payment method through a configured gateway.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/create-subscription",
+      "purpose": "Create, update, or run payments → create subscription.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/payments/gateways",
+      "purpose": "Read or run payments → gateways.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/import-subscription",
+      "purpose": "Create, update, or run payments → import subscription.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/payments/resume-subscription/:id",
+      "purpose": "Read or run payments → resume subscription.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/save-payment-method",
+      "purpose": "Create, update, or run payments → save payment method.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/update-subscription-payment-method/:id",
+      "purpose": "Create, update, or run payments → update subscription payment method.",
+      "permission": "API User",
+      "impact": "Financial"
+    },
+    {
+      "method": "ALL",
+      "endpoint": "/restapi/ping",
+      "purpose": "Check an authenticated API connection.",
+      "permission": "API User",
+      "impact": "Read only"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/projects/update-status/:project/:status",
+      "purpose": "Read or run projects → update status.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/register",
+      "purpose": "Register an API user (root only).",
+      "permission": "Root",
+      "impact": "Writes data"
     },
     {
       "method": "POST",
       "endpoint": "/restapi/secure/decrypt",
-      "purpose": "Decrypt a value when the API user is authorized."
+      "purpose": "Create, update, or run secure → decrypt.",
+      "permission": "API User",
+      "impact": "Destructive"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/secure/encrypt",
+      "purpose": "Create, update, or run secure → encrypt.",
+      "permission": "API User",
+      "impact": "Writes data"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/sms/conversation/:conversation_key",
+      "purpose": "Read or run sms → conversation.",
+      "permission": "API User",
+      "impact": "Communication"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/sms/conversations",
+      "purpose": "Read or run sms → conversations.",
+      "permission": "API User",
+      "impact": "Communication"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/sms/gateways",
+      "purpose": "Read or run sms → gateways.",
+      "permission": "API User",
+      "impact": "Communication"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/sms/send",
+      "purpose": "Queue an SMS message.",
+      "permission": "API User",
+      "impact": "Communication"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/users/invite-user/:id",
+      "purpose": "Read or run users → invite user.",
+      "permission": "API User",
+      "impact": "Communication"
     }
   ]
 }

@@ -70,20 +70,23 @@
 
   function renderApiCatalog(host) {
     const all = catalogData.api;
-    host.innerHTML = `<div class="filter-bar"><input type="search" placeholder="Filter endpoints" aria-label="Filter API endpoints"></div><p class="catalog-count"></p><div class="table-wrap"><table><thead><tr><th>Method</th><th>Endpoint</th><th>Purpose</th></tr></thead><tbody></tbody></table></div>`;
-    const input = host.querySelector('input'); const body = host.querySelector('tbody'); const count = host.querySelector('.catalog-count');
+    const permissions = [...new Set(all.map((item) => item.permission))];
+    const impacts = [...new Set(all.map((item) => item.impact))];
+    host.innerHTML = `<div class="filter-bar"><input type="search" placeholder="Filter endpoint or purpose" aria-label="Filter API endpoints"><select aria-label="Filter by permission"><option value="">All permission levels</option>${permissions.map((permission) => `<option value="${escapeHtml(permission)}">${escapeHtml(permission)}</option>`).join('')}</select><select aria-label="Filter by impact"><option value="">All impacts</option>${impacts.map((impact) => `<option value="${escapeHtml(impact)}">${escapeHtml(impact)}</option>`).join('')}</select></div><p class="catalog-count"></p><div class="table-wrap"><table><thead><tr><th>Method</th><th>Endpoint</th><th>Permission</th><th>Impact</th><th>Purpose</th></tr></thead><tbody></tbody></table></div>`;
+    const input = host.querySelector('input'); const [permissionSelect, impactSelect] = host.querySelectorAll('select'); const body = host.querySelector('tbody'); const count = host.querySelector('.catalog-count');
     const update = () => {
-      const term = input.value.trim().toLowerCase(); const filtered = all.filter((item) => `${item.method} ${item.endpoint} ${item.purpose}`.toLowerCase().includes(term));
-      body.innerHTML = filtered.map((item) => `<tr><td><span class="tag ${item.method.toLowerCase()}">${escapeHtml(item.method)}</span></td><td><code>${escapeHtml(item.endpoint)}</code></td><td>${escapeHtml(item.purpose)}</td></tr>`).join('');
-      count.textContent = `${filtered.length} supported routes`;
+      const term = input.value.trim().toLowerCase();
+      const filtered = all.filter((item) => (!permissionSelect.value || item.permission === permissionSelect.value) && (!impactSelect.value || item.impact === impactSelect.value) && (!term || `${item.method} ${item.endpoint} ${item.permission} ${item.impact} ${item.purpose}`.toLowerCase().includes(term)));
+      body.innerHTML = filtered.map((item) => `<tr><td><span class="tag ${item.method.toLowerCase()}">${escapeHtml(item.method)}</span></td><td><code>${escapeHtml(item.endpoint)}</code></td><td><span class="tag permission-${item.permission.toLowerCase().replace(/\s+/g, '-')}">${escapeHtml(item.permission)}</span></td><td>${escapeHtml(item.impact)}</td><td>${escapeHtml(item.purpose)}</td></tr>`).join('');
+      count.textContent = `${filtered.length.toLocaleString()} of ${all.length.toLocaleString()} source-derived routes`;
     };
-    input.addEventListener('input', update); update();
+    input.addEventListener('input', update); permissionSelect.addEventListener('change', update); impactSelect.addEventListener('change', update); update();
   }
 
   function searchableItems() {
     const pages = Object.entries(docs.pages).map(([id, page]) => ({ href: `#/${id}`, title: page.title, meta: `${page.eyebrow} · ${page.summary}`, search: `${page.title} ${page.eyebrow} ${page.summary} ${plain(page.html)}`.toLowerCase() }));
     const actions = catalogData.actions.map((item) => ({ href: '#/actions', title: item.label, meta: `${prettyScreen(item.screen)} · ${item.action}`, search: `${item.label} ${item.screen} ${item.action}`.toLowerCase() }));
-    const api = catalogData.api.map((item) => ({ href: '#/api', title: `${item.method} ${item.endpoint}`, meta: item.purpose, search: `${item.method} ${item.endpoint} ${item.purpose}`.toLowerCase() }));
+    const api = catalogData.api.map((item) => ({ href: '#/api', title: `${item.method} ${item.endpoint}`, meta: `${item.permission} · ${item.impact} · ${item.purpose}`, search: `${item.method} ${item.endpoint} ${item.permission} ${item.impact} ${item.purpose}`.toLowerCase() }));
     return [...pages, ...actions, ...api];
   }
 
@@ -98,7 +101,8 @@
   function openSearch() { searchDialog.showModal(); searchInput.value = ''; runSearch(); setTimeout(() => searchInput.focus(), 20); }
   function openAi() {
     const page = docs.pages[currentPage];
-    aiQuestion.value = `Help me understand this BizManage documentation topic in plain language: "${page.title}".\n\nMy question: \n\nUse only the documented behavior. Call out permissions, tenant customization, and any action that could send messages, charge/refund money, delete data, publish content, or change production configuration. If a field or button may be customized, say so instead of guessing.`;
+    const documentedText = plain(page.html).replace(/\s+/g, ' ').trim();
+    aiQuestion.value = `Explain this BizManage documentation page in plain language and answer my question from the supplied documentation. Do not search for another copy of the page.\n\nTOPIC: ${page.title}\nSUMMARY: ${page.summary}\nDOCUMENTED PAGE TEXT:\n${documentedText}\n\nMY QUESTION:\n\nRULES: Use only the text above. Clearly label permissions. Call out tenant-customized fields, labels, buttons, workflows, prompts, statuses, and available actions instead of guessing. Warn before anything that can send a message, charge or refund money, delete or overwrite data, publish content, or change production configuration. Distinguish an AI draft or suggestion from an executed action. If a behavior is not stated above, say “not documented here.”`;
     document.querySelector('#copyStatus').textContent = '';
     aiDialog.showModal();
   }

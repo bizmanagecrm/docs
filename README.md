@@ -17,7 +17,11 @@ npx serve .
 With a BizManage core checkout available locally:
 
 ```bash
-node scripts/generate-catalogs.js ../core-system-master
+node scripts/generate-catalogs.js ../bizmanage-core
 ```
 
 This updates the searchable UI action and supported REST API catalogs. Review generated changes before committing.
+
+## Public repository safety
+
+This repository and its deployed site are public. Use placeholders in examples and never commit credentials, tokens, tenant/customer data, private host details, source archives, or proprietary implementation snippets. Generated catalogs intentionally contain public-safe behavior descriptions and route contracts rather than backend source code.

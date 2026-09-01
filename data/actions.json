@@ -1,4211 +1,3976 @@
 {
-  "generatedFrom": "client/views",
-  "count": 841,
+  "generatedFrom": "supplied BizManage source snapshot",
+  "count": 794,
   "actions": [
     {
       "screen": "active-cron-jobs-modal",
       "label": "Close",
-      "action": "$close()"
+      "action": "$close."
     },
     {
       "screen": "active-cron-jobs-modal",
       "label": "Kill",
-      "action": "stopJob(job.jobName)"
+      "action": "Stop Job."
     },
     {
       "screen": "active-scripts-modal",
       "label": "Close",
-      "action": "$close()"
+      "action": "$close."
     },
     {
       "screen": "active-scripts-modal",
       "label": "Kill",
-      "action": "cancelThread(script.start)"
+      "action": "Cancel Thread."
     },
     {
       "screen": "add-cust-be-scipts",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "add-cust-be-scipts",
       "label": "Save",
-      "action": "submit($close)"
+      "action": "Submit."
     },
     {
       "screen": "add-cust-filter",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "add-cust-filter",
       "label": "Save",
-      "action": "submit($close)"
+      "action": "Submit."
     },
     {
       "screen": "add-cust-section",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "add-cust-section",
       "label": "Save",
-      "action": "submit($close, section)"
+      "action": "Submit."
     },
     {
       "screen": "add-edit-menu",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "add-edit-menu",
       "label": "Choose action color",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "add-edit-menu",
-      "label": "customColor ? 'Pick color' : 'Custom color'",
-      "action": "customColor = !customColor"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Custom Color."
     },
     {
       "screen": "add-edit-menu",
-      "label": "customIcon ? 'Pick icon' : 'Custom icon'",
-      "action": "customIcon = !customIcon"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Custom Icon."
     },
     {
       "screen": "add-edit-menu",
-      "label": "menu.condition.useAdvanced ? 'Simple Condition' : 'Advanced Condition'",
-      "action": "menu.condition.useAdvanced = !menu.condition.useAdvanced"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Menu condition use Advanced."
     },
     {
       "screen": "add-edit-menu",
       "label": "Save",
-      "action": "submit($close)"
+      "action": "Submit."
     },
     {
       "screen": "add-webhook",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "add-webhook",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "add-webhook",
-      "label": "wh.id ? \"Update Webhook\" : \"Save Webhook\"",
-      "action": "submit(wh)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "admin-tools",
       "label": "Add Gateway",
-      "action": "sms_gateways.push({})"
+      "action": "Sms gateways push."
     },
     {
       "screen": "admin-tools",
       "label": "Add record",
-      "action": "addRow('white')"
+      "action": "Add Row."
     },
     {
       "screen": "admin-tools",
       "label": "Add record",
-      "action": "addRow('black')"
-    },
-    {
-      "screen": "admin-tools",
-      "label": "Add record",
-      "action": "mail_domains.push({})"
+      "action": "Mail domains push."
     },
     {
       "screen": "admin-tools",
       "label": "Copy",
-      "action": "copyToClipboard(email_receiver.recipientEmail)"
+      "action": "Copy To Clipboard."
     },
     {
       "screen": "admin-tools",
       "label": "Create",
-      "action": "saveRow(setting)"
+      "action": "Save Row."
     },
     {
       "screen": "admin-tools",
       "label": "Create",
-      "action": "saveRow(setting, 'black')"
-    },
-    {
-      "screen": "admin-tools",
-      "label": "Create",
-      "action": "createUpdateMailDomain(domain)"
+      "action": "Create Update Mail Domain."
     },
     {
       "screen": "admin-tools",
       "label": "create Sms Gateway",
-      "action": "createSmsGateway(sms_g)"
+      "action": "Create Sms Gateway."
     },
     {
       "screen": "admin-tools",
       "label": "Delete",
-      "action": "forceDelete(view_to_delete, id_to_delete)"
+      "action": "Force Delete."
     },
     {
       "screen": "admin-tools",
       "label": "Delete",
-      "action": "deleteRow(setting.id)"
+      "action": "Delete Row."
     },
     {
       "screen": "admin-tools",
       "label": "Delete",
-      "action": "deleteDomain(domain.id)"
+      "action": "Delete Domain."
     },
     {
       "screen": "admin-tools",
       "label": "delete Sms Gateway",
-      "action": "deleteSmsGateway(sms_g.id)"
+      "action": "Delete Sms Gateway."
     },
     {
       "screen": "admin-tools",
       "label": "Fetch Files Still On Redis",
-      "action": "fetchRedisFiles()"
+      "action": "Fetch Redis Files."
     },
     {
       "screen": "admin-tools",
       "label": "Fetch Files to upload",
-      "action": "getFilesToUpload()"
+      "action": "Get Files To Upload."
     },
     {
       "screen": "admin-tools",
       "label": "Go to Payment Gateways",
-      "action": "/admin#/payment-gateways/0"
+      "action": "Admin."
     },
     {
       "screen": "admin-tools",
       "label": "refresh Sms Gateway Status",
-      "action": "refreshSmsGatewayStatus(sms_g.id)"
+      "action": "Refresh Sms Gateway Status."
     },
     {
       "screen": "admin-tools",
       "label": "Save",
-      "action": "saveEmailReceiverSettings(email_receiver.enabled, email_receiver.script_name)"
+      "action": "Save Email Receiver Settings."
     },
     {
       "screen": "admin-tools",
       "label": "Save Changes",
-      "action": "editRow(setting)"
+      "action": "Edit Row."
     },
     {
       "screen": "admin-tools",
       "label": "Save Changes",
-      "action": "createUpdateMailDomain(domain)"
+      "action": "Create Update Mail Domain."
     },
     {
       "screen": "admin-tools",
       "label": "Sync",
-      "action": "syncFile(file.id)"
-    },
-    {
-      "screen": "admin-tools",
-      "label": "Sync",
-      "action": "syncFile(id)"
+      "action": "Sync File."
     },
     {
       "screen": "admin-tools",
       "label": "view SMSDashboard",
-      "action": "viewSMSDashboard(sms_g.system_name, sms_g.id)"
+      "action": "View SMSDashboard."
     },
     {
       "screen": "admin/add-edit-permission-policy",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "admin/add-edit-permission-policy",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "admin/add-edit-permission-policy",
       "label": "CRUD",
-      "action": "addCrudException()"
+      "action": "Add Crud Exception."
     },
     {
       "screen": "admin/add-edit-permission-policy",
       "label": "remove Exception",
-      "action": "removeException($index)"
+      "action": "Remove Exception."
     },
     {
       "screen": "admin/add-edit-permission-policy",
       "label": "Save Policy",
-      "action": "submit($close)"
+      "action": "Submit."
     },
     {
       "screen": "admin/add-edit-permission-policy",
       "label": "URL",
-      "action": "addUrlException()"
+      "action": "Add Url Exception."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "Add Gateway",
-      "action": "ai_gateways.push({config: {}, is_active: true})"
+      "action": "Ai gateways push."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "Add Skill",
-      "action": "addAISkill()"
+      "action": "Add AISkill."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "create AIGateway",
-      "action": "createAIGateway(gw)"
+      "action": "Create AIGateway."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "delete AIGateway",
-      "action": "deleteAIGateway(gw.id)"
+      "action": "Delete AIGateway."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "delete AISkill",
-      "action": "deleteAISkill(skill)"
+      "action": "Delete AISkill."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "load AIRequests",
-      "action": "loadAIRequests()"
+      "action": "Load AIRequests."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "load Models",
-      "action": "loadModels(gw); activeTab = 2"
-    },
-    {
-      "screen": "admin/ai-gateways",
-      "label": "load Models",
-      "action": "loadModels(gw)"
+      "action": "Load Models."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "save AISkill",
-      "action": "saveAISkill(skill)"
+      "action": "Save AISkill."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "Save Defaults",
-      "action": "saveGatewayDefaults()"
+      "action": "Save Gateway Defaults."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "save Feature Models",
-      "action": "saveFeatureModels(gw)"
+      "action": "Save Feature Models."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "save Model Config",
-      "action": "saveModelConfig(gw, model)"
+      "action": "Save Model Config."
     },
     {
       "screen": "admin/ai-gateways",
       "label": "set Default Model",
-      "action": "setDefaultModel(gw, model)"
+      "action": "Set Default Model."
     },
     {
       "screen": "admin/cust-page",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "admin/cust-page",
       "label": "Cancel",
-      "action": "settings.openForm = false"
+      "action": "Settings open Form."
     },
     {
       "screen": "admin/cust-page",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "admin/cust-page",
       "label": "Customize",
-      "action": "/admin/custom-pages/cp-editor/page.id"
+      "action": "Admin."
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Save Page."
     },
     {
       "screen": "admin/cust-page",
       "label": "page params push",
-      "action": "page.params.push({})"
+      "action": "Page params push."
     },
     {
       "screen": "admin/cust-page",
       "label": "page params splice",
-      "action": "page.params.splice($index, 1)"
-    },
-    {
-      "screen": "admin/cust-page",
-      "label": "page.id ? 'Update Page' : 'Create Page'",
-      "action": "savePage()"
-    },
-    {
-      "screen": "admin/cust-page",
-      "label": "page.id ? 'Update' : 'Create'",
-      "action": "savePage()"
+      "action": "Page params splice."
     },
     {
       "screen": "admin/cust-pages",
       "label": "admin",
-      "action": "/admin/custom-pages/cp-editor/page.id"
+      "action": "Admin."
     },
     {
       "screen": "admin/cust-pages",
       "label": "Create Customer Page",
-      "action": "createPage(filters.accessPolicy)"
+      "action": "Create Page."
     },
     {
       "screen": "admin/cust-pages",
       "label": "Create External Page",
-      "action": "createPage(filters.accessPolicy)"
+      "action": "Create Page."
     },
     {
       "screen": "admin/cust-pages",
       "label": "Create Internal Page",
-      "action": "createPage(filters.accessPolicy)"
+      "action": "Create Page."
     },
     {
       "screen": "admin/cust-report",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "admin/cust-report",
       "label": "Save",
-      "action": "savePage()"
+      "action": "Save Page."
     },
     {
       "screen": "admin/cust-reports",
       "label": "Create Report",
-      "action": "createReport()"
+      "action": "Create Report."
     },
     {
       "screen": "admin/cust-reports",
       "label": "cust report",
-      "action": "/cust_report/editor/report.id"
+      "action": "Cust report."
     },
     {
       "screen": "admin/cust-reports",
       "label": "custom reports",
-      "action": "/#/custom-reports?report_id=report.id"
+      "action": "Custom reports."
     },
     {
       "screen": "admin/payment-gateways",
       "label": "Add Gateway",
-      "action": "payment_gateways.push({config: {}})"
+      "action": "Payment gateways push."
     },
     {
       "screen": "admin/payment-gateways",
       "label": "create Payment Gateway",
-      "action": "createPaymentGateway(pg)"
+      "action": "Create Payment Gateway."
     },
     {
       "screen": "admin/payment-gateways",
       "label": "delete Payment Gateway",
-      "action": "deletePaymentGateway(pg.id)"
+      "action": "Delete Payment Gateway."
     },
     {
       "screen": "admin/payment-gateways",
       "label": "Manage Transaction Actions",
-      "action": "/admin#/customize-menu/payment_transaction"
+      "action": "Admin."
     },
     {
       "screen": "admin/payment-gateways",
       "label": "open Payment Gateway Settings",
-      "action": "openPaymentGatewaySettings(pg)"
+      "action": "Open Payment Gateway Settings."
     },
     {
       "screen": "admin/payment-gateways",
       "label": "Save Action",
-      "action": "savePostPaymentAction()"
+      "action": "Save Post Payment Action."
     },
     {
       "screen": "admin/payment-gateways",
       "label": "Save Defaults",
-      "action": "saveGatewayDefaults()"
+      "action": "Save Gateway Defaults."
     },
     {
       "screen": "admin/permission-policies",
       "label": "Add Policy",
-      "action": "#/permission-policy"
+      "action": "Permission policy."
     },
     {
       "screen": "admin/permission-policies",
       "label": "permission policy",
-      "action": "#/permission-policy?policy_id=policy.id&allow=policy.allow_all&exc=policy.exceptions&name=policy.namepolicy.is_system ? '&system=true' : ''"
+      "action": "Permission policy."
     },
     {
       "screen": "advanced-template-editor",
       "label": "25%",
-      "action": "applyWidthPreset(25)"
+      "action": "Apply Width Preset."
     },
     {
       "screen": "advanced-template-editor",
       "label": "50%",
-      "action": "applyWidthPreset(50)"
+      "action": "Apply Width Preset."
     },
     {
       "screen": "advanced-template-editor",
       "label": "75%",
-      "action": "applyWidthPreset(75)"
+      "action": "Apply Width Preset."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Add column",
-      "action": "addColumn()"
+      "action": "Add Column."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Align center",
-      "action": "applyAlign('center')"
+      "action": "Apply Align."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Align left",
-      "action": "applyAlign('left')"
+      "action": "Apply Align."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Align right",
-      "action": "applyAlign('right')"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "c.label",
-      "action": "insertComponent(c.id)"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "c.label",
-      "action": "insertLoop(c)"
+      "action": "Apply Align."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Clear",
-      "action": "clearPanelSearch('components')"
+      "action": "Clear Panel Search."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Clear",
-      "action": "clearPanelSearch('layouts')"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "Clear",
-      "action": "clearPanelSearch('fields')"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "Clear",
-      "action": "clearPanelSearch('itemFields')"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "Clear",
-      "action": "clearPanelSearch('loops')"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "Clear",
-      "action": "clearPanelSearch('relatedData')"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "Clear",
-      "action": "clearMulti()"
+      "action": "Clear Multi."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Close",
-      "action": "closeAi()"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "cls.name",
-      "action": "bulkToggleClass(cls.id)"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "cls.name",
-      "action": "toggleClass(cls.id)"
+      "action": "Close Ai."
     },
     {
       "screen": "advanced-template-editor",
       "label": "create Class",
-      "action": "createClass()"
+      "action": "Create Class."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Delete class",
-      "action": "deleteClass(cls)"
+      "action": "Delete Class."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Delete selected",
-      "action": "deleteMulti()"
+      "action": "Delete Multi."
     },
     {
       "screen": "advanced-template-editor",
-      "label": "Diagnostics preview.diagnostics.length",
-      "action": "Opens or submits the current screen"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Show Outline."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle Multi Mode."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Show Labels."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Insert Component."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Insert Layout."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Insert Token."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Insert Item Token."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Insert Loop."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Add Binding."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Insert Binding Token."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Bulk Toggle Class."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle Class."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Delete Selected."
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Edit style",
-      "action": "toggleClassEdit(cls.id)"
+      "action": "Toggle Class Edit."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Expand / collapse",
-      "action": "toggleLayer(row, $event)"
+      "action": "Toggle Layer."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Full",
-      "action": "applyWidthPreset(100)"
+      "action": "Apply Width Preset."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Insert as a table with a header row of field labels",
-      "action": "insertLoopTable(c)"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "l.label",
-      "action": "insertLayout(l.id)"
+      "action": "Insert Loop Table."
     },
     {
       "screen": "advanced-template-editor",
       "label": "More",
-      "action": "toggleToolbarMenu($event)"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "multiMode ? 'Done selecting' : 'Select elements'",
-      "action": "toggleMultiMode()"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "multiMode ? 'Done selecting' : 'Select elements'",
-      "action": "toggleMultiMode(); toolbarMenuOpen = false"
+      "action": "Toggle Toolbar Menu."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Open preview",
-      "action": "openPreview()"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "p.label",
-      "action": "addBinding(p)"
+      "action": "Open Preview."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Preview template",
-      "action": "previewTemplate()"
+      "action": "Preview Template."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Publish",
-      "action": "publish()"
+      "action": "Publish."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Redo",
-      "action": "redo()"
+      "action": "Redo."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Remove",
-      "action": "removeBinding(b)"
+      "action": "Remove Binding."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Remove link",
-      "action": "removeLink()"
+      "action": "Remove Link."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Run checks",
-      "action": "runChecks()"
+      "action": "Run Checks."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Save draft",
-      "action": "saveDraft()"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "selected.type === 'tokenChip' ? 'Remove token' : 'Remove block'",
-      "action": "deleteSelected()"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "showLabels ? 'Hide labels' : 'Show labels'",
-      "action": "showLabels = !showLabels"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "showLabels ? 'Hide labels' : 'Show labels'",
-      "action": "showLabels = !showLabels; toolbarMenuOpen = false"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "showOutline ? 'Hide outlines' : 'Outline containers'",
-      "action": "showOutline = !showOutline"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "showOutline ? 'Hide outlines' : 'Outline containers'",
-      "action": "showOutline = !showOutline; toolbarMenuOpen = false"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "t.label t.type",
-      "action": "insertToken(t)"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "t.label t.type",
-      "action": "insertItemToken(t)"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "t.label t.type",
-      "action": "insertBindingToken(b, t)"
+      "action": "Save Draft."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Template AI",
-      "action": "openAi()"
-    },
-    {
-      "screen": "advanced-template-editor",
-      "label": "Template AI",
-      "action": "openAi(); toolbarMenuOpen = false"
+      "action": "Open Ai."
     },
     {
       "screen": "advanced-template-editor",
       "label": "Undo",
-      "action": "undo()"
+      "action": "Undo."
     },
     {
       "screen": "advanced-template-preview",
-      "label": "downloadingPdf ? 'Preparing…' : 'Download PDF'",
-      "action": "downloadPdf()"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
+    },
+    {
+      "screen": "advanced-template-preview",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Download Pdf."
     },
     {
       "screen": "advanced-template-preview",
       "label": "Email",
-      "action": "setOutput('email')"
+      "action": "Set Output."
     },
     {
       "screen": "advanced-template-preview",
       "label": "PDF",
-      "action": "setOutput('pdf')"
+      "action": "Set Output."
     },
     {
       "screen": "advanced-template-preview",
       "label": "Refresh",
-      "action": "rerender()"
-    },
-    {
-      "screen": "advanced-template-preview",
-      "label": "sending ? 'Sending…' : 'Send draft'",
-      "action": "submit"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl archive Conversation",
-      "action": "$ctrl.archiveConversation()"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl choose Files",
-      "action": "$ctrl.chooseFiles()"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl close Conversation",
-      "action": "$ctrl.closeConversation()"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl load Conversations",
-      "action": "$ctrl.loadConversations()"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl load Messages",
-      "action": "$ctrl.loadMessages()"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl new Conversation",
-      "action": "$ctrl.newConversation()"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl remove Attachment",
-      "action": "$ctrl.removeAttachment(attachment)"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl scroll To Bottom",
-      "action": "$ctrl.scrollToBottom()"
-    },
-    {
-      "screen": "ai-conversation-panel",
-      "label": "$ctrl send",
-      "action": "$ctrl.send()"
+      "action": "Rerender."
     },
     {
       "screen": "ai-conversation-panel",
       "label": "Agent",
-      "action": "$ctrl.setChatMode('agent')"
+      "action": "$ctrl set Chat Mode."
     },
     {
       "screen": "ai-conversation-panel",
       "label": "Ask",
-      "action": "$ctrl.setChatMode('ask')"
+      "action": "$ctrl set Chat Mode."
     },
     {
       "screen": "ai-conversation-panel",
-      "label": "conversation.title || ('Conversation #' + conversation.id) conversation.type || 'general' · $ctrl.formatTokens(conversation.stats.total_tokens) tokens · conversation.stats.tool_call_count tools · $ctrl.formatDate(conversation.last_message_at)",
-      "action": "$ctrl.selectConversation(conversation)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl new Conversation."
     },
     {
       "screen": "ai-conversation-panel",
-      "label": "message.expanded ? 'Show less' : 'Show full message'",
-      "action": "$ctrl.toggleMessage(message)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl load Conversations."
     },
     {
       "screen": "ai-conversation-panel",
-      "label": "suggestion.label || suggestion.text || suggestion",
-      "action": "$ctrl.sendSuggestion(suggestion.text || suggestion)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl select Conversation."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl load Messages."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl archive Conversation."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl close Conversation."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl send Suggestion."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl toggle Message."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl scroll To Bottom."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl remove Attachment."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl choose Files."
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl send."
     },
     {
       "screen": "apply-to-invoice",
       "label": "Apply",
-      "action": "submit(data, applyInvcForm, $close)"
+      "action": "Submit."
     },
     {
       "screen": "apply-to-invoice",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "apps",
       "label": "app",
-      "action": "/app"
+      "action": "App."
     },
     {
       "screen": "apps",
       "label": "Kiosk",
-      "action": "/apps/kiosk"
+      "action": "Apps."
     },
     {
       "screen": "apps",
       "label": "Monitor",
-      "action": "/apps/monitor"
+      "action": "Apps."
     },
     {
       "screen": "ask-for-help",
-      "label": "$close",
-      "action": "$close()"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$close."
     },
     {
       "screen": "ask-for-help",
       "label": "Submit",
-      "action": "submit"
+      "action": "Submit the current form."
     },
     {
       "screen": "bills",
-      "label": "projectInfo.cust_id.name",
-      "action": "/#/projects/projectInfo.cust_id.id/cust/projectInfo.po ? 'true' : 'false'"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Projects."
     },
     {
       "screen": "bills",
-      "label": "projectInfo.name",
-      "action": "/#/general-dashboard/projects/projectInfo.id"
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
     },
     {
       "screen": "bulk-change",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "bulk-change",
       "label": "Update",
-      "action": "submit($close, data)"
-    },
-    {
-      "screen": "calendar",
-      "label": "$event stop Propagation",
-      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip()"
-    },
-    {
-      "screen": "calendar",
-      "label": "$event stop Propagation",
-      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip();archiveEvent(event.appointmentData)"
+      "action": "Submit."
     },
     {
       "screen": "calendar",
       "label": "admin",
-      "action": "admin#/settings?tab=7"
-    },
-    {
-      "screen": "calendar",
-      "label": "calendarView.label",
-      "action": "toggleView(calendarView.value)"
-    },
-    {
-      "screen": "calendar",
-      "label": "child.title",
-      "action": "child.action(child)"
+      "action": "Admin."
     },
     {
       "screen": "calendar",
       "label": "Create New event",
-      "action": "createNewEvent()"
+      "action": "Create New Event."
     },
     {
       "screen": "calendar",
       "label": "Customer",
-      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip()"
+      "action": "$event stop Propagation."
     },
     {
       "screen": "calendar",
-      "label": "event.appointmentData.done ? \"Not Done\" : \"Mark Done\"",
-      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip();markEventDone(event.appointmentData)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle View."
     },
     {
       "screen": "calendar",
-      "label": "getCalendarViewLabel()",
-      "action": "button"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle Show All Calendar Events."
+    },
+    {
+      "screen": "calendar",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Run the button behavior configured by the surrounding form."
+    },
+    {
+      "screen": "calendar",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Qa action."
+    },
+    {
+      "screen": "calendar",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open or submit the current screen."
+    },
+    {
+      "screen": "calendar",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Child action."
+    },
+    {
+      "screen": "calendar",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$event stop Propagation."
     },
     {
       "screen": "calendar",
       "label": "Load All",
-      "action": "loadAll()"
+      "action": "Load All."
     },
     {
       "screen": "calendar",
       "label": "Project",
-      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip()"
-    },
-    {
-      "screen": "calendar",
-      "label": "qa.title",
-      "action": "qa.action(qa)"
-    },
-    {
-      "screen": "calendar",
-      "label": "qa.title",
-      "action": "Opens or submits the current screen"
-    },
-    {
-      "screen": "calendar",
-      "label": "showAllCalendarEvents ? 'Compact events' : 'Show all events'",
-      "action": "toggleShowAllCalendarEvents()"
-    },
-    {
-      "screen": "calendar",
-      "label": "view === 'grid' ? 'Calendar' : 'Grid'",
-      "action": "toggleView(view === 'grid' ? 'month' : 'grid')"
+      "action": "$event stop Propagation."
     },
     {
       "screen": "charge-cc",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "charge-cc",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Process."
     },
     {
       "screen": "charge-cc",
       "label": "Keep saved payment details",
-      "action": "clearReplacementPaymentDetails()"
-    },
-    {
-      "screen": "charge-cc",
-      "label": "processing ? 'Processing...' : submitLabel",
-      "action": "process(ccForm)"
+      "action": "Clear Replacement Payment Details."
     },
     {
       "screen": "charge-cc",
       "label": "Replace payment details",
-      "action": "enablePaymentDetailsReplacement()"
+      "action": "Enable Payment Details Replacement."
     },
     {
       "screen": "clone-record",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "clone-record",
       "label": "Clone",
-      "action": "doCopy()"
+      "action": "Do Copy."
     },
     {
       "screen": "color-theme-form",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "color-theme-form",
       "label": "data colors push",
-      "action": "data.colors.push({})"
+      "action": "Data colors push."
     },
     {
       "screen": "color-theme-form",
       "label": "data colors splice",
-      "action": "data.colors.splice($index, 1)"
+      "action": "Data colors splice."
     },
     {
       "screen": "color-theme-form",
-      "label": "data.id ? \"Update\" : \"Add\"",
-      "action": "submit"
-    },
-    {
-      "screen": "comments",
-      "label": "$dismiss",
-      "action": "$dismiss()"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
     },
     {
       "screen": "comments",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "comments",
       "label": "Cancel",
-      "action": "comment.edit = false"
+      "action": "Comment edit."
+    },
+    {
+      "screen": "comments",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$dismiss."
     },
     {
       "screen": "comments",
       "label": "Save Comment",
-      "action": "saveComment(comment)"
+      "action": "Save Comment."
     },
     {
       "screen": "comments",
       "label": "Save Private Comment",
-      "action": "saveComment(comment, true)"
+      "action": "Save Comment."
     },
     {
       "screen": "company-info",
       "label": "Update Info",
-      "action": "submit"
+      "action": "Submit the current form."
     },
     {
       "screen": "contacts",
-      "label": "bt.display_name (bt.out_of_count ? (bt.out_of_count + '/') : '' bt.count)",
-      "action": "Opens or submits the current screen"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Update."
+    },
+    {
+      "screen": "contacts",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Custom Filter."
+    },
+    {
+      "screen": "contacts",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Go To Form."
+    },
+    {
+      "screen": "contacts",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Upload."
+    },
+    {
+      "screen": "contacts",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "contacts",
       "label": "Load All",
-      "action": "loadAll()"
-    },
-    {
-      "screen": "contacts",
-      "label": "page.customFilter",
-      "action": "customFilter()"
-    },
-    {
-      "screen": "contacts",
-      "label": "page.form",
-      "action": "goToForm()"
-    },
-    {
-      "screen": "contacts",
-      "label": "page.upload",
-      "action": "upload()"
-    },
-    {
-      "screen": "contacts",
-      "label": "parentInfo.name",
-      "action": "/#/update/customers?id=parentInfo.id"
+      "action": "Load All."
     },
     {
       "screen": "cost-price",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "cost-price",
       "label": "Update",
-      "action": "$close(data.listPrice)"
+      "action": "$close."
     },
     {
       "screen": "create-invoice",
       "label": "Add Item",
-      "action": "addItem(createInvoiceForm)"
+      "action": "Add Item."
     },
     {
       "screen": "create-invoice",
       "label": "Cancel",
-      "action": "$close()"
+      "action": "$close."
     },
     {
       "screen": "create-invoice",
       "label": "Create Invoice",
-      "action": "submit()"
+      "action": "Submit."
     },
     {
       "screen": "cust-rules",
       "label": "Basic Unique",
-      "action": "addRule(selectedTable.internal_name, 'enforce_basic_unique_constraint')"
+      "action": "Add Rule."
     },
     {
       "screen": "cust-rules",
       "label": "Complex Unique",
-      "action": "addRule(selectedTable.internal_name, 'enforce_unique_across')"
+      "action": "Add Rule."
     },
     {
       "screen": "cust-rules",
       "label": "delete Field",
-      "action": "deleteField(rule, $index)"
+      "action": "Delete Field."
     },
     {
       "screen": "cust-rules",
       "label": "Track Field",
-      "action": "addRule(selectedTable.internal_name, 'update_field_log')"
+      "action": "Add Rule."
     },
     {
       "screen": "cust-rules",
       "label": "Watcher",
-      "action": "addRule(selectedTable.internal_name, 'update_field_notification')"
-    },
-    {
-      "screen": "custom-be-scripts",
-      "label": "'****' + script.token.slice(-4)",
-      "action": "copyToken(script.token)"
+      "action": "Add Rule."
     },
     {
       "screen": "custom-be-scripts",
       "label": "Create Script",
-      "action": "addUpdateScript()"
+      "action": "Add Update Script."
+    },
+    {
+      "screen": "custom-be-scripts",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Copy Token."
     },
     {
       "screen": "custom-be-scripts",
       "label": "Reset Pool",
-      "action": "resetPool()"
+      "action": "Reset Pool."
     },
     {
       "screen": "custom-be-scripts",
       "label": "Running Cron Jobs",
-      "action": "openActiveCronJobsModal()"
+      "action": "Open Active Cron Jobs Modal."
     },
     {
       "screen": "custom-be-scripts",
       "label": "Running Scripts",
-      "action": "openActiveScriptsModal()"
+      "action": "Open Active Scripts Modal."
     },
     {
       "screen": "custom-filters",
       "label": "add Update Filter",
-      "action": "addUpdateFilter(filter.name)"
+      "action": "Add Update Filter."
     },
     {
       "screen": "custom-filters",
       "label": "Create Filter",
-      "action": "addUpdateFilter()"
+      "action": "Add Update Filter."
     },
     {
       "screen": "custom-filters",
       "label": "delete Filter",
-      "action": "deleteFilter($index)"
+      "action": "Delete Filter."
     },
     {
       "screen": "custom-filters",
       "label": "hide Filter",
-      "action": "hideFilter(filter)"
+      "action": "Hide Filter."
     },
     {
       "screen": "custom-reports",
       "label": "Download",
-      "action": "execute(data, true)"
+      "action": "Execute."
     },
     {
       "screen": "custom-reports",
       "label": "Execute",
-      "action": "execute(data, false)"
+      "action": "Execute."
     },
     {
       "screen": "custom-reports",
       "label": "Toggle description",
-      "action": "isDescCollapsed = !isDescCollapsed"
+      "action": "Is Desc Collapsed."
     },
     {
       "screen": "custom-reports",
       "label": "View",
-      "action": "execute(data, false)"
+      "action": "Execute."
     },
     {
       "screen": "custom-text",
       "label": "reset CT",
-      "action": "resetCT(ct)"
+      "action": "Reset CT."
     },
     {
       "screen": "custom-text",
       "label": "Update",
-      "action": "submit(customText)"
+      "action": "Submit."
     },
     {
       "screen": "customer-dashboard",
       "label": "update",
-      "action": "#/update/customers?id=customer.id"
+      "action": "Update."
     },
     {
       "screen": "customer-form",
       "label": "Add New Project automatically",
-      "action": "submit(record, 'addProject')"
+      "action": "Submit."
     },
     {
       "screen": "customer-form",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "customer-form",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "customer-form",
-      "label": "custId ? \"Update Customer\" : \"Save Customer\"",
-      "action": "submit"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
     },
     {
       "screen": "customer-form",
       "label": "Go To New Project",
-      "action": "submit(record, 'goToNewProject')"
+      "action": "Submit."
     },
     {
       "screen": "customer-form",
       "label": "Save & Go To Dashboard",
-      "action": "submit(record, 'goToDashboard')"
+      "action": "Submit."
     },
     {
       "screen": "customer-group",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "customer-group",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit(data)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "customers",
       "label": "Add Customer",
-      "action": "goToForm()"
+      "action": "Go To Form."
     },
     {
       "screen": "customers",
       "label": "admin",
-      "action": "admin#/settings?tab=1"
+      "action": "Admin."
     },
     {
       "screen": "customers",
-      "label": "bt.display_name (bt.out_of_count ? (bt.out_of_count + '/') : '' bt.count)",
-      "action": "Opens or submits the current screen"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "customers",
       "label": "Load All",
-      "action": "loadAll()"
+      "action": "Load All."
     },
     {
       "screen": "customize-dashboard",
       "label": "Add Section",
-      "action": "addSection(dashboard)"
+      "action": "Add Section."
     },
     {
       "screen": "customize-dashboard",
       "label": "delete Section",
-      "action": "deleteSection($index)"
+      "action": "Delete Section."
     },
     {
       "screen": "customize-dashboard",
       "label": "Reset to Default",
-      "action": "resetDashboard()"
+      "action": "Reset Dashboard."
     },
     {
       "screen": "customize-dashboard",
       "label": "Save",
-      "action": "submit()"
+      "action": "Submit."
     },
     {
       "screen": "customize-dashboard",
       "label": "section hide",
-      "action": "section.hide = !section.hide"
+      "action": "Section hide."
     },
     {
       "screen": "customize-dashboard",
       "label": "update Section",
-      "action": "updateSection(section)"
+      "action": "Update Section."
     },
     {
       "screen": "customize-left-panel",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "customize-left-panel",
       "label": "Cancel",
-      "action": "cancel()"
+      "action": "Cancel."
     },
     {
       "screen": "customize-left-panel",
       "label": "Collapse all",
-      "action": "setAllSectionsCollapsed(true)"
+      "action": "Set All Sections Collapsed."
     },
     {
       "screen": "customize-left-panel",
       "label": "Copy",
-      "action": "copyToUser(from_user_id)"
+      "action": "Copy To User."
     },
     {
       "screen": "customize-left-panel",
       "label": "create New",
-      "action": "createNew(link)"
+      "action": "Create New."
     },
     {
       "screen": "customize-left-panel",
       "label": "Drag to reorder",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "customize-left-panel",
       "label": "Expand all",
-      "action": "setAllSectionsCollapsed(false)"
+      "action": "Set All Sections Collapsed."
     },
     {
       "screen": "customize-left-panel",
       "label": "Link",
-      "action": "createNew()"
+      "action": "Create New."
     },
     {
       "screen": "customize-left-panel",
       "label": "Link",
-      "action": "setType('link')"
+      "action": "Set Type."
     },
     {
       "screen": "customize-left-panel",
       "label": "move To Root",
-      "action": "moveToRoot(child, $event)"
+      "action": "Move To Root."
     },
     {
       "screen": "customize-left-panel",
       "label": "Navigation Items",
-      "action": "activeConfigTab = 'items'"
+      "action": "Active Config Tab."
     },
     {
       "screen": "customize-left-panel",
       "label": "open Settings",
-      "action": "openSettings(link)"
-    },
-    {
-      "screen": "customize-left-panel",
-      "label": "open Settings",
-      "action": "openSettings(child)"
+      "action": "Open Settings."
     },
     {
       "screen": "customize-left-panel",
       "label": "reset Left Panel",
-      "action": "resetLeftPanel()"
+      "action": "Reset Left Panel."
     },
     {
       "screen": "customize-left-panel",
       "label": "Save",
-      "action": "submit()"
+      "action": "Submit."
     },
     {
       "screen": "customize-left-panel",
       "label": "Save Layout",
-      "action": "submit($close)"
+      "action": "Submit."
     },
     {
       "screen": "customize-left-panel",
       "label": "Section",
-      "action": "createSection()"
+      "action": "Create Section."
     },
     {
       "screen": "customize-left-panel",
       "label": "Section",
-      "action": "setType('section')"
+      "action": "Set Type."
     },
     {
       "screen": "customize-left-panel",
       "label": "Settings",
-      "action": "activeConfigTab = 'settings'"
+      "action": "Active Config Tab."
     },
     {
       "screen": "customize-left-panel",
       "label": "toggle Link",
-      "action": "toggleLink(link)"
-    },
-    {
-      "screen": "customize-left-panel",
-      "label": "toggle Link",
-      "action": "toggleLink(child)"
+      "action": "Toggle Link."
     },
     {
       "screen": "customize-left-panel",
       "label": "toggle Section Collapse",
-      "action": "toggleSectionCollapse(link, $event)"
+      "action": "Toggle Section Collapse."
     },
     {
       "screen": "customize-menu",
       "label": "Add Action",
-      "action": "addMenu()"
+      "action": "Add Menu."
     },
     {
       "screen": "customize-menu",
       "label": "add Menu",
-      "action": "addMenu(link)"
+      "action": "Add Menu."
     },
     {
       "screen": "customize-menu",
-      "label": "link.title",
-      "action": "link.type === 'custom-script' ? '/actions/ca-editor/' + view_name + '/' + link.action_name : 'javascript:;'"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Link type."
     },
     {
       "screen": "customize-menu",
       "label": "remove Menu",
-      "action": "removeMenu(link)"
+      "action": "Remove Menu."
     },
     {
       "screen": "customize-menu",
       "label": "Reset Menu",
-      "action": "resetMenus()"
+      "action": "Reset Menus."
     },
     {
       "screen": "dashboard-log-section",
       "label": "Close",
-      "action": "$close()"
+      "action": "$close."
     },
     {
       "screen": "delivery",
       "label": "Apply",
-      "action": "applyTemplateOnOrder(template,$index)"
+      "action": "Apply Template On Order."
     },
     {
       "screen": "delivery",
-      "label": "delivery.id ? 'Save' : 'Create Slip'",
-      "action": "generate()"
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
     },
     {
       "screen": "delivery",
-      "label": "invoice.customer.name",
-      "action": "#/general-dashboard/customers/invoice.customer.id"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Item confirmed."
     },
     {
       "screen": "delivery",
-      "label": "invoice.project.name",
-      "action": "#/general-dashboard/projects/invoice.project.id"
-    },
-    {
-      "screen": "delivery",
-      "label": "item.confirmed ? 'Cancel Confirmation' : 'Confirm'",
-      "action": "item.confirmed = !item.confirmed;"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Generate."
     },
     {
       "screen": "delivery-template",
       "label": "Update Template",
-      "action": "updateTemplate()"
-    },
-    {
-      "screen": "edit-form",
-      "label": "$index || !field.width}\" class=\"btn btn-outline-secondary col py-0 px-1\">",
-      "action": "field.width = w;"
+      "action": "Update Template."
     },
     {
       "screen": "edit-form",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "edit-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Field width."
     },
     {
       "screen": "edit-form",
       "label": "Learn more",
-      "action": "https://github.com/bizmanagrcrm/bmml/tree/main/conditions"
+      "action": "Open linked help or documentation."
     },
     {
       "screen": "edit-form",
       "label": "Save",
-      "action": "submit($close)"
+      "action": "Submit."
     },
     {
       "screen": "edit-project-quote",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "edit-project-quote",
       "label": "Update",
-      "action": "$close(data)"
-    },
-    {
-      "screen": "edit-view",
-      "label": "(view.id || view.system) ? \"Update View\" : \"Create View\"",
-      "action": "submit(view, $close, viewForm)"
+      "action": "$close."
     },
     {
       "screen": "edit-view",
       "label": "1\" title=\"Remove sort rule\">",
-      "action": "view.orderBy.splice($index,1)"
+      "action": "View order By splice."
     },
     {
       "screen": "edit-view",
       "label": "Basics",
-      "action": "viewTab = 0"
+      "action": "View Tab."
     },
     {
       "screen": "edit-view",
       "label": "Behavior",
-      "action": "viewTab = 1"
+      "action": "View Tab."
     },
     {
       "screen": "edit-view",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "edit-view",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "edit-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "edit-view",
       "label": "Email",
-      "action": "viewTab = 2"
+      "action": "View Tab."
     },
     {
       "screen": "edit-view",
       "label": "Reset",
-      "action": "resetView()"
+      "action": "Reset View."
     },
     {
       "screen": "edit-view",
       "label": "Sort",
-      "action": "view.orderBy.push({column:'', order:'asc'})"
+      "action": "View order By push."
     },
     {
       "screen": "email-editor",
       "label": "Example",
-      "action": "insertExample()"
+      "action": "Insert Example."
     },
     {
       "screen": "email-editor",
       "label": "Get Token",
-      "action": "openTokenPopup($event)"
+      "action": "Open Token Popup."
     },
     {
       "screen": "email-editor",
       "label": "Raw HTML",
-      "action": "ui.raw=true"
+      "action": "Ui raw."
     },
     {
       "screen": "email-editor",
       "label": "Save Template",
-      "action": "saveTemplate()"
+      "action": "Save Template."
     },
     {
       "screen": "email-editor",
       "label": "UI Builder",
-      "action": "ui.raw=false"
+      "action": "Ui raw."
     },
     {
       "screen": "email-template",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "email-template",
-      "label": "id ? \"Update\" : \"Add\"",
-      "action": "submit"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
     },
     {
       "screen": "email-templates",
       "label": "Add Template",
-      "action": "goToForm()"
+      "action": "Go To Form."
+    },
+    {
+      "screen": "email-templates",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Advanced templates."
     },
     {
       "screen": "email-templates",
       "label": "Edit",
-      "action": "#/email_templates-form/template.id"
-    },
-    {
-      "screen": "email-templates",
-      "label": "Edit (Advanced)",
-      "action": "#/advanced_templates/template.id"
+      "action": "Email templates form."
     },
     {
       "screen": "email-templates",
       "label": "Edit Template",
-      "action": "#/email_templates/template.id"
+      "action": "Email templates."
     },
     {
       "screen": "emails",
       "label": "Compose",
-      "action": "compose()"
+      "action": "Compose."
     },
     {
       "screen": "emails",
       "label": "Refresh",
-      "action": "refresh()"
+      "action": "Refresh."
     },
     {
       "screen": "emails",
       "label": "Send Reminder",
-      "action": "sendReminder(selectedItem.email)"
+      "action": "Send Reminder."
     },
     {
       "screen": "emails",
       "label": "Sort",
-      "action": "sort()"
+      "action": "Sort."
     },
     {
       "screen": "employee-form",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "employee-form",
-      "label": "empId ? \"Update\" : \"Add\"",
-      "action": "submit"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
     },
     {
       "screen": "employee-form",
       "label": "Reset Password",
-      "action": "resetEmployeePassword(employee)"
+      "action": "Reset Employee Password."
     },
     {
       "screen": "employees",
       "label": "Add Employee",
-      "action": "goToForm()"
+      "action": "Go To Form."
     },
     {
       "screen": "employees",
-      "label": "Create new User (old)",
-      "action": "/admin/create"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Show Logged In."
+    },
+    {
+      "screen": "employees",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Admin."
     },
     {
       "screen": "employees",
       "label": "Invite User to BizManage",
-      "action": "inviteUser()"
+      "action": "Invite User."
     },
     {
       "screen": "employees",
       "label": "Load All",
-      "action": "loadAll()"
-    },
-    {
-      "screen": "employees",
-      "label": "Who is now using the system?",
-      "action": "showLoggedIn()"
+      "action": "Load All."
     },
     {
       "screen": "event_priority",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "event_priority",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit(data)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "event-type",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "event-type",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit(data)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "express-invoice",
       "label": "Add Item",
-      "action": "addItem(expressInvoiceForm)"
+      "action": "Add Item."
     },
     {
       "screen": "express-invoice",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "express-invoice",
       "label": "Cancel",
-      "action": "$close()"
+      "action": "$close."
     },
     {
       "screen": "express-invoice",
       "label": "Create Invoice",
-      "action": "submit(true)"
+      "action": "Submit."
     },
     {
       "screen": "express-invoice",
       "label": "Create Proposal",
-      "action": "submit(false)"
+      "action": "Submit."
     },
     {
       "screen": "file_ext_types",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "file_ext_types",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit(data)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "file-type",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "file-type",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit(data)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "files",
       "label": "admin",
-      "action": "admin#/settings?tab=6"
+      "action": "Admin."
     },
     {
       "screen": "files",
       "label": "Cancel",
-      "action": "closeWindow(selectedFolder)"
+      "action": "Close Window."
     },
     {
       "screen": "files",
-      "label": "doc.folder ? 'Open folder' : 'Open file'",
-      "action": "$event.stopPropagation(); handleDblClick(doc)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
+    },
+    {
+      "screen": "files",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Files."
+    },
+    {
+      "screen": "files",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open Folder."
+    },
+    {
+      "screen": "files",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$event stop Propagation."
     },
     {
       "screen": "files",
       "label": "files query",
-      "action": "files_query = ''"
-    },
-    {
-      "screen": "files",
-      "label": "fld.display_name",
-      "action": "openFolder(fld)"
-    },
-    {
-      "screen": "files",
-      "label": "projectInfo.customer.name",
-      "action": "#/general-dashboard/customers/projectInfo.cust_id"
-    },
-    {
-      "screen": "files",
-      "label": "projectInfo.name",
-      "action": "#/files?project_id=projectInfo.id&table=projects&folderId=null&parent_id=projectInfo.id"
+      "action": "Files query."
     },
     {
       "screen": "files",
       "label": "Select",
-      "action": "closeWindow(selectedFolder)"
+      "action": "Close Window."
     },
     {
       "screen": "files",
       "label": "set View",
-      "action": "setView('grid')"
-    },
-    {
-      "screen": "files",
-      "label": "set View",
-      "action": "setView('list')"
+      "action": "Set View."
     },
     {
       "screen": "files",
       "label": "Upload All",
-      "action": "uploadAll()"
+      "action": "Upload All."
     },
     {
       "screen": "form",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "general-dashboard",
       "label": "Configure Dashboard",
-      "action": "/admin#/cust-dashboard?viewName=dashboard.name"
+      "action": "Admin."
     },
     {
       "screen": "general-dashboard",
       "label": "dashboard edit Link",
-      "action": "dashboard.editLink"
+      "action": "Dashboard edit Link."
     },
     {
       "screen": "grid-view",
       "label": "add Contact",
-      "action": "addContact(selectedRow)"
+      "action": "Add Contact."
     },
     {
       "screen": "grid-view",
       "label": "add Event",
-      "action": "addEvent(selectedRow)"
+      "action": "Add Event."
     },
     {
       "screen": "grid-view",
       "label": "archive",
-      "action": "archive(selectedRow)"
-    },
-    {
-      "screen": "grid-view",
-      "label": "bt.display_name || bt.display (bt.out_of_count ? (bt.out_of_count + '/') : ''bt.count)",
-      "action": "bt.url || bt.link"
-    },
-    {
-      "screen": "grid-view",
-      "label": "child.title",
-      "action": "child.action(child)"
+      "action": "Archive."
     },
     {
       "screen": "grid-view",
       "label": "Close",
-      "action": "popup.show = false"
+      "action": "Popup show."
     },
     {
       "screen": "grid-view",
       "label": "comments",
-      "action": "#/comments/page.comments.table/selectedRow"
+      "action": "Comments."
     },
     {
       "screen": "grid-view",
       "label": "Context action",
-      "action": "Opens or submits the current screen"
+      "action": "Open or submit the current screen."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Go To Form."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open Layout."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Custom Filter."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Qa action."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open or submit the current screen."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Child action."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Bt url."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "View All."
+    },
+    {
+      "screen": "grid-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Copy."
     },
     {
       "screen": "grid-view",
       "label": "edit",
-      "action": "edit(selectedRow)"
+      "action": "Edit."
     },
     {
       "screen": "grid-view",
       "label": "go To Form",
-      "action": "goToForm()"
-    },
-    {
-      "screen": "grid-view",
-      "label": "layout.display_name || layout.internal_name",
-      "action": "openLayout(layout)"
+      "action": "Go To Form."
     },
     {
       "screen": "grid-view",
       "label": "Layouts",
-      "action": "Opens or submits the current screen"
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "grid-view",
       "label": "Load All",
-      "action": "loadAll()"
-    },
-    {
-      "screen": "grid-view",
-      "label": "page.copy",
-      "action": "copy(selectedRow)"
-    },
-    {
-      "screen": "grid-view",
-      "label": "page.customFilter",
-      "action": "customFilter()"
-    },
-    {
-      "screen": "grid-view",
-      "label": "page.form",
-      "action": "goToForm()"
-    },
-    {
-      "screen": "grid-view",
-      "label": "page.viewAll",
-      "action": "viewAll(selectedRow)"
-    },
-    {
-      "screen": "grid-view",
-      "label": "qa.title",
-      "action": "qa.action(qa)"
-    },
-    {
-      "screen": "grid-view",
-      "label": "qa.title",
-      "action": "Opens or submits the current screen"
+      "action": "Load All."
     },
     {
       "screen": "grid-view",
       "label": "refresh Info",
-      "action": "refreshInfo(true)"
+      "action": "Refresh Info."
     },
     {
       "screen": "grid-view",
       "label": "remove Qte",
-      "action": "removeQte(selectedRow)"
+      "action": "Remove Qte."
     },
     {
       "screen": "grid-view",
       "label": "Stop Loading",
-      "action": "stopLoadAll()"
+      "action": "Stop Load All."
     },
     {
       "screen": "import-data",
       "label": "Context action",
-      "action": "(field.match = field.match || []).push({});"
+      "action": "Open or run the configured screen action."
+    },
+    {
+      "screen": "import-data",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Field manual."
+    },
+    {
+      "screen": "import-data",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Settings current Step."
+    },
+    {
+      "screen": "import-data",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Next."
     },
     {
       "screen": "import-data",
       "label": "field match splice",
-      "action": "field.match.splice($index, 1);"
-    },
-    {
-      "screen": "import-data",
-      "label": "field.manual ? 'Use CSV column' : 'Use static value'",
-      "action": "field.manual = !field.manual"
+      "action": "Field match splice."
     },
     {
       "screen": "import-data",
       "label": "m manual",
-      "action": "m.manual = !m.manual"
+      "action": "M manual."
     },
     {
       "screen": "import-data",
       "label": "remove Upload File",
-      "action": "removeUploadFile()"
-    },
-    {
-      "screen": "import-data",
-      "label": "settings.currentStep === 2 ? 'Confirm & Save' : 'Continue'",
-      "action": "next()"
-    },
-    {
-      "screen": "import-data",
-      "label": "settings.currentStep === 2 ? 'Try Again' : settings.currentStep === 3 ? 'Done' : 'Cancel'",
-      "action": "settings.currentStep === 2 ? tryAgain() : exit()"
-    },
-    {
-      "screen": "import-results",
-      "label": "$dismiss",
-      "action": "$dismiss()"
+      "action": "Remove Upload File."
     },
     {
       "screen": "import-results",
       "label": "copy Error",
-      "action": "copyError(activeError)"
+      "action": "Copy Error."
     },
     {
       "screen": "import-results",
-      "label": "error.title Code error.code error.count | number",
-      "action": "setActiveError(error)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$dismiss."
+    },
+    {
+      "screen": "import-results",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Set Active Error."
     },
     {
       "screen": "import-results",
       "label": "load",
-      "action": "load()"
+      "action": "Load."
     },
     {
       "screen": "import-status",
       "label": "Cancel Import",
-      "action": "cancel()"
+      "action": "Cancel."
     },
     {
       "screen": "import-status",
       "label": "Close",
-      "action": "close()"
+      "action": "Close."
     },
     {
       "screen": "import-status",
       "label": "Copy Link",
-      "action": "copy()"
+      "action": "Copy."
+    },
+    {
+      "screen": "invoices",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Projects."
+    },
+    {
+      "screen": "invoices",
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
     },
     {
       "screen": "invoices",
       "label": "Load All",
-      "action": "loadAll()"
-    },
-    {
-      "screen": "invoices",
-      "label": "projectInfo.cust_id.name",
-      "action": "/#/projects/projectInfo.cust_id.id/cust/projectInfo.po ? 'true' : 'false'"
-    },
-    {
-      "screen": "invoices",
-      "label": "projectInfo.name",
-      "action": "/#/general-dashboard/projects/projectInfo.id"
+      "action": "Load All."
     },
     {
       "screen": "items",
       "label": "Add Item",
-      "action": "goToForm()"
+      "action": "Go To Form."
     },
     {
       "screen": "items",
       "label": "admin",
-      "action": "admin#/settings?tab=5"
+      "action": "Admin."
     },
     {
       "screen": "items",
       "label": "Load All",
-      "action": "loadAll()"
+      "action": "Load All."
     },
     {
       "screen": "items",
       "label": "Upload Items",
-      "action": "upload()"
+      "action": "Upload."
     },
     {
       "screen": "kanban",
       "label": "Card Details",
-      "action": "cardDetails()"
+      "action": "Card Details."
     },
     {
       "screen": "kanban",
       "label": "Context action",
-      "action": "#"
+      "action": "Open or run the configured screen action."
     },
     {
       "screen": "kanban",
       "label": "Manage Columns",
-      "action": "manageColumns()"
+      "action": "Manage Columns."
     },
     {
       "screen": "kanban-board",
       "label": "+",
-      "action": "column.new_link"
+      "action": "Column new link."
     },
     {
       "screen": "kanban-board",
-      "label": "card.title",
-      "action": "dblClickFn(card.row)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Dbl Click Fn."
     },
     {
       "screen": "kanban-board",
-      "label": "Load More (column.cards.length/column.count)",
-      "action": "loadMore(column)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Load More."
     },
     {
       "screen": "lines",
       "label": "Add Cabinet Line",
-      "action": "goToForm()"
+      "action": "Go To Form."
     },
     {
       "screen": "lines",
       "label": "admin",
-      "action": "admin#/settings?tab=5"
+      "action": "Admin."
     },
     {
       "screen": "lines",
       "label": "Load All",
-      "action": "loadAll()"
+      "action": "Load All."
     },
     {
       "screen": "manage-account",
       "label": "Apply",
-      "action": "applyUserData(userData)"
+      "action": "Apply User Data."
     },
     {
       "screen": "manage-account",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "manage-address",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "manage-address",
       "label": "Submit",
-      "action": "submit(locationSettings, $close, addressForm)"
+      "action": "Submit."
     },
     {
       "screen": "manage-api",
       "label": "API Docs",
-      "action": "https://documenter.getpostman.com/view/2111713/2s7YfScsp1"
+      "action": "Open linked help or documentation."
     },
     {
       "screen": "manage-api",
       "label": "Copy API Key",
-      "action": "copyApiKey(user.api_key)"
+      "action": "Copy Api Key."
+    },
+    {
+      "screen": "manage-api",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Generate Api Key."
     },
     {
       "screen": "manage-api",
       "label": "New Admin API User",
-      "action": "createApiUser('admin')"
+      "action": "Create Api User."
     },
     {
       "screen": "manage-api",
       "label": "New API User",
-      "action": "createApiUser()"
+      "action": "Create Api User."
     },
     {
       "screen": "manage-api",
       "label": "Show calls count",
-      "action": "loadCallsCount(user)"
-    },
-    {
-      "screen": "manage-api",
-      "label": "user.api_key ? 'Reg' : 'G'enerate API Key",
-      "action": "generateApiKey(user)"
+      "action": "Load Calls Count."
     },
     {
       "screen": "manage-field",
       "label": "Advanced",
-      "action": "fieldTab = 'advanced'"
+      "action": "Field Tab."
     },
     {
       "screen": "manage-field",
       "label": "Basics",
-      "action": "fieldTab = 'basic'"
+      "action": "Field Tab."
     },
     {
       "screen": "manage-field",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "manage-field",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "manage-field",
       "label": "Display",
-      "action": "fieldTab = 'display'"
+      "action": "Field Tab."
+    },
+    {
+      "screen": "manage-field",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "manage-field",
       "label": "Sort",
-      "action": "field.vals = field.vals.sort()"
-    },
-    {
-      "screen": "manage-field",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit(field)"
+      "action": "Field vals."
     },
     {
       "screen": "manage-forms",
       "label": "button",
-      "action": "button"
-    },
-    {
-      "screen": "manage-forms",
-      "label": "button.create.display_name",
-      "action": "editSaveBtn(viewName, form.form_name, button.internal_name)"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "manage-forms",
       "label": "Create New Button",
-      "action": "editSaveBtn(viewName, form.form_name)"
+      "action": "Edit Save Btn."
     },
     {
       "screen": "manage-forms",
       "label": "Create New Form",
-      "action": "createUpdateForm()"
+      "action": "Create Update Form."
     },
     {
       "screen": "manage-forms",
       "label": "create Update Form",
-      "action": "createUpdateForm(form)"
+      "action": "Create Update Form."
+    },
+    {
+      "screen": "manage-forms",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Edit Save Btn."
+    },
+    {
+      "screen": "manage-forms",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "manage-forms",
       "label": "edit form",
-      "action": "#/edit-form?viewName=viewName&formName=form.form_name"
-    },
-    {
-      "screen": "manage-forms",
-      "label": "form.id ? \"Update\" : \"Create\"",
-      "action": "submit()"
+      "action": "Edit form."
     },
     {
       "screen": "manage-forms",
       "label": "reset Form",
-      "action": "resetForm(viewName, form.form_name)"
+      "action": "Reset Form."
     },
     {
       "screen": "manage-forms",
       "label": "set Default Form",
-      "action": "setDefaultForm(viewName, form.form_name)"
+      "action": "Set Default Form."
     },
     {
       "screen": "manage-menu-sections",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "manage-menu-sections",
       "label": "Choose section color",
-      "action": "button"
-    },
-    {
-      "screen": "manage-menu-sections",
-      "label": "customColor ? 'Pick color' : 'Custom color'",
-      "action": "customColor = !customColor"
-    },
-    {
-      "screen": "manage-menu-sections",
-      "label": "customIcon ? 'Pick icon' : 'Custom icon'",
-      "action": "customIcon = !customIcon"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "manage-menu-sections",
       "label": "delete Section",
-      "action": "deleteSection(section)"
+      "action": "Delete Section."
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Custom Color."
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Custom Icon."
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "manage-menu-sections",
       "label": "section",
-      "action": "section = {}"
-    },
-    {
-      "screen": "manage-menu-sections",
-      "label": "section.action_name ? \"Update\" : \"Add\"",
-      "action": "submit($close)"
+      "action": "Section."
     },
     {
       "screen": "manage-rules",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "manage-rules",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit()"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "manage-view",
       "label": "Action Sections",
-      "action": "#/manage-menu-sections?view=selectedTable.internal_name"
+      "action": "Manage menu sections."
     },
     {
       "screen": "manage-view",
       "label": "Actions",
-      "action": "manageMenu(selectedTable.internal_name)"
+      "action": "Manage Menu."
     },
     {
       "screen": "manage-view",
       "label": "Add Field",
-      "action": "addField(selectedTable.internal_name)"
+      "action": "Add Field."
     },
     {
       "screen": "manage-view",
       "label": "Address",
-      "action": "#/manage-address?viewName=selectedTable.internal_name"
+      "action": "Manage address."
     },
     {
       "screen": "manage-view",
       "label": "Clear Cache",
-      "action": "clearCache(selectedTable.internal_name)"
+      "action": "Clear Cache."
     },
     {
       "screen": "manage-view",
       "label": "Dashboard",
-      "action": "#/cust-dashboard?viewName=selectedTable.internal_name"
+      "action": "Cust dashboard."
     },
     {
       "screen": "manage-view",
       "label": "Filters",
-      "action": "#/cust-filters?viewName=selectedTable.internal_name"
+      "action": "Cust filters."
     },
     {
       "screen": "manage-view",
       "label": "Layouts",
-      "action": "manageLayouts(selectedTable.internal_name)"
+      "action": "Manage Layouts."
     },
     {
       "screen": "manage-view",
       "label": "Manage Forms",
-      "action": "#/manage-forms/selectedTable.internal_name?display_name=selectedTable.display_name"
+      "action": "Manage forms."
     },
     {
       "screen": "manage-view",
       "label": "Open view tools",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "manage-view",
       "label": "Rules",
-      "action": "#/cust-rules?view=selectedTable.internal_name"
+      "action": "Cust rules."
     },
     {
       "screen": "manage-view",
       "label": "Sub Views",
-      "action": "#/sub-views?view=selectedTable.internal_name"
+      "action": "Sub views."
     },
     {
       "screen": "manage-view",
       "label": "View Tools",
-      "action": "#/edit-view?viewName=selectedTable.internal_name"
+      "action": "Edit view."
     },
     {
       "screen": "manage-views",
       "label": "Action Sections",
-      "action": "#/manage-menu-sections?view=table.internal_name"
+      "action": "Manage menu sections."
     },
     {
       "screen": "manage-views",
       "label": "Actions",
-      "action": "manageMenu(table.internal_name)"
+      "action": "Manage Menu."
     },
     {
       "screen": "manage-views",
       "label": "Add Custom View",
-      "action": "addView()"
+      "action": "Add View."
     },
     {
       "screen": "manage-views",
       "label": "Address",
-      "action": "#/manage-address?viewName=table.internal_name"
+      "action": "Manage address."
     },
     {
       "screen": "manage-views",
       "label": "Clear Cache",
-      "action": "clearCache(table.internal_name)"
+      "action": "Clear Cache."
     },
     {
       "screen": "manage-views",
       "label": "Dashboard",
-      "action": "manageDashboard(table.internal_name)"
+      "action": "Manage Dashboard."
     },
     {
       "screen": "manage-views",
       "label": "Fields And More",
-      "action": "choseView(table.internal_name)"
+      "action": "Chose View."
     },
     {
       "screen": "manage-views",
       "label": "Filters",
-      "action": "#/cust-filters?viewName=table.internal_name"
+      "action": "Cust filters."
     },
     {
       "screen": "manage-views",
       "label": "Forms",
-      "action": "#/manage-forms/table.internal_name?display_name=table.display_name"
+      "action": "Manage forms."
     },
     {
       "screen": "manage-views",
       "label": "Layouts",
-      "action": "manageLayouts(table.internal_name)"
+      "action": "Manage Layouts."
     },
     {
       "screen": "manage-views",
       "label": "Open view tools",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "manage-views",
       "label": "Rules",
-      "action": "#/cust-rules?view=table.internal_name"
+      "action": "Cust rules."
     },
     {
       "screen": "manage-views",
       "label": "Sub Views",
-      "action": "#/sub-views?view=table.internal_name"
+      "action": "Sub views."
     },
     {
       "screen": "manage-views",
       "label": "View Settings",
-      "action": "manageView(table.internal_name)"
+      "action": "Manage View."
     },
     {
       "screen": "manage-webhooks",
       "label": "Add Webhook",
-      "action": "addUpdateWebhook()"
+      "action": "Add Update Webhook."
     },
     {
       "screen": "map-view",
       "label": "Context action",
-      "action": "Opens or submits the current screen"
+      "action": "Open or submit the current screen."
+    },
+    {
+      "screen": "map-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Custom Filter."
+    },
+    {
+      "screen": "map-view",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Go To Form."
     },
     {
       "screen": "map-view",
       "label": "go To Form",
-      "action": "goToForm()"
-    },
-    {
-      "screen": "map-view",
-      "label": "page.customFilter",
-      "action": "customFilter()"
-    },
-    {
-      "screen": "map-view",
-      "label": "page.form",
-      "action": "goToForm()"
+      "action": "Go To Form."
     },
     {
       "screen": "merge_units",
       "label": "Merge All Units",
-      "action": "mergeUnits(true)"
+      "action": "Merge Units."
     },
     {
       "screen": "merge_units",
       "label": "Merge Unit",
-      "action": "mergeUnits()"
+      "action": "Merge Units."
     },
     {
       "screen": "not-found",
       "label": "Go back",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "order",
       "label": "Apply",
-      "action": "applyTemplateOnOrder(template,$index)"
+      "action": "Apply Template On Order."
     },
     {
       "screen": "order",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "order",
       "label": "delete Order Item",
-      "action": "deleteOrderItem(item)"
+      "action": "Delete Order Item."
+    },
+    {
+      "screen": "order",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Generate Update Order."
     },
     {
       "screen": "order",
       "label": "Generate PO For All Vendors",
-      "action": "generateAll(mainForm)"
+      "action": "Generate All."
     },
     {
       "screen": "order",
       "label": "Hide All",
-      "action": "hideWhowAllTop(false)"
-    },
-    {
-      "screen": "order",
-      "label": "orderId ? 'Update PO' : 'Generate PO'",
-      "action": "generateUpdateOrder(vendor, false, orderForm)"
-    },
-    {
-      "screen": "order",
-      "label": "orderId ? 'Update PO' : 'Generate PO' & Send",
-      "action": "generateUpdateOrder(vendor, 'email', orderForm)"
+      "action": "Hide Whow All Top."
     },
     {
       "screen": "order",
       "label": "Show All",
-      "action": "hideWhowAllTop(true)"
+      "action": "Hide Whow All Top."
     },
     {
       "screen": "order-template",
       "label": "Update Template",
-      "action": "updateTemplate()"
+      "action": "Update Template."
     },
     {
       "screen": "payment_gateway_settings/banquest-settings",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "payment_gateway_settings/banquest-settings",
       "label": "Save",
-      "action": "submit($close, gateway)"
+      "action": "Submit."
     },
     {
       "screen": "payment_gateway_settings/cardknox-settings",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "payment_gateway_settings/cardknox-settings",
       "label": "Save",
-      "action": "submit($close, gateway)"
+      "action": "Submit."
     },
     {
       "screen": "payment_gateway_settings/jackhenry-settings",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "payment_gateway_settings/jackhenry-settings",
       "label": "Save",
-      "action": "submit($close, gateway)"
+      "action": "Submit."
     },
     {
       "screen": "payment_gateway_settings/stripe-settings",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "payment_gateway_settings/stripe-settings",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Reconnect Webhook."
     },
     {
       "screen": "payment_gateway_settings/stripe-settings",
       "label": "Import Payment Methods from Stripe",
-      "action": "importPaymentMethods(importer)"
-    },
-    {
-      "screen": "payment_gateway_settings/stripe-settings",
-      "label": "reconnecting ? 'Reconnecting...' : 'Reconnect Stripe Webhook'",
-      "action": "reconnectWebhook()"
+      "action": "Import Payment Methods."
     },
     {
       "screen": "payment_gateway_settings/stripe-settings",
       "label": "Save",
-      "action": "submit($close, gateway)"
+      "action": "Submit."
     },
     {
       "screen": "payment_gateway_settings/usa_epay-settings",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "payment_gateway_settings/usa_epay-settings",
       "label": "Save",
-      "action": "submit($close, gateway)"
+      "action": "Submit."
     },
     {
       "screen": "project-dashboard",
       "label": "archive",
-      "action": "archive()"
+      "action": "Archive."
     },
     {
       "screen": "project-dashboard",
       "label": "complete Project",
-      "action": "completeProject()"
+      "action": "Complete Project."
     },
     {
       "screen": "project-dashboard",
       "label": "projects",
-      "action": "#/projects/form/project.id?custid=project.customer.id"
+      "action": "Projects."
     },
     {
       "screen": "project-dashboard",
       "label": "start Project",
-      "action": "startProject(project.id, project.project_status)"
+      "action": "Start Project."
     },
     {
       "screen": "project-form",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "project-form",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "project-form",
       "label": "Create",
-      "action": "submit(record, projectForm)"
+      "action": "Submit."
     },
     {
       "screen": "project-form",
       "label": "Create & Start",
-      "action": "submit(record, projectForm, '', true)"
+      "action": "Submit."
     },
     {
       "screen": "project-form",
       "label": "Save",
-      "action": "submit(record, projectForm)"
+      "action": "Submit."
     },
     {
       "screen": "project-form",
       "label": "Save & Close",
-      "action": "submit(record, projectForm)"
+      "action": "Submit."
     },
     {
       "screen": "project-form",
       "label": "Save & Continue",
-      "action": "submit(record, projectForm,'project_plan',false)"
+      "action": "Submit."
     },
     {
       "screen": "project-form",
       "label": "Save & Go To Dashbaord",
-      "action": "submit(record, projectForm,'dashbaord',false)"
+      "action": "Submit."
     },
     {
       "screen": "project-form",
       "label": "Save & Start & Close",
-      "action": "submit(record, projectForm, false, true)"
+      "action": "Submit."
     },
     {
       "screen": "project-form",
       "label": "Save & Start & Go To Dashboard",
-      "action": "submit(record, projectForm, 'dashbaord', true)"
+      "action": "Submit."
     },
     {
       "screen": "project-plan",
       "label": "Apply",
-      "action": "applyTemplate(projectTemplate)"
+      "action": "Apply Template."
     },
     {
       "screen": "project-plan",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "project-plan",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "project-plan",
       "label": "Save",
-      "action": "submit(false,true)"
+      "action": "Submit."
     },
     {
       "screen": "project-plan",
       "label": "Save & Go To Dashboard",
-      "action": "submit()"
+      "action": "Submit."
     },
     {
       "screen": "project-plan",
       "label": "Save & Start & Dashboard",
-      "action": "submit(true)"
+      "action": "Submit."
     },
     {
       "screen": "project-plan",
       "label": "Save & Start Project",
-      "action": "submit(true, false)"
+      "action": "Submit."
     },
     {
       "screen": "projects",
       "label": "Add Customer",
-      "action": "#/add/customers"
+      "action": "Add."
     },
     {
       "screen": "projects",
       "label": "admin",
-      "action": "admin#/settings?tab=2"
-    },
-    {
-      "screen": "projects",
-      "label": "All Projects (totalProjects)",
-      "action": "updateParams({gridName : 'all_projects'})"
+      "action": "Admin."
     },
     {
       "screen": "projects",
       "label": "Create New Project",
-      "action": "goToForm()"
+      "action": "Go To Form."
     },
     {
       "screen": "projects",
-      "label": "Invoices (totalInvoices || 0)",
-      "action": "/#invoices/selectedRow.id"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Update Params."
     },
     {
       "screen": "projects",
-      "label": "Leads (totalLeads)",
-      "action": "updateParams({gridName : 'leads_projects'})"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Proposals."
+    },
+    {
+      "screen": "projects",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Invoices."
+    },
+    {
+      "screen": "projects",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open or submit the current screen."
+    },
+    {
+      "screen": "projects",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Orders."
     },
     {
       "screen": "projects",
       "label": "Load All",
-      "action": "loadAll()"
-    },
-    {
-      "screen": "projects",
-      "label": "Orders (totalOrders || 0)",
-      "action": "/#orders?projectId=selectedRow.id"
-    },
-    {
-      "screen": "projects",
-      "label": "PO's (totalPos)",
-      "action": "updateParams({gridName : 'po_projects'})"
-    },
-    {
-      "screen": "projects",
-      "label": "Proposals (totalProposals || 0)",
-      "action": "/#proposals/selectedRow.id"
-    },
-    {
-      "screen": "projects",
-      "label": "Quotes (finalQuotesCount/quotesCount )",
-      "action": "Opens or submits the current screen"
+      "action": "Load All."
     },
     {
       "screen": "proposal",
       "label": "add File",
-      "action": "addFile()"
+      "action": "Add File."
     },
     {
       "screen": "proposal",
       "label": "add Plan",
-      "action": "addPlan(quote, plan.type)"
+      "action": "Add Plan."
     },
     {
       "screen": "proposal",
       "label": "Apply",
-      "action": "applyTemplateOnProposal(template)"
+      "action": "Apply Template On Proposal."
     },
     {
       "screen": "proposal",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "proposal",
       "label": "Display All",
-      "action": "toggleHideAll(true)"
+      "action": "Toggle Hide All."
+    },
+    {
+      "screen": "proposal",
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
+    },
+    {
+      "screen": "proposal",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Settings quotes show Invisable."
+    },
+    {
+      "screen": "proposal",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Generate Proposal."
     },
     {
       "screen": "proposal",
       "label": "Hide All",
-      "action": "toggleHideAll(false)"
+      "action": "Toggle Hide All."
     },
     {
       "screen": "proposal",
       "label": "manage Item Fields",
-      "action": "manageItemFields(settings.quotes[quote.id].units[unit.id].cats[cat.id].lines[line.line.id].item_fields)"
-    },
-    {
-      "screen": "proposal",
-      "label": "proposal.project.customer.name",
-      "action": "#/general-dashboard/customers/proposal.project.customer.id"
-    },
-    {
-      "screen": "proposal",
-      "label": "proposal.project.name",
-      "action": "#/general-dashboard/projects/proposal.project.id"
-    },
-    {
-      "screen": "proposal",
-      "label": "proposalId ? 'Update' : 'Genrate' Proposal",
-      "action": "generateProposal()"
-    },
-    {
-      "screen": "proposal",
-      "label": "proposalId ? 'Update' : 'Genrate' Proposal & Send",
-      "action": "generateProposal('email')"
-    },
-    {
-      "screen": "proposal",
-      "label": "proposalId ? 'Update' : 'Genrate' Proposal & View",
-      "action": "generateProposal('view')"
-    },
-    {
-      "screen": "proposal",
-      "label": "Quote - #quote.id - quote.name",
-      "action": "#/general-dashboard/quotes/quote.id"
+      "action": "Manage Item Fields."
     },
     {
       "screen": "proposal",
       "label": "remove File",
-      "action": "removeFile($index)"
+      "action": "Remove File."
     },
     {
       "screen": "proposal",
       "label": "remove Plan",
-      "action": "removePlan(quote.id, $index)"
+      "action": "Remove Plan."
     },
     {
       "screen": "proposal",
       "label": "Reset",
-      "action": "resetPaymentPlan()"
-    },
-    {
-      "screen": "proposal",
-      "label": "settings.quotes.showInvisable ? 'Show Hidden Quotes' : 'Hide Hidden Quotes'",
-      "action": "settings.quotes.showInvisable = !settings.quotes.showInvisable"
+      "action": "Reset Payment Plan."
     },
     {
       "screen": "proposal-template",
       "label": "+ Add Special Category",
-      "action": "addSpecialCategory(selectedCat)"
+      "action": "Add Special Category."
     },
     {
       "screen": "proposal-template",
       "label": "manage Item Fields",
-      "action": "manageItemFields(settings.item_fields)"
-    },
-    {
-      "screen": "proposal-template",
-      "label": "manage Item Fields",
-      "action": "manageItemFields(settings.special_cats[special_cat_id].item_fields)"
+      "action": "Manage Item Fields."
     },
     {
       "screen": "proposal-template",
       "label": "page layout settings collapsed all cats",
-      "action": "page_layout_settings.collapsed.all_cats = !page_layout_settings.collapsed.all_cats"
+      "action": "Page layout settings collapsed all cats."
     },
     {
       "screen": "proposal-template",
       "label": "page layout settings collapsed special cats",
-      "action": "page_layout_settings.collapsed.special_cats[special_cat_id] = !page_layout_settings.collapsed.special_cats[special_cat_id]"
+      "action": "Page layout settings collapsed special cats."
     },
     {
       "screen": "proposal-template",
       "label": "remove Special Category",
-      "action": "removeSpecialCategory(special_cat_id)"
+      "action": "Remove Special Category."
     },
     {
       "screen": "proposal-template",
       "label": "Update Template",
-      "action": "updateTemplate()"
+      "action": "Update Template."
+    },
+    {
+      "screen": "proposals",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Projects."
+    },
+    {
+      "screen": "proposals",
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
     },
     {
       "screen": "proposals",
       "label": "Load All",
-      "action": "loadAll()"
-    },
-    {
-      "screen": "proposals",
-      "label": "projectInfo.customer.name",
-      "action": "/#/projects/projectInfo.customer.id/cust/projectInfo.po ? 'true' : 'false'"
-    },
-    {
-      "screen": "proposals",
-      "label": "projectInfo.name",
-      "action": "/#/general-dashboard/projects/projectInfo.id"
+      "action": "Load All."
     },
     {
       "screen": "quote",
       "label": "Add Item",
-      "action": "addItemToUnit()"
+      "action": "Add Item To Unit."
     },
     {
       "screen": "quote",
       "label": "Add Items To All Linked",
-      "action": "addItemToUnit(true)"
+      "action": "Add Item To Unit."
     },
     {
       "screen": "quote",
       "label": "Add items to this unit",
-      "action": "openItemsToUnit(unit.id)"
+      "action": "Open Items To Unit."
     },
     {
       "screen": "quote",
       "label": "Add Unit",
-      "action": "addEditUnit()"
+      "action": "Add Edit Unit."
     },
     {
       "screen": "quote",
       "label": "Apply markup To all Items",
-      "action": "applyMarkupAll()"
+      "action": "Apply Markup All."
     },
     {
       "screen": "quote",
       "label": "Apply To all Items",
-      "action": "applyMarkup(mkup)"
+      "action": "Apply Markup."
     },
     {
       "screen": "quote",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
+    },
+    {
+      "screen": "quote",
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
+    },
+    {
+      "screen": "quote",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Next Accordion."
+    },
+    {
+      "screen": "quote",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Add Item To Unit."
+    },
+    {
+      "screen": "quote",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle Grid Hidden."
     },
     {
       "screen": "quote",
       "label": "full Screen Items",
-      "action": "fullScreenItems()"
-    },
-    {
-      "screen": "quote",
-      "label": "gridControl.items.hidden ? \"View Table\" : \"Hide Table\"",
-      "action": "toggleGridHidden(gridControl.items, 'items', selection.unit)"
+      "action": "Full Screen Items."
     },
     {
       "screen": "quote",
       "label": "Next",
-      "action": "nextAccordion(4, $event)"
-    },
-    {
-      "screen": "quote",
-      "label": "Next",
-      "action": "nextAccordion(5, $event)"
-    },
-    {
-      "screen": "quote",
-      "label": "Next 2. Quote Information Quote Name Note Next 3. Quote Settings selection.numberToAdd Default Tax Rate % Apply To all Items",
-      "action": "nextAccordion(1, $event)"
-    },
-    {
-      "screen": "quote",
-      "label": "Next 4. Units Name Quantity Installation Sale Shipping Total Items Incorrect Items unit.name unit.qty | number : 0 unit.installation | number : 2 unit.shipping | number : 2 getItemsInUnit(unit) | number : 2 getItemsInUnitIncorrect(unit.id) | number : 2 Edit unit",
-      "action": "nextAccordion(3, $event)"
-    },
-    {
-      "screen": "quote",
-      "label": "projectInfo.cust_id.name",
-      "action": "#/general-dashboard/customers/projectInfo.cust_id.id"
-    },
-    {
-      "screen": "quote",
-      "label": "projectInfo.name",
-      "action": "#/general-dashboard/projects/projectInfo.id"
+      "action": "Next Accordion."
     },
     {
       "screen": "quote",
       "label": "Quick Enter",
-      "action": "quickEnter()"
+      "action": "Quick Enter."
     },
     {
       "screen": "quote",
       "label": "remove Def From Quote",
-      "action": "removeDefFromQuote(quote.defaults, def)"
-    },
-    {
-      "screen": "quote",
-      "label": "selection.itemInEditMode ? \"Save item\" : \"Add item\"",
-      "action": "addItemToUnit()"
+      "action": "Remove Def From Quote."
     },
     {
       "screen": "quote",
       "label": "Show All Items",
-      "action": "filterApplied(false, true)"
+      "action": "Filter Applied."
     },
     {
       "screen": "quote",
       "label": "update Cust Project",
-      "action": "updateCustProject()"
+      "action": "Update Cust Project."
     },
     {
       "screen": "quote-result",
       "label": "1\">Combine",
-      "action": "combineItems(selectedRows)"
+      "action": "Combine Items."
     },
     {
       "screen": "quote-result",
       "label": "By Vendor",
-      "action": "#/reports/grouped/quotes/by_vendor/quote.id"
+      "action": "Reports."
     },
     {
       "screen": "quote-result",
       "label": "Change List Price",
-      "action": "ChangeListCostPrice()"
+      "action": "Change List Cost Price."
+    },
+    {
+      "screen": "quote-result",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Change View."
+    },
+    {
+      "screen": "quote-result",
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
+    },
+    {
+      "screen": "quote-result",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Employees."
+    },
+    {
+      "screen": "quote-result",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Contact."
+    },
+    {
+      "screen": "quote-result",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Projects."
     },
     {
       "screen": "quote-result",
       "label": "Edit Quote",
-      "action": "editQuote(quote)"
+      "action": "Edit Quote."
     },
     {
       "screen": "quote-result",
       "label": "Generate Order",
-      "action": "/#/order/quote.project.id?quoteId=quote.id"
+      "action": "Order."
     },
     {
       "screen": "quote-result",
       "label": "Generate Proposal",
-      "action": "/#/proposal/quote.project.id?quotes=quote.id"
+      "action": "Proposal."
     },
     {
       "screen": "quote-result",
       "label": "Quote Items",
-      "action": "#/reports/list/quotes/sort_by_vendor/quote.id"
-    },
-    {
-      "screen": "quote-result",
-      "label": "quote.contact.name",
-      "action": "#/contact/quote.contact.id/edit"
-    },
-    {
-      "screen": "quote-result",
-      "label": "quote.customer.employeesdata.name",
-      "action": "#/employees/form/quote.customer.employeesdata.id"
-    },
-    {
-      "screen": "quote-result",
-      "label": "quote.customer.name",
-      "action": "#/general-dashboard/customers/quote.customer.id"
-    },
-    {
-      "screen": "quote-result",
-      "label": "quote.project_status.name",
-      "action": "#/projects/change-status/quote.project.id"
-    },
-    {
-      "screen": "quote-result",
-      "label": "quote.project.name",
-      "action": "#/general-dashboard/projects/quote.project.id"
+      "action": "Reports."
     },
     {
       "screen": "quote-result",
       "label": "Reports",
-      "action": "Opens or submits the current screen"
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "quote-result",
       "label": "Reverse Final",
-      "action": "unFinal()"
-    },
-    {
-      "screen": "quote-result",
-      "label": "View groupByCats ? 'By Units' : 'By Categories'",
-      "action": "changeView()"
+      "action": "Un Final."
     },
     {
       "screen": "quote-result",
       "label": "View Invoice",
-      "action": "/public/quote.invoice.url"
+      "action": "Public."
     },
     {
       "screen": "quote-v2",
       "label": "Apply",
-      "action": "applyDefault(quotePageSettings.quote_default)"
+      "action": "Apply Default."
     },
     {
       "screen": "quote-v2",
       "label": "Cancel",
-      "action": "quotePageSettings.isSidePanelOpen = false"
+      "action": "Quote Page Settings is Side Panel Open."
+    },
+    {
+      "screen": "quote-v2",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Save Quote Item."
     },
     {
       "screen": "quote-v2",
       "label": "Load All",
-      "action": "loadAll()"
+      "action": "Load All."
     },
     {
       "screen": "quote-v2",
       "label": "quick Enter",
-      "action": "quickEnter()"
-    },
-    {
-      "screen": "quote-v2",
-      "label": "quoteItemRecord.id ? 'Update' : 'Add'",
-      "action": "saveQuoteItem(quoteItemRecord, quoteItemForm)"
+      "action": "Quick Enter."
     },
     {
       "screen": "quote-v2",
       "label": "Save",
-      "action": "saveQuote(data, quoteForm)"
+      "action": "Save Quote."
     },
     {
       "screen": "quote-v2",
       "label": "Save Filter Group",
-      "action": "saveDefault(quoteItemRecord.vendor_name, quoteItemRecord.cat_name, quoteItemRecord.line_name)"
+      "action": "Save Default."
     },
     {
       "screen": "quote-v3",
       "label": "Add Item",
-      "action": "addItemToUnit()"
+      "action": "Add Item To Unit."
     },
     {
       "screen": "quote-v3",
       "label": "Add Items To All Linked",
-      "action": "addItemToUnit(true)"
+      "action": "Add Item To Unit."
     },
     {
       "screen": "quote-v3",
       "label": "Add items to this unit",
-      "action": "openItemsToUnit(unit.id)"
+      "action": "Open Items To Unit."
     },
     {
       "screen": "quote-v3",
       "label": "Add Unit",
-      "action": "addEditUnit()"
+      "action": "Add Edit Unit."
     },
     {
       "screen": "quote-v3",
       "label": "Apply markup To all Items",
-      "action": "applyMarkupAll()"
+      "action": "Apply Markup All."
     },
     {
       "screen": "quote-v3",
       "label": "Apply To all Items",
-      "action": "applyMarkup(mkup)"
+      "action": "Apply Markup."
     },
     {
       "screen": "quote-v3",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Next Accordion."
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Add Item To Unit."
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle Grid Hidden."
     },
     {
       "screen": "quote-v3",
       "label": "full Screen Items",
-      "action": "fullScreenItems()"
-    },
-    {
-      "screen": "quote-v3",
-      "label": "gridControl.items.hidden ? \"View Table\" : \"Hide Table\"",
-      "action": "toggleGridHidden(gridControl.items, 'items', selection.unit)"
+      "action": "Full Screen Items."
     },
     {
       "screen": "quote-v3",
       "label": "Next",
-      "action": "nextAccordion(4, $event)"
-    },
-    {
-      "screen": "quote-v3",
-      "label": "Next",
-      "action": "nextAccordion(5, $event)"
-    },
-    {
-      "screen": "quote-v3",
-      "label": "Next 2. Quote Information Quote Name Note Next 3. Quote Settings selection.numberToAdd Default Tax Rate % Apply To all Items",
-      "action": "nextAccordion(1, $event)"
-    },
-    {
-      "screen": "quote-v3",
-      "label": "Next 4. Units Name Quantity Installation Sale Shipping Total Items Incorrect Items unit.name unit.qty | number : 0 unit.installation | number : 2 unit.shipping | number : 2 getItemsInUnit(unit) | number : 2 getItemsInUnitIncorrect(unit.id) | number : 2 Edit unit",
-      "action": "nextAccordion(3, $event)"
-    },
-    {
-      "screen": "quote-v3",
-      "label": "projectInfo.cust_id.name",
-      "action": "#/general-dashboard/customers/projectInfo.cust_id.id"
-    },
-    {
-      "screen": "quote-v3",
-      "label": "projectInfo.name",
-      "action": "#/general-dashboard/projects/projectInfo.id"
+      "action": "Next Accordion."
     },
     {
       "screen": "quote-v3",
       "label": "Quick Enter",
-      "action": "quickEnter()"
+      "action": "Quick Enter."
     },
     {
       "screen": "quote-v3",
       "label": "remove Def From Quote",
-      "action": "removeDefFromQuote(quote.defaults, def)"
-    },
-    {
-      "screen": "quote-v3",
-      "label": "selection.itemInEditMode ? \"Save item\" : \"Add item\"",
-      "action": "addItemToUnit()"
+      "action": "Remove Def From Quote."
     },
     {
       "screen": "quote-v3",
       "label": "Show All Items",
-      "action": "filterApplied(false, true)"
+      "action": "Filter Applied."
     },
     {
       "screen": "quote-v3",
       "label": "update Cust Project",
-      "action": "updateCustProject()"
+      "action": "Update Cust Project."
     },
     {
       "screen": "quotes",
       "label": "Generate Quote",
-      "action": "generateQuote(projectInfo.id)"
+      "action": "Generate Quote."
     },
     {
       "screen": "quotes",
       "label": "Invoices",
-      "action": "/#invoices/selectedRow.project"
+      "action": "Invoices."
     },
     {
       "screen": "quotes",
       "label": "Load All",
-      "action": "loadAll()"
+      "action": "Load All."
     },
     {
       "screen": "quotes",
       "label": "Orders",
-      "action": "/#orders?quote=selectedRow.id"
+      "action": "Orders."
     },
     {
       "screen": "quotes",
       "label": "Proposals",
-      "action": "/#proposals/selectedRow.project"
+      "action": "Proposals."
     },
     {
       "screen": "recycle-bin-all",
       "label": "See Details",
-      "action": "#/recycle-bin-detail/view.internal_name"
+      "action": "Recycle bin detail."
     },
     {
       "screen": "recycle-bin-detail",
       "label": "Delete Forever",
-      "action": "deleteForever(rec)"
+      "action": "Delete Forever."
     },
     {
       "screen": "recycle-bin-detail",
-      "label": "Delete selected.length === 0 ? 'All' : 'Selected (' + selected.length + ')'",
-      "action": "deleteAll()"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Restore All."
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Delete All."
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle Non Empty Columns Filter."
     },
     {
       "screen": "recycle-bin-detail",
       "label": "Restore",
-      "action": "restore(rec.group_id)"
-    },
-    {
-      "screen": "recycle-bin-detail",
-      "label": "Restore selected.length === 0 ? 'All' : 'Selected (' + selected.length + ')'",
-      "action": "restoreAll()"
+      "action": "Restore."
     },
     {
       "screen": "recycle-bin-detail",
       "label": "Show/Hide Columns",
-      "action": "showColumnToggle = !showColumnToggle"
-    },
-    {
-      "screen": "recycle-bin-detail",
-      "label": "showOnlyNonEmpty ? 'Showing' : 'Show' Only Non-Empty",
-      "action": "toggleNonEmptyColumnsFilter()"
+      "action": "Show Column Toggle."
     },
     {
       "screen": "refund",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "refund",
       "label": "Process refund",
-      "action": "process(ccForm, payment)"
+      "action": "Process."
     },
     {
       "screen": "reports/grouped",
       "label": "Accordion Style",
-      "action": "viewType = 'accordion'"
+      "action": "View Type."
     },
     {
       "screen": "reports/grouped",
       "label": "Grid Style",
-      "action": "tableStyle = 'grid'"
+      "action": "Table Style."
     },
     {
       "screen": "reports/grouped",
       "label": "List Style",
-      "action": "tableStyle = 'list'"
+      "action": "Table Style."
     },
     {
       "screen": "reports/grouped",
       "label": "Tabs Style",
-      "action": "viewType = 'tabs'"
+      "action": "View Type."
     },
     {
       "screen": "reports/list",
       "label": "Grid Style",
-      "action": "tableStyle = 'grid'"
+      "action": "Table Style."
     },
     {
       "screen": "reports/list",
       "label": "List Style",
-      "action": "tableStyle = 'list'"
+      "action": "Table Style."
     },
     {
       "screen": "requests",
       "label": "Submit",
-      "action": "submit"
+      "action": "Submit the current form."
     },
     {
       "screen": "script-run-logs",
       "label": "Close",
-      "action": "$close()"
+      "action": "$close."
     },
     {
       "screen": "script-run-logs",
       "label": "Print to console",
-      "action": "logData(log.data)"
+      "action": "Log Data."
     },
     {
       "screen": "services",
       "label": "Connect",
-      "action": "connectToApp(service.name)"
+      "action": "Connect To App."
     },
     {
       "screen": "services",
       "label": "Disconnect",
-      "action": "disconnectApp(service)"
+      "action": "Disconnect App."
+    },
+    {
+      "screen": "services",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Service $open."
     },
     {
       "screen": "services",
       "label": "Edit Connection",
-      "action": "editConnection(service.name)"
+      "action": "Edit Connection."
     },
     {
       "screen": "services",
       "label": "Install",
-      "action": "installApp(service.name)"
-    },
-    {
-      "screen": "services",
-      "label": "service.display_name service.installed ? (service.active ? 'Activated' : 'Installed') : 'Not Installed'",
-      "action": "service.$open = !service.$open"
+      "action": "Install App."
     },
     {
       "screen": "services",
       "label": "View Logs",
-      "action": "editConnection(service.name)"
+      "action": "Edit Connection."
     },
     {
       "screen": "settings",
       "label": "Create new Creating…",
-      "action": "createNew(t)"
+      "action": "Create New."
     },
     {
       "screen": "settings",
       "label": "Edit selected",
-      "action": "editSelected(t)"
+      "action": "Edit Selected."
     },
     {
       "screen": "settings",
       "label": "Update Settings",
-      "action": "submit"
+      "action": "Submit the current form."
     },
     {
       "screen": "status-form",
       "label": "add Emp St",
-      "action": "addEmpSt()"
+      "action": "Add Emp St."
     },
     {
       "screen": "status-form",
       "label": "Cancel",
-      "action": "goBack()"
+      "action": "Go Back."
+    },
+    {
+      "screen": "status-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
     },
     {
       "screen": "status-form",
       "label": "go Back",
-      "action": "goBack()"
+      "action": "Go Back."
     },
     {
       "screen": "status-form",
       "label": "remove Emp St",
-      "action": "removeEmpSt($index)"
-    },
-    {
-      "screen": "status-form",
-      "label": "update ? \"Update\" : \"Add\"",
-      "action": "submit"
+      "action": "Remove Emp St."
     },
     {
       "screen": "sub-views",
       "label": "update View",
-      "action": "updateView(v)"
+      "action": "Update View."
     },
     {
       "screen": "templates/bmng-grid",
       "label": "Context action",
-      "action": "Opens or submits the current screen"
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "templates/bulk-apply",
       "label": "Apply",
-      "action": "$close(number)"
+      "action": "$close."
     },
     {
       "screen": "templates/bulk-apply",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/bulk-edit",
       "label": "Apply",
-      "action": "$close(data)"
+      "action": "$close."
     },
     {
       "screen": "templates/bulk-edit",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/button-settings-popup",
       "label": "Cancel",
-      "action": "$close()"
+      "action": "$close."
+    },
+    {
+      "screen": "templates/button-settings-popup",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Delete Btn."
     },
     {
       "screen": "templates/button-settings-popup",
       "label": "form selected btn condition use Advanced",
-      "action": "form.selected_btn.condition.useAdvanced = !form.selected_btn.condition.useAdvanced"
-    },
-    {
-      "screen": "templates/button-settings-popup",
-      "label": "form.selected_btn.system ? 'Restore' : 'Delete'",
-      "action": "deleteBtn(form.selected_btn)"
+      "action": "Form selected btn condition use Advanced."
     },
     {
       "screen": "templates/button-settings-popup",
       "label": "Learn more",
-      "action": "https://github.com/bizmanagrcrm/bmml/tree/main/conditions"
+      "action": "Open linked help or documentation."
     },
     {
       "screen": "templates/button-settings-popup",
       "label": "Save",
-      "action": "submit()"
+      "action": "Submit."
     },
     {
       "screen": "templates/cancel-invoice",
       "label": "Back",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/cancel-invoice",
       "label": "Cancel & Backup & Edit",
-      "action": "$close('copy')"
+      "action": "$close."
     },
     {
       "screen": "templates/cancel-invoice",
-      "label": "Cancel Invoiceinvoices.length > 1 ? 's' : ''",
-      "action": "$close('cancel')"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$close."
     },
     {
       "screen": "templates/change-status",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "templates/change-status",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Update Status."
     },
     {
       "screen": "templates/change-status",
       "label": "Mark as complete",
-      "action": "markAsComplete(employeeTask)"
-    },
-    {
-      "screen": "templates/change-status",
-      "label": "project.nextStatus.special ? 'Apply Special Status' : 'Change Status to' project.nextStatus.full_status.name",
-      "action": "updateStatus(project.nextStatus)"
+      "action": "Mark As Complete."
     },
     {
       "screen": "templates/chat",
       "label": "chat minamize chat",
-      "action": "chat.minamize_chat = !chat.minamize_chat"
+      "action": "Chat minamize chat."
     },
     {
       "screen": "templates/chat",
       "label": "close Chat",
-      "action": "closeChat()"
+      "action": "Close Chat."
     },
     {
       "screen": "templates/chat",
       "label": "Join",
-      "action": "joinGroup()"
+      "action": "Join Group."
     },
     {
       "screen": "templates/chat",
       "label": "open Chat Window",
-      "action": "openChatWindow()"
+      "action": "Open Chat Window."
     },
     {
       "screen": "templates/chat",
       "label": "submit",
-      "action": "submit"
+      "action": "Submit the current form."
     },
     {
       "screen": "templates/choose",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/color-picker",
       "label": "Clear",
-      "action": "setColor('')"
+      "action": "Set Color."
     },
     {
       "screen": "templates/color-picker",
-      "label": "clr.name",
-      "action": "setColor(clr.color)"
-    },
-    {
-      "screen": "templates/combine-items",
-      "label": "(it.id). it.name",
-      "action": "$close(it.id)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Set Color."
     },
     {
       "screen": "templates/combine-items",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "templates/combine-items",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$close."
     },
     {
       "screen": "templates/components/dashboard-btns",
-      "label": "$ctrl.getBtnTxt(group.title, $ctrl.object) $ctrl.getGroupMenus(group.action_name).length",
-      "action": "$ctrl.toggleMobileGroup(group, $event)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "templates/components/dashboard-btns",
-      "label": "$ctrl.getBtnTxt(menu.title, $ctrl.object)",
-      "action": "$ctrl.runAction(menu, $event)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl run Action."
     },
     {
       "screen": "templates/components/dashboard-btns",
-      "label": "$ctrl.getBtnTxt(menu.title, $ctrl.object) $ctrl.getSubMenus(menu).length",
-      "action": "$ctrl.toggleMobileGroup(menu, $event)"
-    },
-    {
-      "screen": "templates/components/dashboard-btns",
-      "label": "$ctrl.getBtnTxt(subItem.name || subItem.title || subItem.display_name, subItem)",
-      "action": "$ctrl.runAction(menu, $event, subItem)"
-    },
-    {
-      "screen": "templates/components/dashboard-btns",
-      "label": "$ctrl.getBtnTxt(subItem.title, $ctrl.object)",
-      "action": "$ctrl.runAction(subItem, $event)"
-    },
-    {
-      "screen": "templates/components/dashboard-btns",
-      "label": "Actions $ctrl.getMobileActionCount()",
-      "action": "button"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl toggle Mobile Group."
     },
     {
       "screen": "templates/confirm",
-      "label": "btn.text",
-      "action": "$close(btn.value)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$close."
     },
     {
       "screen": "templates/confirm",
-      "label": "confirm.no || 'No'",
-      "action": "$dismiss()"
-    },
-    {
-      "screen": "templates/confirm",
-      "label": "confirm.no || 'No'",
-      "action": "$close('no')"
-    },
-    {
-      "screen": "templates/confirm",
-      "label": "confirm.yes || 'Yes'",
-      "action": "$close({result : 'yes', dontShowAgain : confirm.dontShowAgain})"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$dismiss."
     },
     {
       "screen": "templates/copy-links",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/copy-links",
       "label": "Copy To Clipboard",
-      "action": "copy($close)"
+      "action": "Copy."
     },
     {
       "screen": "templates/copy-links",
-      "label": "url.display_name",
-      "action": "url.url"
-    },
-    {
-      "screen": "templates/copy-quote",
-      "label": "backup ? 'Backup' : 'Copy'",
-      "action": "$close(data)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Url url."
     },
     {
       "screen": "templates/copy-quote",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "templates/copy-quote",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$close."
     },
     {
       "screen": "templates/copy-value",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/copy-value",
       "label": "Copy To Clipboard",
-      "action": "copy($close)"
+      "action": "Copy."
     },
     {
       "screen": "templates/customer-group",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/customer-group",
       "label": "Submit",
-      "action": "$close(data.cg)"
-    },
-    {
-      "screen": "templates/dashboard",
-      "label": "!someLogsSelected(history_sections) ? 'Select Logs To View' : 'View Selected Logs'",
-      "action": "openLogWindow(history_sections)"
+      "action": "$close."
     },
     {
       "screen": "templates/dashboard",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "templates/dashboard",
       "label": "Context action",
-      "action": "#"
+      "action": "Open or run the configured screen action."
     },
     {
       "screen": "templates/dashboard",
       "label": "Context action",
-      "action": "Opens or submits the current screen"
+      "action": "Open or submit the current screen."
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open Log Window."
     },
     {
       "screen": "templates/dashboard",
       "label": "set Clm Class",
-      "action": "setClmClass('4')"
-    },
-    {
-      "screen": "templates/dashboard",
-      "label": "set Clm Class",
-      "action": "setClmClass('6')"
-    },
-    {
-      "screen": "templates/dashboard",
-      "label": "set Clm Class",
-      "action": "setClmClass('12')"
+      "action": "Set Clm Class."
     },
     {
       "screen": "templates/dashboard",
       "label": "View All",
-      "action": "section.link"
+      "action": "Section link."
     },
     {
       "screen": "templates/dashboard",
       "label": "View All",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "templates/dashboard-fields",
-      "label": "$ctrl.getValue(field.value, field.type)",
-      "action": "#/field.value ? field.value : field.link"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Field value."
     },
     {
       "screen": "templates/dashboard-fields",
-      "label": "$ctrl.getValue(field.value, field.type)",
-      "action": "field.link"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Field link."
     },
     {
       "screen": "templates/dashboard-fields",
-      "label": "$ctrl.getValue(field.value, field.type)",
-      "action": "$ctrl.getValue(field.value, field.type)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl get Value."
     },
     {
       "screen": "templates/dashboard-fields",
       "label": "update",
-      "action": "#/update/field.table?id=$ctrl.data[field.internal_name + '__id']"
+      "action": "Update."
     },
     {
       "screen": "templates/dashboard-fields",
       "label": "val -",
-      "action": "#/general-dashboard/field.table/$ctrl.data[field.internal_name + '__id'][$index]"
+      "action": "General dashboard."
     },
     {
       "screen": "templates/edit-layout",
       "label": "Add",
-      "action": "addCustomColumn()"
+      "action": "Add Custom Column."
     },
     {
       "screen": "templates/edit-layout",
       "label": "Add",
-      "action": "addCardField()"
+      "action": "Add Card Field."
     },
     {
       "screen": "templates/edit-layout",
       "label": "Add",
-      "action": "addTooltipField()"
+      "action": "Add Tooltip Field."
     },
     {
       "screen": "templates/edit-layout",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/edit-layout",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/edit-layout",
-      "label": "layout.id ? 'Update' : 'Create'",
-      "action": "save(layout, layoutForm, $close)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Save."
     },
     {
       "screen": "templates/email",
       "label": "Apply",
-      "action": "applyTemplate(template)"
+      "action": "Apply Template."
     },
     {
       "screen": "templates/email",
       "label": "Bcc",
-      "action": "bccDisplayed = !bccDisplayed;"
+      "action": "Bcc Displayed."
     },
     {
       "screen": "templates/email",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/email",
       "label": "Cc",
-      "action": "ccDisplayed = !ccDisplayed;"
+      "action": "Cc Displayed."
     },
     {
       "screen": "templates/email",
-      "label": "emailObj.sendButton || 'Send'",
-      "action": "submit"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
     },
     {
       "screen": "templates/email",
       "label": "Manual Dropdown",
-      "action": "manualFrom = !manualFrom"
+      "action": "Manual From."
     },
     {
       "screen": "templates/event",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/event",
       "label": "Clear end time",
-      "action": "event.ev_end_time = ''"
+      "action": "Event ev end time."
     },
     {
       "screen": "templates/event",
       "label": "Clear start time",
-      "action": "event.ev_time = ''"
+      "action": "Event ev time."
+    },
+    {
+      "screen": "templates/event",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Event Type Selscted."
     },
     {
       "screen": "templates/event",
       "label": "Save Event",
-      "action": "saveOpenEvent(event, eventForm)"
-    },
-    {
-      "screen": "templates/event",
-      "label": "type.name",
-      "action": "eventTypeSelscted(event, type)"
+      "action": "Save Open Event."
     },
     {
       "screen": "templates/filters",
       "label": "Apply Filter",
-      "action": "$close(data)"
+      "action": "$close."
     },
     {
       "screen": "templates/filters",
       "label": "Configure filters",
-      "action": "configureFiltersUrl"
+      "action": "Configure Filters Url."
     },
     {
       "screen": "templates/filters",
       "label": "settings date",
-      "action": "settings.date[filter.name] = !settings.date[filter.name]"
+      "action": "Settings date."
     },
     {
       "screen": "templates/group-proposal-items",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/group-proposal-items",
       "label": "Save",
-      "action": "submit($close)"
-    },
-    {
-      "screen": "templates/invite-user-form",
-      "label": "$close",
-      "action": "$close()"
+      "action": "Submit."
     },
     {
       "screen": "templates/invite-user-form",
       "label": "Close",
-      "action": "$close()"
+      "action": "$close."
+    },
+    {
+      "screen": "templates/invite-user-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$close."
     },
     {
       "screen": "templates/invite-user-form",
       "label": "Send Invite",
-      "action": "invite(selectedUser.id, email, role, fullname, copyLayoutFromUserId)"
+      "action": "Invite."
     },
     {
       "screen": "templates/invoice-export",
       "label": "Apply",
-      "action": "$close(data)"
+      "action": "$close."
     },
     {
       "screen": "templates/invoice-export",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/jt-sms-dashboard/conversations",
       "label": "deselect Conversation",
-      "action": "deselectConversation()"
+      "action": "Deselect Conversation."
     },
     {
       "screen": "templates/jt-sms-dashboard/conversations",
       "label": "get Conversations",
-      "action": "getConversations()"
+      "action": "Get Conversations."
     },
     {
       "screen": "templates/jt-sms-dashboard/conversations",
       "label": "mark As Read Unread",
-      "action": "markAsReadUnread(selectedItem, false)"
+      "action": "Mark As Read Unread."
     },
     {
       "screen": "templates/jt-sms-dashboard/conversations",
       "label": "new Conversation",
-      "action": "newConversation()"
+      "action": "New Conversation."
     },
     {
       "screen": "templates/jt-sms-dashboard/conversations",
       "label": "submit",
-      "action": "submit"
-    },
-    {
-      "screen": "templates/jt-sms-dashboard/general",
-      "label": "configAllExpanded ? 'Collapse all' : 'Expand all'",
-      "action": "setAllConfigSections(!configAllExpanded)"
+      "action": "Submit the current form."
     },
     {
       "screen": "templates/jt-sms-dashboard/general",
       "label": "Create SMS usage product",
-      "action": "/admin#/usage/1?createProduct=sms"
+      "action": "Admin."
     },
     {
       "screen": "templates/jt-sms-dashboard/general",
-      "label": "formatConfigKey(item.key)",
-      "action": "toggleConfigItem(item)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Set All Config Sections."
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Show Sensitive."
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Toggle Config Item."
     },
     {
       "screen": "templates/jt-sms-dashboard/general",
       "label": "load Gateway Usage Stats",
-      "action": "loadGatewayUsageStats()"
+      "action": "Load Gateway Usage Stats."
     },
     {
       "screen": "templates/jt-sms-dashboard/general",
       "label": "Refresh",
-      "action": "refreshGateway()"
+      "action": "Refresh Gateway."
     },
     {
       "screen": "templates/jt-sms-dashboard/general",
       "label": "Setup Receive Webhook",
-      "action": "setupReceiveWebhook()"
-    },
-    {
-      "screen": "templates/jt-sms-dashboard/general",
-      "label": "showSensitive ? 'Hide' : 'Show' sensitive",
-      "action": "showSensitive = !showSensitive"
+      "action": "Setup Receive Webhook."
     },
     {
       "screen": "templates/jt-sms-dashboard/general",
       "label": "toggle Config Item",
-      "action": "toggleConfigItem(item)"
+      "action": "Toggle Config Item."
     },
     {
       "screen": "templates/jt-sms-dashboard/insights",
       "label": "daysd",
-      "action": "setInsightsRange(days)"
+      "action": "Set Insights Range."
     },
     {
       "screen": "templates/jt-sms-dashboard/insights",
       "label": "Refresh Insights",
-      "action": "loadInsights(true)"
+      "action": "Load Insights."
     },
     {
       "screen": "templates/kanban-card-details",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/kanban-card-details",
       "label": "Update",
-      "action": "complete()"
+      "action": "Complete."
     },
     {
       "screen": "templates/kanban-manage-columns",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/kanban-manage-columns",
       "label": "Update",
-      "action": "complete()"
-    },
-    {
-      "screen": "templates/logged-users",
-      "label": "$event stop Propagation",
-      "action": "$event.stopPropagation(); toggleUserGroup(group)"
-    },
-    {
-      "screen": "templates/logged-users",
-      "label": "$event stop Propagation",
-      "action": "$event.stopPropagation(); beginRename(session)"
+      "action": "Complete."
     },
     {
       "screen": "templates/logged-users",
       "label": "Cancel",
-      "action": "cancelRename()"
+      "action": "Cancel Rename."
     },
     {
       "screen": "templates/logged-users",
       "label": "Cancel",
-      "action": "$event.stopPropagation(); cancelTerminateSession()"
+      "action": "$event stop Propagation."
     },
     {
       "screen": "templates/logged-users",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/logged-users",
       "label": "Confirm",
-      "action": "$event.stopPropagation(); terminateSession(session)"
+      "action": "$event stop Propagation."
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$event stop Propagation."
     },
     {
       "screen": "templates/logged-users",
       "label": "refresh",
-      "action": "refresh()"
+      "action": "Refresh."
     },
     {
       "screen": "templates/logged-users",
       "label": "Save",
-      "action": "saveSessionName(session)"
+      "action": "Save Session Name."
     },
     {
       "screen": "templates/logged-users",
       "label": "Terminate",
-      "action": "$event.stopPropagation(); askTerminateSession(session)"
+      "action": "$event stop Propagation."
     },
     {
       "screen": "templates/manage-clms",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/manage-clms",
       "label": "Hide All",
-      "action": "doAll()"
+      "action": "Do All."
     },
     {
       "screen": "templates/manage-clms",
       "label": "Show All",
-      "action": "doAll(true)"
+      "action": "Do All."
     },
     {
       "screen": "templates/manage-clms",
       "label": "View All",
-      "action": "viewAll()"
+      "action": "View All."
     },
     {
       "screen": "templates/manage-clms",
       "label": "View Hidden",
-      "action": "viewVisible()"
+      "action": "View Visible."
     },
     {
       "screen": "templates/manage-clms",
       "label": "View Visible",
-      "action": "viewVisible(true)"
+      "action": "View Visible."
     },
     {
       "screen": "templates/manage-layouts",
       "label": "Add Layout",
-      "action": "addLayout()"
+      "action": "Add Layout."
     },
     {
       "screen": "templates/manage-layouts",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/manage-layouts",
       "label": "edit Layout",
-      "action": "editLayout(layout)"
+      "action": "Edit Layout."
     },
     {
       "screen": "templates/manage-layouts",
       "label": "Open",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/manage-layouts",
       "label": "remove Layout",
-      "action": "removeLayout(layout)"
+      "action": "Remove Layout."
     },
     {
       "screen": "templates/new-folder",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/new-folder",
       "label": "Create",
-      "action": "$close(name)"
+      "action": "$close."
     },
     {
       "screen": "templates/prompt",
-      "label": "prompt.cancelText || 'Cancel'",
-      "action": "$dismiss()"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$close."
     },
     {
       "screen": "templates/prompt",
-      "label": "prompt.okText || 'Ok'",
-      "action": "$close(prompt.value)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "$dismiss."
     },
     {
       "screen": "templates/qbo-integration-settings",
-      "label": "action.label",
-      "action": "Opens or submits the current screen"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "templates/qbo-integration-settings",
       "label": "Save Changes",
-      "action": "$ctrl.saveChanges()"
+      "action": "$ctrl save Changes."
     },
     {
       "screen": "templates/qbo-integration-settings",
       "label": "Sync Company Info",
-      "action": "$ctrl.syncCompanyData($ctrl.serviceName, $ctrl, 'info')"
+      "action": "$ctrl sync Company Data."
     },
     {
       "screen": "templates/quote-quick-enter",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/quote-quick-enter",
       "label": "Enter",
-      "action": "enter(data, $close)"
+      "action": "Enter."
     },
     {
       "screen": "templates/rename",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/rename",
       "label": "Ok",
-      "action": "$close(name)"
-    },
-    {
-      "screen": "templates/reset-user-password",
-      "label": "$dismiss",
-      "action": "$dismiss()"
+      "action": "$close."
     },
     {
       "screen": "templates/reset-user-password",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
+    },
+    {
+      "screen": "templates/reset-user-password",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$dismiss."
     },
     {
       "screen": "templates/reset-user-password",
       "label": "Reset Password",
-      "action": "submit"
+      "action": "Submit the current form."
     },
     {
       "screen": "templates/result-accordion",
       "label": "heading",
-      "action": "Opens or submits the current screen"
+      "action": "Open or submit the current screen."
     },
     {
       "screen": "templates/session-relogin",
       "label": "Close",
-      "action": "$dismiss('cancel')"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/session-relogin",
       "label": "Send another code",
-      "action": "resendCode()"
+      "action": "Resend Code."
     },
     {
       "screen": "templates/session-relogin",
       "label": "Sign in Verify",
-      "action": "submit"
+      "action": "Submit the current form."
     },
     {
       "screen": "templates/session-relogin",
       "label": "Use a different account",
-      "action": "backToLogin()"
+      "action": "Back To Login."
     },
     {
       "screen": "templates/smart-form/form-btns",
       "label": "button",
-      "action": "button"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "templates/smart-form/form-btns",
-      "label": "button.display_name",
-      "action": "submit(record, basicForm, button)"
-    },
-    {
-      "screen": "templates/smart-form/form-btns",
-      "label": "defaultBtn ? defaultBtn.display_name : '----'",
-      "action": "submit(record, basicForm, defaultBtn)"
-    },
-    {
-      "screen": "templates/smart-form/form-btns",
-      "label": "defaultBtn.display_name",
-      "action": "submit(record, basicForm, defaultBtn)"
-    },
-    {
-      "screen": "templates/smart-form/smart-form",
-      "label": "$ctrl",
-      "action": "$ctrl[cf.field_name + '_opened'] = !$ctrl[cf.field_name + '_opened']"
-    },
-    {
-      "screen": "templates/smart-form/smart-form",
-      "label": "$ctrl add New Value",
-      "action": "$ctrl.addNewValue(cf, $ctrl.record)"
-    },
-    {
-      "screen": "templates/smart-form/smart-form",
-      "label": "$ctrl download File",
-      "action": "$ctrl.downloadFile($ctrl.record[cf.field_name])"
-    },
-    {
-      "screen": "templates/smart-form/smart-form",
-      "label": "$ctrl encrypt Decrypt",
-      "action": "$ctrl.encryptDecrypt(cf, $ctrl.formController)"
-    },
-    {
-      "screen": "templates/smart-form/smart-form",
-      "label": "$ctrl open Form",
-      "action": "$ctrl.openForm(cf, $ctrl.record)"
-    },
-    {
-      "screen": "templates/smart-form/smart-form",
-      "label": "$ctrl open Form Url",
-      "action": "$ctrl.openFormUrl(cf, $ctrl.record)"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit."
     },
     {
       "screen": "templates/smart-form/smart-form",
       "label": "config forms here",
-      "action": "$ctrl.getFormConfigUrl()"
+      "action": "$ctrl get Form Config Url."
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl encrypt Decrypt."
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl download File."
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl."
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl add New Value."
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl open Form Url."
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "Dynamic / tenant-configured control",
+      "action": "$ctrl open Form."
     },
     {
       "screen": "templates/sms",
       "label": "Apply",
-      "action": "applyTemplate(template)"
+      "action": "Apply Template."
     },
     {
       "screen": "templates/sms",
       "label": "Cancel",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "templates/sms",
-      "label": "smsObj.sendButton || 'Send'",
-      "action": "submit"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Submit the current form."
+    },
+    {
+      "screen": "templates/theme-switcher",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Set Theme."
     },
     {
       "screen": "templates/theme-switcher",
       "label": "Theme",
-      "action": "button"
-    },
-    {
-      "screen": "templates/theme-switcher",
-      "label": "theme.label",
-      "action": "setTheme(theme)"
+      "action": "Run the button behavior configured by the surrounding form."
     },
     {
       "screen": "templates/view-email-body",
       "label": "Close",
-      "action": "$dismiss()"
+      "action": "$dismiss."
     },
     {
       "screen": "units",
       "label": "add Event",
-      "action": "addEvent(selectedRow)"
+      "action": "Add Event."
     },
     {
       "screen": "units",
       "label": "add Quote",
-      "action": "addQuote()"
+      "action": "Add Quote."
     },
     {
       "screen": "units",
       "label": "Add Unit",
-      "action": "goToForm()"
+      "action": "Go To Form."
     },
     {
       "screen": "units",
       "label": "comments",
-      "action": "#/comments/units/selectedRow"
+      "action": "Comments."
+    },
+    {
+      "screen": "units",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Projects."
+    },
+    {
+      "screen": "units",
+      "label": "Dynamic / tenant-configured control",
+      "action": "General dashboard."
     },
     {
       "screen": "units",
       "label": "edit",
-      "action": "edit(selectedRow)"
+      "action": "Edit."
     },
     {
       "screen": "units",
       "label": "go To Files",
-      "action": "goToFiles(selectedRow)"
-    },
-    {
-      "screen": "units",
-      "label": "projectInfo.customer.name",
-      "action": "/#/projects/projectInfo.cust_id/cust/projectInfo.po ? 'true' : 'false'"
-    },
-    {
-      "screen": "units",
-      "label": "projectInfo.name",
-      "action": "/#/general-dashboard/projects/projectInfo.id"
+      "action": "Go To Files."
     },
     {
       "screen": "units",
       "label": "remove Unit",
-      "action": "removeUnit(selectedRow)"
+      "action": "Remove Unit."
     },
     {
       "screen": "units",
       "label": "update Status",
-      "action": "updateStatus(info.status, selectedRow)"
+      "action": "Update Status."
     },
     {
       "screen": "upload-items",
       "label": "delete Import",
-      "action": "deleteImport(file)"
+      "action": "Delete Import."
     },
     {
       "screen": "upload-items",
-      "label": "file.file.display_name",
-      "action": "/files/download/file.file.id"
+      "label": "Dynamic / tenant-configured control",
+      "action": "Files."
     },
     {
       "screen": "upload-items",
       "label": "item upload",
-      "action": "item.upload()"
+      "action": "Item upload."
     },
     {
       "screen": "upload-items",
       "label": "items",
-      "action": "/#/items/all?import=file.id"
+      "action": "Items."
     },
     {
       "screen": "upload-items",
       "label": "msg",
-      "action": "msg(item.successMsg, true)"
-    },
-    {
-      "screen": "upload-items",
-      "label": "msg",
-      "action": "msg(item.errMsg)"
+      "action": "Msg."
     },
     {
       "screen": "usage-dashboard",
       "label": "Cancel",
-      "action": "cancelProductForm()"
+      "action": "Cancel Product Form."
     },
     {
       "screen": "usage-dashboard",
       "label": "delete Product",
-      "action": "deleteProduct(p)"
+      "action": "Delete Product."
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "Dynamic / tenant-configured control",
+      "action": "P expanded."
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "Dynamic / tenant-configured control",
+      "action": "Save Product."
     },
     {
       "screen": "usage-dashboard",
       "label": "edit Product",
-      "action": "editProduct(p)"
-    },
-    {
-      "screen": "usage-dashboard",
-      "label": "editingProduct ? 'Update' : 'Create' Product",
-      "action": "saveProduct()"
+      "action": "Edit Product."
     },
     {
       "screen": "usage-dashboard",
       "label": "load Breakdown",
-      "action": "loadBreakdown()"
+      "action": "Load Breakdown."
     },
     {
       "screen": "usage-dashboard",
       "label": "Load More",
-      "action": "loadMoreTransactions()"
+      "action": "Load More Transactions."
     },
     {
       "screen": "usage-dashboard",
       "label": "load Transactions",
-      "action": "loadTransactions()"
+      "action": "Load Transactions."
     },
     {
       "screen": "usage-dashboard",
       "label": "New Product",
-      "action": "showProductForm()"
-    },
-    {
-      "screen": "usage-dashboard",
-      "label": "p.sub_balances.length sub-balancep.sub_balances.length > 1 ? 's' : ''",
-      "action": "p._expanded = !p._expanded"
+      "action": "Show Product Form."
     },
     {
       "screen": "usage-dashboard",
       "label": "recalculate",
-      "action": "recalculate(p)"
+      "action": "Recalculate."
     },
     {
       "screen": "usage-dashboard",
       "label": "Refresh",
-      "action": "loadOverview()"
+      "action": "Load Overview."
     },
     {
       "screen": "usage-dashboard",
       "label": "Resync",
-      "action": "resync()"
+      "action": "Resync."
     },
     {
       "screen": "usage-dashboard",
       "label": "Top Up",
-      "action": "doTopUp(p)"
+      "action": "Do Top Up."
     }
   ]
 }
