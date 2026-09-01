@@ -235,13 +235,46 @@ window.BIZMANAGE_DOCS = {
   -H "x-api-key: YOUR_API_KEY"</code></pre>
         <div class="callout warning"><strong>Do not use an admin API user by default.</strong>Create a normal API user with only the tables/actions needed by the integration. Store the key in a secret manager or protected environment variable.</div>
         <h2 id="create-key">Create an API key in the UI</h2><ol><li>As an administrator, open <strong>API Access</strong>.</li><li>Select <strong>New API User</strong>.</li><li>Configure its access.</li><li>Select <strong>Generate API Key</strong>, then <strong>Copy API Key</strong>.</li><li>Store it securely and test <code>/restapi/ping</code>.</li></ol>
-        <h2 id="crud">CRUD entry point</h2><p>The supported generic entry point is <code>POST /restapi/crud/:table/:op</code>. The table, operation, request body, and resulting access are validated by the server and the API user permissions. Discover actual table and field names from the target instance; do not guess them.</p>
-        <pre><code>curl -X POST "https://YOUR-INSTANCE/restapi/crud/customers/read" \\
-  -H "Content-Type: application/json" \\
-  -H "x-api-key: YOUR_API_KEY" \\
-  -d '{"filter":{"id":123}}'</code></pre>
+        <h2 id="crud">Every view uses the CRUD entry point</h2><p>BizManage uses <code>POST /restapi/crud/:view/:operation</code> for system views such as <code>customers</code> and <code>projects</code> and for tenant-created views. The supplied system snapshot registers 46 views. The server supports 17 operations for each view, expanded into individual searchable entries below.</p><div class="callout info"><strong>Why “get” is still POST</strong>The route uses POST so typed filters and data can be sent in JSON. To get records, use operations such as <code>read</code>, <code>read-one</code>, <code>get-by-id</code>, or <code>get-data</code>; <code>edit</code> is called <code>update</code>.</div>
+        <h3 id="body-envelope">Request body envelope</h3><p>Send either <code>data</code> or <code>query</code>, plus optional <code>options</code>. If both data and query are present, data is used. Field names, required fields, writable fields, and available internal-name behavior come from the target tenant's Manage Views configuration.</p>
+        <pre><code>{
+  "data": { "id": 123, "field_name": "value" },
+  "options": {}
+}</code></pre>
+        <h3 id="customer-examples">Customer examples</h3><pre><code># Create a customer
+POST /restapi/crud/customers/create
+{"data":{"name":"Example Customer"}}
+
+# Read customer 123
+POST /restapi/crud/customers/get-by-id
+{"data":{"id":123}}
+
+# Update customer 123
+POST /restapi/crud/customers/update
+{"data":{"id":123,"name":"Updated Example"}}
+
+# Soft-delete customer 123
+POST /restapi/crud/customers/delete
+{"data":{"id":123}}</code></pre>
+        <h3 id="project-examples">Project examples</h3><pre><code># Create a project linked to customer 123
+POST /restapi/crud/projects/create
+{"data":{"name":"Example Project","cust_id":123}}
+
+# Find matching projects
+POST /restapi/crud/projects/read
+{"query":{"cust_id":123}}
+
+# Update project 456
+POST /restapi/crud/projects/update
+{"data":{"id":456,"name":"Updated Project"}}
+
+# Soft-delete project 456
+POST /restapi/crud/projects/delete
+{"data":{"id":456}}</code></pre><p>These use system field names visible in the supplied snapshot. Your tenant may add, remove, rename, require, restrict, transform, or calculate fields; inspect that tenant's view schema before sending a real request.</p>
+        <h3 id="operations">Supported CRUD operations</h3><div class="table-wrap compact-table"><table><thead><tr><th>Type</th><th>Operations</th><th>Important behavior</th></tr></thead><tbody><tr><td>Read</td><td><code>read</code>, <code>read-one</code>, <code>get-data</code>, <code>get-by-id</code>, <code>get-by-internal-name</code>, <code>count</code></td><td>Permission policy and row-level filters can deny or narrow results.</td></tr><tr><td>Create</td><td><code>create</code>, <code>create-many</code></td><td>Can set metadata and trigger notifications/webhooks.</td></tr><tr><td>Update</td><td><code>update</code>, <code>update-by-id</code>, <code>update-many</code>, <code>upsert</code>, <code>upsert-many</code>, <code>bulk_update</code>, <code>archive</code></td><td>Bulk update requires a Bulk Changeable field. Internal-name upsert requires that field type.</td></tr><tr><td>Delete</td><td><code>delete</code>, <code>delete-cascade</code></td><td>Delete follows the recycle-bin path and may be disabled per view. Delete-cascade is Admin/Root-only and may be irreversible.</td></tr></tbody></table></div>
+        <h3 id="crud-permissions">CRUD permissions</h3><p>All CRUD calls require an authenticated API identity. The policy engine checks the exact <code>view:operation</code> capability and can apply a row-level filter. <code>delete-cascade</code> additionally requires an Admin or Root role. A permission tag therefore describes the minimum route role—not proof that a specific identity can access a specific tenant view.</p>
         <h2 id="errors">Responses and errors</h2><p>A missing route returns HTTP 404 with a JSON message. Validation/permission errors return their relevant status; unexpected failures return 500 with an error string. Treat non-2xx as failure and log the status plus a redacted response—never the API key or payment data.</p>
-        <h2 id="catalog">Source-derived route catalog</h2><p>This catalog covers every explicit route mounted below <code>/restapi</code> in the supplied source snapshot. Permission labels describe route middleware: <strong>Public</strong> requires no API key at that route; <strong>API User</strong> requires an authenticated API identity; <strong>Admin</strong> requires administrator access; <strong>Root</strong> requires the highest system role. Table/action policies, feature flags, tenant configuration, usage limits, and provider setup can still deny a call.</p><div class="callout warning"><strong>Impact labels are source-inferred warnings, not permission grants.</strong>They call out writes, destructive operations, financial operations, communications, publishing, and production configuration. Read the endpoint contract and confirm the target tenant, identity, request body, and idempotency behavior before calling a high-impact route.</div><div data-catalog="api"></div>
+        <h2 id="catalog">Complete source-derived endpoint catalog</h2><p>The catalog combines 146 explicit REST routes with 782 expanded CRUD combinations: 17 operations across 46 registered system views. Tenant-created views use the same <code>/crud/:view/:operation</code> pattern and appear only when discovered from that tenant at runtime. Use the View and Operation filters to see every customer, project, invoice, quote, task, and other view operation without a cut-off table.</p><p>Permission labels describe the minimum route role: <strong>Public</strong>, <strong>API User</strong>, <strong>Admin</strong>, or <strong>Root</strong>. Exact view/action policy, row-level filters, feature flags, tenant configuration, usage limits, and provider setup can still deny a call.</p><div class="callout warning"><strong>Impact labels are source-inferred warnings, not permission grants.</strong>They call out writes, destructive operations, financial operations, communications, publishing, and production configuration. Read the endpoint details and confirm the target tenant, identity, request body, and idempotency behavior before calling a high-impact route.</div><div data-catalog="api"></div>
       `
     },
     bmml: {

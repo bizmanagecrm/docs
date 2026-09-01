@@ -141,6 +141,9 @@ function parseRouteFile(relativeFile, prefix, inheritedPermission = 'API User') 
       purpose: purposeFor(method, endpoint),
       permission,
       impact: impactFor(method, endpoint),
+      family: 'Explicit route',
+      request: 'Use the endpoint-specific request described by its feature guide.',
+      response: 'JSON response; non-2xx means the operation failed.',
     });
   }
   return results;
@@ -167,18 +170,77 @@ const apiMounts = [
 ];
 
 const publicEndpoints = [
-  { method: 'ALL', endpoint: '/restapi/open-ping', purpose: purposeFor('ALL', '/restapi/open-ping'), permission: 'Public', impact: 'Read only' },
-  { method: 'POST', endpoint: '/restapi/register', purpose: purposeFor('POST', '/restapi/register'), permission: 'Root', impact: 'Writes data' },
-  { method: 'ALL', endpoint: '/restapi/ping', purpose: purposeFor('ALL', '/restapi/ping'), permission: 'API User', impact: 'Read only' },
+  { method: 'ALL', endpoint: '/restapi/open-ping', purpose: purposeFor('ALL', '/restapi/open-ping'), permission: 'Public', impact: 'Read only', family: 'Explicit route', request: 'No request body.', response: '{"success":true}' },
+  { method: 'POST', endpoint: '/restapi/register', purpose: purposeFor('POST', '/restapi/register'), permission: 'Root', impact: 'Production configuration', family: 'Explicit route', request: 'API-user registration fields in the JSON body.', response: 'Created API-user result.' },
+  { method: 'ALL', endpoint: '/restapi/ping', purpose: purposeFor('ALL', '/restapi/ping'), permission: 'API User', impact: 'Read only', family: 'Explicit route', request: 'No request body; include x-api-key.', response: '{"success":true}' },
 ];
 for (const [file, prefix, permission] of apiMounts) publicEndpoints.push(...parseRouteFile(file, prefix, permission));
-const uniqueEndpoints = [...new Map(publicEndpoints.map((item) => [`${item.method}|${item.endpoint}`, item])).values()]
+
+function getRegisteredViews() {
+  const registryFile = path.join(core, 'backend', 'db', 'tables.js');
+  const registry = fs.readFileSync(registryFile, 'utf8');
+  const modelFiles = [...registry.matchAll(/require\(\s*(["'])(\.\.\/\.\.\/models\/[^"']+)\1\s*\)/g)].map((match) => {
+    let modelFile = path.resolve(path.dirname(registryFile), match[2]);
+    if (!path.extname(modelFile)) modelFile += '.js';
+    return modelFile;
+  });
+  return [...new Map(modelFiles.map((modelFile) => {
+    const source = fs.readFileSync(modelFile, 'utf8');
+    const internalName = (source.match(/internal_name\s*:\s*["']([^"']+)["']/) || [])[1];
+    if (!internalName) return null;
+    const displayName = (source.match(/display_name\s*:\s*["']([^"']+)["']/) || [])[1] || internalName;
+    return [internalName, { internalName, displayName, deleteDisabledInSource: /disable_delete\s*:\s*true/.test(source) }];
+  }).filter(Boolean)).values()].sort((a, b) => a.displayName.localeCompare(b.displayName));
+}
+
+const crudOperations = [
+  { op: 'read', purpose: 'Read records matching a query.', request: '{"query":{"field":"value"},"options":{}}', response: 'Array of matching records.', permission: 'API User', impact: 'Read only', notes: 'Row-level policy filters can narrow the returned records.' },
+  { op: 'read-one', purpose: 'Read one record matching a query.', request: '{"query":{"id":123},"options":{}}', response: 'One record; 404 when no record matches.', permission: 'API User', impact: 'Read only', notes: 'A query object is required.' },
+  { op: 'get-data', purpose: 'Read grid-shaped data without a separate count query.', request: '{"query":{"filter":{}},"options":{}}', response: 'Grid data for the view.', permission: 'API User', impact: 'Read only', notes: 'Uses view expansion and restricted-field behavior from the grid service.' },
+  { op: 'get-by-id', purpose: 'Read one expanded record by numeric ID.', request: '{"data":{"id":123}}', response: 'Expanded record; 404 when the ID is absent.', permission: 'API User', impact: 'Read only', notes: 'The id field is required.' },
+  { op: 'get-by-internal-name', purpose: 'Read one expanded record by its configured internal-name field.', request: '{"data":{"internal_name":"EXAMPLE"}}', response: 'Expanded record; 404 when no record matches.', permission: 'API User', impact: 'Read only', notes: 'Available only when this view has an Internal Name field.' },
+  { op: 'count', purpose: 'Count records matching a query.', request: '{"query":{"field":"value"}}', response: 'Count result.', permission: 'API User', impact: 'Read only', notes: 'Use the tenant field names configured for this view.' },
+  { op: 'create', purpose: 'Create one record in the view.', request: '{"data":{"field":"value"},"options":{}}', response: 'Created record, or an ID when returnAll is explicitly disabled.', permission: 'API User', impact: 'Writes data', notes: 'Can trigger create notifications and webhooks. Writable fields come from tenant view configuration.' },
+  { op: 'create-many', purpose: 'Create multiple records in one transaction.', request: '{"data":[{"field":"value"},{"field":"value"}],"options":{}}', response: 'Array of created results; the transaction fails when any row fails.', permission: 'API User', impact: 'Writes data', notes: 'Can trigger the create-many webhook.' },
+  { op: 'update', purpose: 'Update one record, using id unless $query_key is supplied.', request: '{"data":{"id":123,"field":"new value"},"options":{}}', response: 'Updated record.', permission: 'API User', impact: 'Writes data', notes: 'Can write history and trigger update webhooks.' },
+  { op: 'update-by-id', purpose: 'Update one record directly by ID.', request: '{"data":{"id":123,"field":"new value"},"options":{}}', response: 'Database update result.', permission: 'API User', impact: 'Writes data', notes: 'The id field is required.' },
+  { op: 'update-many', purpose: 'Update multiple records in one transaction.', request: '{"data":[{"id":123,"field":"value"},{"id":124,"field":"value"}],"options":{}}', response: 'Array of updated results; the transaction fails when any row fails.', permission: 'API User', impact: 'Writes data', notes: 'Can trigger the update-many webhook.' },
+  { op: 'upsert', purpose: 'Update when a matching ID/internal name exists; otherwise create.', request: '{"data":{"id":123,"field":"value"},"options":{}}', response: 'Created or updated record.', permission: 'API User', impact: 'Writes data', notes: 'Internal-name upsert requires use_internal_name=true and an Internal Name field.' },
+  { op: 'upsert-many', purpose: 'Create or update multiple records in one transaction.', request: '{"data":[{"id":123,"field":"value"}],"options":{}}', response: 'Array of created/updated results.', permission: 'API User', impact: 'Writes data', notes: 'Can trigger the upsert-many webhook.' },
+  { op: 'archive', purpose: 'Archive or unarchive one or more records.', request: '{"data":{"id":[123,124],"archived":true}}', response: 'Archived record or array of records.', permission: 'API User', impact: 'Writes data', notes: 'Omit archived to archive; pass false to unarchive.' },
+  { op: 'bulk_update', purpose: 'Set one bulk-changeable field across selected IDs.', request: '{"data":{"ids":[123,124],"internal_name":"field_name","value":"new value"}}', response: 'Bulk update result.', permission: 'API User', impact: 'Writes data', notes: 'The field must be configured as Bulk Changeable.' },
+  { op: 'delete', purpose: 'Soft-delete one record into the recycle-bin flow.', request: '{"data":{"id":123}}', response: 'Deleted record metadata.', permission: 'API User', impact: 'Destructive', notes: 'A view can disable delete. This can trigger a delete webhook.' },
+  { op: 'delete-cascade', purpose: 'Cascade-delete one record and dependent data.', request: '{"data":{"id":123}}', response: 'Cascade deletion result.', permission: 'Admin', impact: 'Destructive', notes: 'Admin or Root only. This bypasses the normal recycle-bin delete and may be irreversible.' },
+];
+
+const crudRuntimeSource = fs.readFileSync(path.join(core, 'backend', 'db', 'v2_crud', 'index.js'), 'utf8');
+const runtimeOperations = [...new Set([...crudRuntimeSource.matchAll(/case\s+["']([^"']+)["']\s*:/g)].map((match) => match[1]))].sort();
+const documentedOperations = crudOperations.map((item) => item.op).sort();
+const missingCrudDocumentation = runtimeOperations.filter((operation) => !documentedOperations.includes(operation));
+const staleCrudDocumentation = documentedOperations.filter((operation) => !runtimeOperations.includes(operation));
+if (missingCrudDocumentation.length || staleCrudDocumentation.length) {
+  throw new Error(`CRUD documentation mismatch. Missing: ${missingCrudDocumentation.join(', ') || 'none'}. Stale: ${staleCrudDocumentation.join(', ') || 'none'}.`);
+}
+
+const registeredViews = getRegisteredViews();
+const viewCrudEndpoints = registeredViews.flatMap((view) => crudOperations.map((operation) => ({
+  method: 'POST', endpoint: `/restapi/crud/${view.internalName}/${operation.op}`,
+  purpose: `${operation.purpose} View: ${view.displayName}.`, permission: operation.permission, impact: operation.impact,
+  family: 'View CRUD', view: view.internalName, viewDisplay: view.displayName, operation: operation.op,
+  request: operation.request, response: operation.response,
+  notes: `${operation.notes}${view.deleteDisabledInSource && operation.op.startsWith('delete') ? ' Delete is disabled in the supplied system-view definition.' : ''}`,
+})));
+
+const uniqueEndpoints = [...new Map([...publicEndpoints, ...viewCrudEndpoints].map((item) => [`${item.method}|${item.endpoint}`, item])).values()]
   .sort((a, b) => a.endpoint.localeCompare(b.endpoint) || a.method.localeCompare(b.method));
 
 fs.writeFileSync(path.join(outDir, 'actions.json'), JSON.stringify({ generatedFrom: 'supplied BizManage source snapshot', count: uniqueActions.length, actions: uniqueActions }, null, 2) + '\n');
 fs.writeFileSync(path.join(outDir, 'api.json'), JSON.stringify({
   generatedFrom: 'supplied BizManage source snapshot',
   count: uniqueEndpoints.length,
+  explicitRouteCount: publicEndpoints.length,
+  registeredViewCount: registeredViews.length,
+  viewOperationCount: viewCrudEndpoints.length,
   permissions: {
     Public: 'No API credential required by the route.',
     'API User': 'Any authenticated API identity, still subject to policy, operation, table, feature, and usage checks.',
