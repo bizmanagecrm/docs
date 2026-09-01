@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Concise, source-backed documentation for the BizManage UI, API, AI tools, and CLI.">
+  <meta name="theme-color" content="#14261f">
+  <title>BizManage Documentation</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%2314261f%22/><path d=%22M17 17h18c9 0 14 4 14 11 0 4-2 7-6 9 5 2 7 5 7 10 0 9-7 13-17 13H17V17zm11 9v8h7c3 0 5-1 5-4s-2-4-5-4h-7zm0 16v9h8c3 0 5-2 5-5s-2-4-6-4h-7z%22 fill=%22%23d9f99d%22/></svg>">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#doc">Skip to documentation</a>
+  <header class="topbar">
+    <a class="brand" href="#/start" aria-label="BizManage documentation home">
+      <span class="brand-mark">B</span>
+      <span><strong>BizManage</strong><small>Documentation</small></span>
+    </a>
+    <button class="search-trigger" id="searchTrigger" type="button" aria-label="Search documentation">
+      <span>Search actions, API, and guides</span><kbd>Ctrl K</kbd>
+    </button>
+    <div class="top-actions">
+      <a class="quiet-link" href="https://github.com/bizmanagecrm/docs" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch color theme">◐</button>
+      <button class="menu-button" id="menuToggle" type="button" aria-label="Open navigation">Menu</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+      <nav id="nav"></nav>
+      <div class="source-note"><span></span>Source-checked against BizManage 3.1.332</div>
+    </aside>
+    <main class="main" id="doc" tabindex="-1">
+      <article id="article" class="article"></article>
+      <footer class="footer">
+        <span>Built from the supplied BizManage source snapshot.</span>
+        <button type="button" class="link-button" id="reportGap">Ask AI about this page</button>
+      </footer>
+    </main>
+    <aside class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <nav id="toc"></nav>
+    </aside>
+  </div>
+
+  <dialog class="search-dialog" id="searchDialog">
+    <form method="dialog" class="dialog-head">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="Try “refund”, “API key”, or “import CSV”" aria-label="Search documentation">
+      <button type="submit">Esc</button>
+    </form>
+    <div id="searchResults" class="search-results"></div>
+  </dialog>
+
+  <dialog class="ai-dialog" id="aiDialog">
+    <form method="dialog" class="ai-card">
+      <div class="ai-head"><span class="ai-orb">AI</span><div><strong>Ask for a simpler explanation</strong><small>Copy a source-grounded question into your AI assistant.</small></div></div>
+      <label for="aiQuestion">What do you want help with?</label>
+      <textarea id="aiQuestion" rows="7"></textarea>
+      <div class="dialog-actions"><button value="cancel" class="button secondary">Close</button><button type="button" id="copyPrompt" class="button primary">Copy question</button></div>
+      <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <script src="/assets/content.js"></script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

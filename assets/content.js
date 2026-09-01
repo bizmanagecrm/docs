@@ -1,0 +1,253 @@
+window.BIZMANAGE_DOCS = {
+  groups: [
+    { label: 'Use BizManage', pages: ['start','ui-basics','records-grids','customers','projects','sales','payments','operations','communications'] },
+    { label: 'Configure', pages: ['reports-imports','admin','users-permissions','ai'] },
+    { label: 'Build & integrate', pages: ['api','cli','webhooks-custom'] },
+    { label: 'Reference', pages: ['actions','troubleshooting','glossary'] }
+  ],
+  pages: {
+    start: {
+      title: 'Everything you need to use BizManage', eyebrow: 'Start here',
+      summary: 'Short, practical instructions for daily work in the UI, automation through the API, AI-assisted tasks, and instance administration.',
+      html: String.raw`
+        <div class="lead-card"><h2>Choose what you are trying to do</h2><p>BizManage is permission-driven and customizable. Your labels, fields, and buttons may differ, but the workflow stays the same: open a module, find or create a record, use its actions, then confirm the result.</p></div>
+        <div class="card-grid">
+          <a class="module-card" href="#/ui-basics"><small>Daily work</small><h3>Use the UI</h3><p>Navigation, search, grids, forms, files, comments, and common buttons.</p></a>
+          <a class="module-card" href="#/admin"><small>Administrators</small><h3>Configure the CRM</h3><p>Views, fields, forms, layouts, rules, users, gateways, and settings.</p></a>
+          <a class="module-card" href="#/api"><small>Developers</small><h3>Use the API</h3><p>API users, keys, authentication, CRUD, payments, SMS, and AI endpoints.</p></a>
+          <a class="module-card" href="#/ai"><small>AI help</small><h3>Use BizManage AI</h3><p>Ask, structured JSON, files, read-only CRM tools, models, skills, and logs.</p></a>
+        </div>
+        <h2 id="safe-workflow">The safe workflow</h2>
+        <div class="steps"><div class="step"><strong>Check your context</strong>Confirm the company, customer, project, and record before editing.</div><div class="step"><strong>Make one clear change</strong>Use Save or the named action. Destructive actions normally ask for confirmation.</div><div class="step"><strong>Verify the result</strong>Reopen or refresh the record and check status, totals, history, or output.</div></div>
+        <div class="callout warning"><strong>Payments, messages, and deletes are real actions.</strong>Preview amounts and recipients. “Delete Forever,” refunds, charges, invitations, emails, and SMS can affect customers or permanent data.</div>
+        <h2 id="roles">Why screens differ by user</h2><p>Navigation and routes are filtered by role and restriction policies. Administrators can also customize left navigation, forms, actions, dashboards, field names, and layouts. If a documented control is missing, first check your permission and the current view configuration.</p>
+        <h2 id="quick-help">Get a short AI explanation</h2><p>Every page has an <strong>Ask AI about this page</strong> link. It prepares a question with the page title and a reminder not to invent unavailable fields or permissions. Copy the prompt into your approved AI assistant.</p>
+      `
+    },
+    'ui-basics': {
+      title: 'Navigate and control the UI', eyebrow: 'UI basics',
+      summary: 'Understand the top bar, left navigation, dynamic actions, themes, alerts, modal windows, and keyboard-friendly behavior.',
+      html: String.raw`
+        <h2 id="navigation">Navigation</h2><div class="table-wrap"><table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody>
+          <tr><td>Left navigation</td><td>Opens modules such as Accounts, Projects, Accounting, Calendar, Files, Catalog, Setup, Reports, API Access, and admin tools. Groups expand to show child pages.</td></tr>
+          <tr><td>Collapse sidebar</td><td>Reduces the left panel to icons. On mobile, the same control opens or closes the navigation drawer.</td></tr>
+          <tr><td>Landing page</td><td>The first configured page, or the page marked as your landing page, opens after sign-in.</td></tr>
+          <tr><td>Top-bar chat and notifications</td><td>Open conversations and unread notifications when enabled for your user.</td></tr>
+          <tr><td>User/account menu</td><td>Access account options, appearance, help, and sign out.</td></tr>
+        </tbody></table></div>
+        <h2 id="buttons">How buttons behave</h2><ul class="checklist"><li><strong>Primary filled button:</strong> the main action, usually Save, Create, Apply, Send, or Publish.</li><li><strong>Outline button:</strong> a secondary action such as Cancel, Preview, Copy, or Open.</li><li><strong>Icon button:</strong> hover or focus to read its label; common icons mean edit, delete/archive, copy, refresh, download, open files, comments, or more actions.</li><li><strong>Actions menu:</strong> contains record-specific and custom actions; availability follows your permissions and selection.</li><li><strong>Disabled button:</strong> required data, a selection, or permission is missing, or work is already running.</li></ul>
+        <div class="callout info"><strong>Save vs. Save &amp; Close</strong><em>Save</em> keeps you in the current workflow. <em>Save &amp; Close</em> saves and dismisses the form. Project forms may also offer Save &amp; Start or Save &amp; Go to Dashboard.</div>
+        <h2 id="dialogs">Dialogs and confirmations</h2><p>Most create/edit forms open in a modal window. <strong>Cancel</strong> closes without intentionally saving. A backdrop may be locked to prevent accidental dismissal. Confirm dialogs can show separate confirm, cancel, or alternate actions; read the button text before proceeding.</p>
+        <h2 id="theme">Appearance</h2><p>The theme switcher supports default, light, and dark themes. BizManage stores your selection locally. Admins can also create color themes and assign UI preferences.</p>
+        <h2 id="loading-errors">Loading and errors</h2><p>A “Working…” panel means the request is still active. Wait for it to finish before repeating the action. Error messages should describe missing input, permission, or server failure. If the result is uncertain, refresh and verify the record rather than clicking twice.</p>
+      `
+    },
+    'records-grids': {
+      title: 'Find, edit, and organize records', eyebrow: 'Core pattern',
+      summary: 'Most BizManage modules use the same grid, form, dashboard, filter, layout, and action patterns.',
+      html: String.raw`
+        <h2 id="grid">Use a grid</h2><div class="steps"><div class="step"><strong>Open a view</strong>Select Customers, Projects, Transactions, Tasks, a custom view, or another grid from navigation.</div><div class="step"><strong>Filter or search</strong>Use column filters, the view filter control, or configured smart search. “Load All” fetches more rows and may take time.</div><div class="step"><strong>Select a row</strong>Click a row or checkbox. Row actions and the Actions menu apply to the selection.</div><div class="step"><strong>Open or act</strong>Open the dashboard/form, or choose a named action such as edit, files, comment, archive, copy, or status change.</div></div>
+        <h3 id="grid-buttons">Grid controls</h3><div class="table-wrap"><table><thead><tr><th>Control</th><th>Meaning</th></tr></thead><tbody><tr><td>Filter / Apply Filter</td><td>Limits rows using configured conditions. Clear or reset to return to the base view.</td></tr><tr><td>Column menu</td><td>Sort, filter, show/hide, resize, or export when enabled.</td></tr><tr><td>Load All / Stop Loading</td><td>Fetches every matching row, or stops the long load.</td></tr><tr><td>Layouts</td><td>Switches the data into grid, Kanban, calendar, or map layouts when configured.</td></tr><tr><td>Show All / Hide All</td><td>Changes column visibility or section expansion; it does not delete data.</td></tr><tr><td>Refresh</td><td>Reloads data from the server.</td></tr></tbody></table></div>
+        <h2 id="forms">Create or edit a record</h2><p>Choose <strong>Add</strong>, <strong>Create</strong>, or an edit icon. Complete required fields, then use Save. Tabs and form sections come from the configured form. The small plus/open controls beside relationship fields can create or open linked records.</p>
+        <h2 id="dashboards">Dashboards</h2><p>A record dashboard summarizes fields, related tables, history, buttons, and custom sections. <strong>View All</strong> opens the full related list. The Actions button runs system or custom actions. History and comments provide context before a change.</p>
+        <h2 id="copy-delete">Copy, archive, and delete</h2><ul><li><strong>Duplicate/Clone/Copy:</strong> creates a new record from selected data. Check whether linked children are included.</li><li><strong>Archive:</strong> removes the record from normal active views but keeps it recoverable.</li><li><strong>Delete:</strong> usually sends eligible records to the Recycle Bin.</li><li><strong>Delete Forever:</strong> permanently removes a recycle-bin group. Use only after checking its details.</li><li><strong>Restore:</strong> returns a recycle-bin group to active data.</li></ul>
+        <h2 id="custom">Custom views</h2><p>Administrators can add custom tables, fields, forms, actions, filters, layouts, dashboards, subviews, and addresses. Because of this, use the action catalog as a source snapshot, not a promise that every tenant shows the same controls.</p>
+      `
+    },
+    customers: {
+      title: 'Customers, contacts, and account activity', eyebrow: 'Accounts',
+      summary: 'Create the account first, add people and activity, then use its dashboard to reach projects, files, messages, and financial records.',
+      html: String.raw`
+        <h2 id="create">Create a customer</h2><ol><li>Open <strong>Accounts → Customers</strong>.</li><li>Select <strong>Add Customer</strong> or the configured Add action.</li><li>Enter the required identity, contact, address, assignment, and group fields.</li><li>Select <strong>Create</strong> or <strong>Save</strong>.</li><li>Open the customer dashboard and verify the saved details.</li></ol>
+        <h2 id="contacts">Add or edit a contact</h2><p>Open the customer, then Contacts. Use the add-contact action, complete the contact form, and save. Link the contact to the correct customer. The contact can then be selected on projects, proposals, emails, and other records.</p>
+        <h2 id="dashboard">Use the customer dashboard</h2><div class="table-wrap"><table><thead><tr><th>Action</th><th>Use it for</th></tr></thead><tbody><tr><td>Edit</td><td>Update customer fields.</td></tr><tr><td>Projects / Quotes / Invoices</td><td>Open related operational or accounting records.</td></tr><tr><td>Files</td><td>Upload, download, rename, mail, or organize linked files.</td></tr><tr><td>Comments</td><td>Add a normal or private comment.</td></tr><tr><td>Email / SMS</td><td>Compose from a template or write a message, then confirm the recipient.</td></tr><tr><td>History</td><td>Review recorded changes and activity.</td></tr></tbody></table></div>
+        <h2 id="groups">Customer groups</h2><p>Open <strong>Setup → Customer Groups</strong> to create or edit reusable customer classifications. Save the group, then select it on customer records or use it in filters and rules.</p>
+        <div class="callout warning"><strong>A customer and a contact are different records.</strong>The customer is the account. Contacts are people linked to it. Choose the correct record before sending, assigning, or merging data.</div>
+      `
+    },
+    projects: {
+      title: 'Projects, tasks, statuses, and calendar', eyebrow: 'Work management',
+      summary: 'Move customer work from a new project through plan, assignments, events, status changes, completion, and dashboard review.',
+      html: String.raw`
+        <h2 id="project">Create a project</h2><ol><li>Open <strong>Projects → All</strong> and choose <strong>Create New Project</strong>.</li><li>Select the customer and contact, then enter the project details.</li><li>Choose the finish action: <strong>Save</strong>, <strong>Save &amp; Continue</strong>, <strong>Create &amp; Start</strong>, or a dashboard option.</li><li>Verify the project dashboard, owner, and current status.</li></ol>
+        <h2 id="plan">Plan and start</h2><p>Open the project plan to apply a project template, edit planned steps, and save. <strong>Save &amp; Start Project</strong> saves and begins the project. <strong>Save &amp; Start &amp; Dashboard</strong> also opens its dashboard.</p>
+        <h2 id="status">Change status</h2><p>Use the status action on the project or dashboard. Select an allowed next status. Status rules can trigger follow-up work, so verify the new status and resulting events. <strong>Mark as complete</strong> completes an assigned task; project completion is a separate action.</p>
+        <h2 id="tasks">Tasks</h2><p>Open Projects → Tasks or add a task from a project. Assign the task, dates, status, and project link. Available quick actions include accept, assign, mark, or cancel depending on configuration and permission.</p>
+        <h2 id="calendar">Calendar and events</h2><ul><li><strong>Create New Event:</strong> opens the event form.</li><li><strong>Save Event:</strong> creates or updates the event.</li><li><strong>Mark done:</strong> closes the selected event.</li><li><strong>Duplicate:</strong> starts a copy for a similar event.</li><li><strong>Archive:</strong> removes it from active scheduling.</li><li><strong>Grid / month switch:</strong> changes the calendar presentation.</li><li><strong>Load All:</strong> loads all matching events.</li></ul>
+        <h2 id="templates">Project templates</h2><p>Admins manage templates under Setup. A template provides repeatable project structure and defaults. Applying it changes the current plan; review before saving.</p>
+      `
+    },
+    sales: {
+      title: 'Quotes, proposals, orders, and deliveries', eyebrow: 'Sales workflow',
+      summary: 'Build an estimate, turn it into a customer proposal, then create the operational order and delivery records.',
+      html: String.raw`
+        <h2 id="flow">Typical flow</h2><div class="steps"><div class="step"><strong>Generate a quote</strong>Open a project or Quotes and choose Generate Quote.</div><div class="step"><strong>Build the quote</strong>Set quote information, tax, markup, units, categories, lines, and items. Save at each stage.</div><div class="step"><strong>Review results</strong>Use Quote Result to check totals, vendors, items, reports, and customer/project links.</div><div class="step"><strong>Generate a proposal</strong>Select the quote, apply a proposal template, control visible sections and payment plans, then create, view, or send.</div><div class="step"><strong>Create order and delivery</strong>Generate the order from the final quote, create vendor POs if needed, and build delivery records from the correct invoice/project.</div></div>
+        <h2 id="quote-buttons">Quote controls</h2><div class="table-wrap"><table><thead><tr><th>Button</th><th>Result</th></tr></thead><tbody><tr><td>Apply to all items</td><td>Applies the current tax, markup, or field setting across quote items.</td></tr><tr><td>Add Unit</td><td>Creates another room/section or quantity group.</td></tr><tr><td>Quick Enter</td><td>Adds items with a compact input workflow.</td></tr><tr><td>Add Item / Add Items to All Linked</td><td>Adds to the selected unit, or repeats across linked units.</td></tr><tr><td>Show All Items</td><td>Clears the item visibility filter.</td></tr><tr><td>Change List Price</td><td>Updates pricing for selected quote items.</td></tr><tr><td>Reverse Final</td><td>Moves a finalized quote back to editing when allowed.</td></tr></tbody></table></div>
+        <h2 id="proposal-buttons">Proposal controls</h2><p><strong>Apply</strong> loads a template. <strong>Hide All / Display All</strong> controls presentation. Add/remove file and payment-plan icons change proposal attachments or plan rows. <strong>Proposal</strong> generates it, <strong>Proposal &amp; View</strong> generates and opens it, and <strong>Proposal &amp; Send</strong> generates and starts delivery to the customer.</p>
+        <h2 id="orders">Orders and purchase orders</h2><p>On an order, apply a template, show or hide sections, update items, and use <strong>Generate PO For All Vendors</strong> only after checking vendor assignments and quantities. The final send control generates or sends based on the configured action.</p>
+        <h2 id="deliveries">Deliveries</h2><p>Create the delivery from the intended invoice/project, select the relevant categories/items, then generate or update it. Use delivery templates for repeatable layout. Verify the rendered output before sending.</p>
+      `
+    },
+    payments: {
+      title: 'Invoices, transactions, payments, and subscriptions', eyebrow: 'Accounting',
+      summary: 'Create and review invoices, record or charge payments, apply funds, refund carefully, and manage gateway-backed subscriptions.',
+      html: String.raw`
+        <h2 id="invoice">Create an invoice</h2><p>Open Invoices from Accounting or a project. Create from a quote when the quote is the source, or use Create Invoice/Express Invoice for the configured direct workflow. Add items, confirm customer, project, totals, tax, and due information, then create. Render or view the invoice to verify the output.</p>
+        <h2 id="payment">Accept or apply a payment</h2><ul><li><strong>Accept Payment:</strong> records/processes a payment using the chosen method.</li><li><strong>Charge Credit Card:</strong> processes through a configured payment gateway.</li><li><strong>Save payment method:</strong> stores a reusable gateway payment method when the customer authorized it.</li><li><strong>Apply:</strong> allocates an existing payment to one or more invoices.</li><li><strong>Balance Sheet:</strong> shows linked charges, applications, and remaining balance.</li></ul>
+        <div class="callout warning"><strong>Before Charge, Refund, or Void</strong>Verify customer, gateway, amount, currency, invoice, and saved payment method. Do not double-click while the request is working. Recheck Transactions and the gateway result.</div>
+        <h2 id="refund">Refund or void</h2><p>Open the transaction and choose the available refund/void action. Enter the allowed amount and select <strong>Process refund</strong>. A void generally targets an unsettled transaction; a refund returns funds after capture. The available behavior depends on the gateway.</p>
+        <h2 id="gateways">Payment gateways</h2><p>Admins open <strong>Payment Gateways</strong> to add a gateway, save credentials/settings, load gateway-specific options, choose defaults, import payment methods where supported, and configure post-payment/transaction actions. Never paste credentials into docs, comments, or AI prompts.</p>
+        <h2 id="subscriptions">Subscriptions</h2><p>Create or import plans, register the gateway webhook, create a subscription, then cancel, resume, or update its payment method. Confirm both BizManage and the gateway state after any lifecycle change.</p>
+      `
+    },
+    operations: {
+      title: 'Catalog, vendors, files, and templates', eyebrow: 'Operations',
+      summary: 'Maintain reusable products and suppliers, organize linked documents, and use templates to standardize output.',
+      html: String.raw`
+        <h2 id="catalog">Catalog structure</h2><p>Catalog contains Vendors, Categories, Cabinet Lines, and Items. Categories and lines organize items; vendors provide source and purchasing data. Open the relevant list, add or edit a record, and save.</p>
+        <h2 id="items">Items</h2><ul><li><strong>Add Item:</strong> opens the item form.</li><li><strong>Upload Items:</strong> starts a file import for catalog data.</li><li><strong>Load All:</strong> fetches all matching catalog rows.</li><li><strong>Update Default:</strong> changes default item behavior where configured.</li><li><strong>Delete import:</strong> removes eligible items created by an import; review the import result first.</li></ul>
+        <h2 id="files">Files</h2><div class="table-wrap"><table><thead><tr><th>Action</th><th>What it does</th></tr></thead><tbody><tr><td>Upload</td><td>Adds a file to the current table, record, and optional folder.</td></tr><tr><td>New Folder</td><td>Creates a folder at the current location.</td></tr><tr><td>Download / Full size / View PDF</td><td>Reads or downloads the selected file.</td></tr><tr><td>Rename</td><td>Changes the file/folder display name.</td></tr><tr><td>Mail</td><td>Starts an email with the file attached.</td></tr><tr><td>Combine PDFs</td><td>Creates a combined document from the selected PDFs.</td></tr><tr><td>Lock / Unlock</td><td>Controls concurrent editing when supported.</td></tr><tr><td>Create from template</td><td>Generates a new file from a configured file template.</td></tr></tbody></table></div>
+        <h2 id="templates">Business templates</h2><p>Setup includes email, file, project, proposal, order, and delivery templates. Edit a template, save, then test it on non-production/sample data before broad use.</p>
+        <h2 id="advanced">Advanced template editor</h2><p>Use <strong>Undo/Redo</strong>, insert components/layouts/tokens/loops, adjust bindings, run checks, preview, and save a draft. <strong>Publish</strong> makes the draft active. The editor can preview Email or PDF output and send a test when configured. Template AI assists drafting but does not replace preview and validation.</p>
+      `
+    },
+    communications: {
+      title: 'Email, SMS, chat, notifications, and comments', eyebrow: 'Communication',
+      summary: 'Communicate from the correct record, verify recipients, and use templates without losing customer-specific context.',
+      html: String.raw`
+        <h2 id="email">Send email</h2><ol><li>Open a customer, contact, project, invoice, proposal, or file action that offers Email.</li><li>Select a template with <strong>Apply</strong>, or write the subject/body manually.</li><li>Use Cc/Bcc only when necessary.</li><li>Check recipients, attachments, tokens, and rendered text.</li><li>Select Send once and confirm the recorded email/activity.</li></ol>
+        <h2 id="sms">Send SMS</h2><p>Open the SMS dashboard or a record SMS action. Choose the configured gateway/conversation, enter the message, and send. <strong>New Conversation</strong> starts another thread, refresh reloads it, and mark read/unread controls the inbox state.</p>
+        <h2 id="sms-admin">SMS gateway controls</h2><p>Admins can add, save, delete, refresh, or open a gateway dashboard. The dashboard includes gateway status, usage, receive-webhook setup, configuration, conversations, and insights. Webhook setup changes provider-facing configuration; confirm the callback before activating it.</p>
+        <h2 id="chat">Internal chat</h2><p>Use the top-bar chat list to open a user or group conversation. Send text or files, minimize, close, join an available group, and mark messages read. Chat permission and visibility can be disabled per user.</p>
+        <h2 id="comments">Comments</h2><p>Comments attach to a record. <strong>Save Comment</strong> creates a normal comment. <strong>Save Private Comment</strong> restricts visibility according to the app policy. Do not store passwords, API keys, card data, or unnecessary personal data in comments.</p>
+        <h2 id="notifications">Notifications</h2><p>The notification control shows unread work and system notices for the signed-in user. Open the linked item, complete the work, and use the relevant read/done behavior.</p>
+      `
+    },
+    'reports-imports': {
+      title: 'Reports, dashboards, imports, and recycle bin', eyebrow: 'Data tools',
+      summary: 'Analyze data, customize summaries, import in stages, and recover eligible deleted records.',
+      html: String.raw`
+        <h2 id="reports">Run reports</h2><p>Reports may be list, grouped, or custom reports. Choose the report, provide filters/record context, run it, then use the screen controls to sort, expand, print, or export when available. Built-in examples include project/event consistency reports.</p>
+        <h2 id="custom-reports">Custom reports</h2><p>Open Custom Reports, choose <strong>Create Report</strong>, define the report data/settings, save, then run it from the list. Administrators can edit the source configuration. Test with a restricted dataset before sharing.</p>
+        <h2 id="dashboard">Customize dashboards</h2><p>Administrators can add dashboard sections, fields, logs, buttons, and related views. <strong>View All</strong> opens the source list. Reset returns the dashboard to its default definition.</p>
+        <h2 id="import">Import data safely</h2><div class="steps"><div class="step"><strong>Choose the module and CSV</strong>Use the Imports page or a module-specific upload.</div><div class="step"><strong>Map and validate</strong>Match columns to fields and resolve required/invalid values.</div><div class="step"><strong>Try import</strong>Run the preview/try stage and review counts and errors.</div><div class="step"><strong>Confirm import</strong>Only confirm after the preview matches your intention.</div><div class="step"><strong>Review results</strong>Use the status/results pages. Copy Link shares the status URL; Cancel stops an eligible in-progress import.</div></div>
+        <h2 id="undo">Undo and recycle bin</h2><p>Eligible imports can be undone from their import record. Deleted record groups appear in Recycle Bin: <strong>See Details</strong>, then <strong>Restore</strong> or <strong>Delete Forever</strong>. Permanent delete cannot be treated as recoverable.</p>
+      `
+    },
+    admin: {
+      title: 'Configure BizManage without guessing', eyebrow: 'Administrator guide',
+      summary: 'Use Manage Views and Settings to control data structure, forms, actions, layouts, dashboards, integrations, and company-wide behavior.',
+      html: String.raw`
+        <h2 id="views">Manage views</h2><p>Open <strong>Manage Views</strong>. Choose an existing view or <strong>Add Custom View</strong>. Each view exposes focused tools:</p><div class="table-wrap"><table><thead><tr><th>Tool</th><th>Purpose</th></tr></thead><tbody><tr><td>Fields And More / Add Field</td><td>Create or edit field basics, display, advanced settings, choices, sorting, search, and uniqueness.</td></tr><tr><td>View Settings / View Tools</td><td>Control grid behavior and view-level options.</td></tr><tr><td>Forms</td><td>Create forms, arrange fields, define defaults, and configure buttons.</td></tr><tr><td>Actions</td><td>Create system/custom actions and their conditions or scripts.</td></tr><tr><td>Action Sections</td><td>Group and order actions in menus.</td></tr><tr><td>Rules</td><td>Configure unique, watcher, tracking, and other rules.</td></tr><tr><td>Sub Views</td><td>Connect related views.</td></tr><tr><td>Layouts</td><td>Add grid, Kanban, calendar, or map layouts.</td></tr><tr><td>Dashboard</td><td>Configure record summary sections.</td></tr><tr><td>Filters</td><td>Create reusable view filters.</td></tr><tr><td>Address</td><td>Set address-field behavior for maps/formatting.</td></tr><tr><td>Clear Cache</td><td>Expires cached view configuration so new settings load.</td></tr></tbody></table></div>
+        <h2 id="forms-actions">Forms and buttons</h2><p><strong>Create New Form</strong> starts another layout for the view. Edit it, move fields, save, and optionally set it as default. <strong>Create New Button</strong> adds a configured form action. Reset restores a default form/button. Test create and edit flows with a sample record.</p>
+        <h2 id="settings">Settings</h2><p>Settings are organized by tabs and can include company behavior, projects, items/catalog, calendars, files, integrations, and tenant-specific options. Use <strong>Update Settings</strong> after reviewing the active tab. Some setting screens offer Create New or Edit Selected for structured entries.</p>
+        <h2 id="navigation">Customize navigation</h2><p>Admins can hide/show/reorder views, choose a landing page, group items, and hide upper navigation, left navigation, chat, or notifications for a user. Copy settings between users only when they should receive the same configuration.</p>
+        <h2 id="tools">Admin Tools</h2><p>Admin Tools includes session/user inspection, IP allow/block lists, mail domains, file synchronization, SMS gateways, migrations, and other operational controls. Sync, migration, termination, and allow/block actions affect the running system; verify target and current state first.</p>
+        <h2 id="scripts-pages">Scripts and custom pages</h2><p>Backend scripts can run server-side logic and may expose tokenized routes or schedules. Custom Pages can be Internal, Customer, or External and can be edited, customized, and published. Treat code, tokens, and external publishing as privileged changes.</p>
+      `
+    },
+    'users-permissions': {
+      title: 'Users, employees, API users, and permissions', eyebrow: 'Access control',
+      summary: 'Create the right identity type, apply least privilege, and verify access with the actual user experience.',
+      html: String.raw`
+        <h2 id="people">Users and employees</h2><p>Admins open <strong>Users / Employees</strong>. Add or edit a person, assign role/type/template and status, then save. Employee Types and Employee Templates provide reusable access/configuration defaults.</p>
+        <h2 id="invite">Invite and account actions</h2><ul><li><strong>Send Invite:</strong> sends an invitation to the selected user(s).</li><li><strong>Reset Password:</strong> starts an administrator-controlled reset.</li><li><strong>Promote/Revoke role:</strong> changes role access.</li><li><strong>Deactivate:</strong> blocks normal account use without deleting historical links.</li><li><strong>Terminate session:</strong> signs out a selected active session.</li></ul>
+        <h2 id="policies">Permission policies</h2><p>Create a policy, choose whether it broadly allows or restricts, add CRUD or URL exceptions, save, then associate it with users. View restrictions also control navigation/routes. Test with the target user rather than assuming the admin screen proves access.</p>
+        <h2 id="api-users">API users</h2><p>Open <strong>API Access</strong>. <strong>New API User</strong> creates a normal API identity; <strong>New Admin API User</strong> is highly privileged. Generate the API key, copy it once to an approved secret store, and inspect call count when needed.</p>
+        <div class="callout warning"><strong>API keys are passwords.</strong>Do not place them in source code, screenshots, documentation, tickets, comments, or AI prompts. Rotate a key if exposure is possible.</div>
+        <h2 id="encryption">Encryption key</h2><p>User/account tools may generate an encryption key for protected data. Follow the instance security process and never mix it up with an API key.</p>
+      `
+    },
+    ai: {
+      title: 'Use BizManage AI safely', eyebrow: 'AI features',
+      summary: 'Configure a provider, choose models, use stable skills, ask for text or JSON, attach approved files, and inspect traceable request logs.',
+      html: String.raw`
+        <h2 id="admin-setup">Admin setup</h2><ol><li>Open <strong>AI Gateways</strong> and select <strong>Add Gateway</strong>.</li><li>Choose the provider/system and enter credentials in the protected settings.</li><li>Save, load models, enable/configure approved models, and set feature or gateway defaults.</li><li>Optionally add stable business Skills.</li><li>Run a low-risk test and inspect Logs.</li></ol>
+        <h2 id="methods">Choose the AI method</h2><div class="table-wrap"><table><thead><tr><th>Method</th><th>Use when</th></tr></thead><tbody><tr><td>Ask</td><td>You want text and already have the context.</td></tr><tr><td>Generate JSON</td><td>You need schema-constrained structured output.</td></tr><tr><td>Run with tools</td><td>AI must inspect schema or read permitted CRM records.</td></tr><tr><td>Attachments</td><td>The source is an approved text-like file.</td></tr><tr><td>Context refs</td><td>You already know exactly which record to load.</td></tr></tbody></table></div>
+        <h2 id="tools">Read-only tools</h2><p>The Phase 1 tool registry can inspect tables/fields and read records. Tool calls still use the current user/API key permissions and redact sensitive keys. The model is not allowed to choose create, update, delete, payment, or arbitrary backend actions in Phase 1.</p>
+        <h2 id="files">Files and limits</h2><p>Temporary AI uploads accept approved text-like formats such as TXT, CSV, JSON, Markdown, logs, XML, HTML, YAML, and YML. The supplied source documents limits of 5 files per request, 10 MB per file, 100,000 extracted characters per file, 200,000 per request, and 7-day temporary retention.</p>
+        <h2 id="skills">Skills</h2><p>Skills should contain reusable company terminology, schema/query guidance, and output rules. Put one-off customer IDs or temporary instructions in the request, not a reusable skill.</p>
+        <h2 id="logs">Logs and permissions</h2><p>Logs include status, feature, gateway, model, token usage, duration, tool calls, context references, attachment metadata, skills, provider metadata, and errors. Prompt/response text is not stored by default in the supplied implementation. Capabilities include <code>ai:ask</code>, <code>ai:generateJson</code>, <code>ai:tools.run</code>, and <code>ai:files.attach</code>.</p>
+        <div class="callout info"><strong>Good prompt</strong>“Customer ID 123. Inspect schema before filtering, do not guess table or field names, and return a concise factual account summary with missing data called out.”</div>
+      `
+    },
+    api: {
+      title: 'API quick start and endpoint reference', eyebrow: 'REST API',
+      summary: 'Create a dedicated API user, authenticate with x-api-key, test the connection, then call only the routes and operations that identity is allowed to use.',
+      html: String.raw`
+        <h2 id="base-url">Base URL and authentication</h2><p>Use your own BizManage instance URL. Authenticated REST routes live under <code>/restapi</code> and expect the API key in the <code>x-api-key</code> request header.</p>
+        <pre><code>curl https://YOUR-INSTANCE.bizmanagecrm.com/restapi/ping \\
+  -H "x-api-key: YOUR_API_KEY"</code></pre>
+        <div class="callout warning"><strong>Do not use an admin API user by default.</strong>Create a normal API user with only the tables/actions needed by the integration. Store the key in a secret manager or protected environment variable.</div>
+        <h2 id="create-key">Create an API key in the UI</h2><ol><li>As an administrator, open <strong>API Access</strong>.</li><li>Select <strong>New API User</strong>.</li><li>Configure its access.</li><li>Select <strong>Generate API Key</strong>, then <strong>Copy API Key</strong>.</li><li>Store it securely and test <code>/restapi/ping</code>.</li></ol>
+        <h2 id="crud">CRUD entry point</h2><p>The supported generic entry point is <code>POST /restapi/crud/:table/:op</code>. The table, operation, request body, and resulting access are validated by the server and the API user permissions. Discover actual table and field names from the target instance; do not guess them.</p>
+        <pre><code>curl -X POST "https://YOUR-INSTANCE/restapi/crud/customers/read" \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: YOUR_API_KEY" \\
+  -d '{"filter":{"id":123}}'</code></pre>
+        <h2 id="errors">Responses and errors</h2><p>A missing route returns HTTP 404 with a JSON message. Validation/permission errors return their relevant status; unexpected failures return 500 with an error string. Treat non-2xx as failure and log the status plus a redacted response—never the API key or payment data.</p>
+        <h2 id="catalog">Supported route catalog</h2><p>This catalog covers the explicit REST surface found in the supplied source snapshot. Tenant permissions, feature flags, and gateway configuration still decide whether a call succeeds.</p><div data-catalog="api"></div>
+      `
+    },
+    cli: {
+      title: 'CLI, local setup, and instance operations', eyebrow: 'Command line',
+      summary: 'Install the supported runtime and services, migrate the database, run development or production, test, and create instances only on authorized infrastructure.',
+      html: String.raw`
+        <h2 id="requirements">Requirements from the supplied codebase</h2><ul><li>Node.js 18.20.5 or newer is recommended by the repository guide.</li><li>PostgreSQL 12 or newer.</li><li>Redis for sessions and caching.</li><li>Application configuration and environment values for the target instance.</li></ul>
+        <h2 id="install">Install and migrate</h2><pre><code>npm install
+cd app &amp;&amp; npm install &amp;&amp; cd ..
+npm run migrate</code></pre><p>Migration changes the database. Back up the intended database and verify the environment before running it outside development.</p>
+        <h2 id="run">Run the application</h2><div class="table-wrap"><table><thead><tr><th>Command</th><th>Purpose</th></tr></thead><tbody><tr><td><code>npm run start-dev</code></td><td>Development server with reload/debug behavior.</td></tr><tr><td><code>npm run compile</code></td><td>Compile web assets with Webpack.</td></tr><tr><td><code>npm run compile-prod</code></td><td>Compile production assets.</td></tr><tr><td><code>npm start</code></td><td>Install/verify PDF browser, compile, and start the PM2 ecosystem.</td></tr><tr><td><code>npm run start-prod</code></td><td>Start the production PM2 ecosystem after PDF-browser setup.</td></tr><tr><td><code>npm run desktop</code></td><td>Start the Electron desktop entry point when the desktop tree is present.</td></tr></tbody></table></div>
+        <h2 id="test">Tests</h2><pre><code>npm test
+npm run test-be
+npm run test-ad
+npm run test-unit
+npm run coverage</code></pre><p>The package also exposes front-end testing and coverage-report/badge tasks. A passing unit suite is not proof that payment gateways, mail/SMS providers, PDF browsers, or external integrations work end to end.</p>
+        <h2 id="instance">Create a new instance</h2><p><code>npm run new-instance</code> runs the interactive instance creator. It asks for subdomain, development/beta/production version, and an even available port; then it updates server mapping, creates a database, updates process configuration, and reloads Apache.</p>
+        <div class="callout warning"><strong>This is an infrastructure-changing command.</strong>Run it only on the authorized BizManage host after confirming DNS/subdomain, port, database naming, Apache mapping, and rollback plan.</div>
+        <h2 id="session-demo">Session demo helpers</h2><p><code>npm run session-demo:seed</code>, <code>:status</code>, and <code>:clean</code> manage repository-provided session demo data. Keep demo data away from production unless the script and target were explicitly reviewed.</p>
+      `
+    },
+    'webhooks-custom': {
+      title: 'Webhooks, custom scripts, pages, and integrations', eyebrow: 'Automation',
+      summary: 'Extend BizManage through controlled callbacks and custom logic while keeping tokens, data access, and public exposure narrow.',
+      html: String.raw`
+        <h2 id="webhooks">Webhooks</h2><ol><li>Open <strong>Webhooks</strong> and choose <strong>Add Webhook</strong>.</li><li>Select the section/event, destination, and required configuration.</li><li>Save it inactive when possible.</li><li>Use webhook details to verify the final configuration.</li><li>Activate it and test one safe event.</li><li>Check the destination and BizManage logs; remove/deactivate if incorrect.</li></ol>
+        <h2 id="incoming">Incoming provider webhooks</h2><p>Payment, SMS, mail, and subscription integrations register provider-specific callback routes. Use the exact URL generated/configured by the instance. Validate signatures/secrets where the provider and gateway support them.</p>
+        <h2 id="scripts">Backend scripts</h2><p>Administrators can create, edit, list, run, schedule/register, inspect logs, cancel running work, or regenerate a public token for a script. A script can change data or contact external systems depending on allowed modules.</p>
+        <div class="callout warning"><strong>Public script tokens grant access to the script route.</strong>Regenerate a token after possible exposure. Never log secrets or sensitive input. Validate request bodies and keep the script permission scope minimal.</div>
+        <h2 id="pages">Custom pages</h2><p>Create an Internal, Customer, or External page. Configure parameters and access policy, customize content, save, preview, then publish. External pages are internet-facing: test authentication/access, data returned, and mobile behavior before publishing.</p>
+        <h2 id="integrations">Service integrations</h2><p>The supplied source includes service connection flows such as QuickBooks and Microsoft-related services. The Services screen can Install, Connect, Disconnect, Edit Connection, Sync Company Info, Save Changes, and View Logs. Provider authorization and scopes determine the real access.</p>
+      `
+    },
+    actions: {
+      title: 'Every UI action found in the source snapshot', eyebrow: 'Button reference',
+      summary: 'Searchable inventory of buttons and links extracted from BizManage view templates, including screen, visible label or inferred icon action, and its bound UI behavior.',
+      html: String.raw`
+        <div class="callout info"><strong>How to read this catalog</strong>Custom actions, dynamic menus, permissions, feature flags, and tenant labels can add, remove, or rename controls. An Angular expression is shown as implementation evidence—not something to type into the UI.</div>
+        <div data-catalog="actions"></div>
+      `
+    },
+    troubleshooting: {
+      title: 'Troubleshoot without making things worse', eyebrow: 'Help',
+      summary: 'Use the smallest check that proves where the problem is: user permission, UI configuration, record data, browser state, server route, provider, or background work.',
+      html: String.raw`
+        <h2 id="missing">A page or button is missing</h2><ol><li>Confirm you are in the intended instance and account.</li><li>Check the user role and permission policy.</li><li>Check navigation/view customization and whether the action is conditional.</li><li>Open the same record/view as an authorized administrator.</li><li>If configuration changed, refresh or use the admin Clear Cache action.</li></ol>
+        <h2 id="save">Save did not work</h2><p>Look for required-field messages and the working indicator. Wait for the request to finish. If uncertain, close/reopen or refresh the record and check History. Do not repeat payments, sends, imports, or creates until you know the first request failed.</p>
+        <h2 id="api-error">API returns 401, 403, 404, or 500</h2><div class="table-wrap"><table><thead><tr><th>Status</th><th>Check</th></tr></thead><tbody><tr><td>401</td><td>Missing, invalid, expired, or incorrectly placed <code>x-api-key</code>.</td></tr><tr><td>403</td><td>API user lacks role/table/action permission.</td></tr><tr><td>404</td><td>Wrong instance, prefix, method, or route.</td></tr><tr><td>400/422</td><td>Missing/invalid field, operation, or request body.</td></tr><tr><td>500</td><td>Server/provider failure; record the time, route, safe request ID/context, and redacted error.</td></tr></tbody></table></div>
+        <h2 id="payment">Payment result is uncertain</h2><p>Stop. Check BizManage Transactions and the processor dashboard using the same amount/customer/time. Do not resubmit until you can prove the first request failed or was safely voided.</p>
+        <h2 id="provider">Email, SMS, AI, or integration fails</h2><p>Confirm the gateway is active/default, credentials and provider scopes are valid, usage/balance is available, recipient/input is valid, and the provider callback/webhook matches. Inspect the feature-specific logs without exposing secrets.</p>
+        <h2 id="support">What to include in a support request</h2><ul><li>Instance and page name (not credentials).</li><li>Your role and expected action.</li><li>Record ID and safe business context.</li><li>Exact time and timezone.</li><li>Steps taken and exact error text.</li><li>Whether refresh/reopen changed the result.</li><li>Redacted screenshot or request/response metadata.</li></ul>
+      `
+    },
+    glossary: {
+      title: 'BizManage glossary', eyebrow: 'Reference',
+      summary: 'Plain-language definitions for the concepts that appear across the UI, API, and administration screens.',
+      html: String.raw`
+        <div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody>
+          <tr><td>View</td><td>A table/list module and its configured fields, filters, forms, actions, and layouts.</td></tr><tr><td>Record</td><td>One row/entity, such as a customer, project, quote, or invoice.</td></tr><tr><td>Grid</td><td>A sortable/filterable table of records.</td></tr><tr><td>Dashboard</td><td>A summary page for one record or business area.</td></tr><tr><td>Form</td><td>The create/edit layout for a record.</td></tr><tr><td>Layout</td><td>An alternate presentation such as grid, Kanban, calendar, or map.</td></tr><tr><td>Action</td><td>A button or menu command that reads, changes, sends, generates, or navigates.</td></tr><tr><td>Rule</td><td>Configured validation or automation behavior attached to a view/field.</td></tr><tr><td>Template</td><td>Reusable structure/content for projects, documents, email, proposals, orders, or deliveries.</td></tr><tr><td>Gateway</td><td>A configured external provider for payments, SMS, or AI.</td></tr><tr><td>API user</td><td>A non-human identity authenticated with an API key.</td></tr><tr><td>Webhook</td><td>An HTTP callback sent when an event happens, or received from a provider.</td></tr><tr><td>Custom script</td><td>Administrator-authored backend logic with controlled helper access.</td></tr><tr><td>Archive</td><td>Hide from active use while preserving data.</td></tr><tr><td>Recycle Bin</td><td>Recoverable deleted record groups before permanent deletion.</td></tr><tr><td>Skill</td><td>Reusable instructions added to relevant BizManage AI calls.</td></tr><tr><td>Context ref</td><td>A controlled reference telling AI which CRM record data to load.</td></tr>
+        </tbody></table></div>
+      `
+    }
+  }
+};

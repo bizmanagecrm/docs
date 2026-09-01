@@ -1,0 +1,4211 @@
+{
+  "generatedFrom": "client/views",
+  "count": 841,
+  "actions": [
+    {
+      "screen": "active-cron-jobs-modal",
+      "label": "Close",
+      "action": "$close()"
+    },
+    {
+      "screen": "active-cron-jobs-modal",
+      "label": "Kill",
+      "action": "stopJob(job.jobName)"
+    },
+    {
+      "screen": "active-scripts-modal",
+      "label": "Close",
+      "action": "$close()"
+    },
+    {
+      "screen": "active-scripts-modal",
+      "label": "Kill",
+      "action": "cancelThread(script.start)"
+    },
+    {
+      "screen": "add-cust-be-scipts",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "add-cust-be-scipts",
+      "label": "Save",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "add-cust-filter",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "add-cust-filter",
+      "label": "Save",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "add-cust-section",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "add-cust-section",
+      "label": "Save",
+      "action": "submit($close, section)"
+    },
+    {
+      "screen": "add-edit-menu",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "add-edit-menu",
+      "label": "Choose action color",
+      "action": "button"
+    },
+    {
+      "screen": "add-edit-menu",
+      "label": "customColor ? 'Pick color' : 'Custom color'",
+      "action": "customColor = !customColor"
+    },
+    {
+      "screen": "add-edit-menu",
+      "label": "customIcon ? 'Pick icon' : 'Custom icon'",
+      "action": "customIcon = !customIcon"
+    },
+    {
+      "screen": "add-edit-menu",
+      "label": "menu.condition.useAdvanced ? 'Simple Condition' : 'Advanced Condition'",
+      "action": "menu.condition.useAdvanced = !menu.condition.useAdvanced"
+    },
+    {
+      "screen": "add-edit-menu",
+      "label": "Save",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "add-webhook",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "add-webhook",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "add-webhook",
+      "label": "wh.id ? \"Update Webhook\" : \"Save Webhook\"",
+      "action": "submit(wh)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Add Gateway",
+      "action": "sms_gateways.push({})"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Add record",
+      "action": "addRow('white')"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Add record",
+      "action": "addRow('black')"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Add record",
+      "action": "mail_domains.push({})"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Copy",
+      "action": "copyToClipboard(email_receiver.recipientEmail)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Create",
+      "action": "saveRow(setting)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Create",
+      "action": "saveRow(setting, 'black')"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Create",
+      "action": "createUpdateMailDomain(domain)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "create Sms Gateway",
+      "action": "createSmsGateway(sms_g)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Delete",
+      "action": "forceDelete(view_to_delete, id_to_delete)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Delete",
+      "action": "deleteRow(setting.id)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Delete",
+      "action": "deleteDomain(domain.id)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "delete Sms Gateway",
+      "action": "deleteSmsGateway(sms_g.id)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Fetch Files Still On Redis",
+      "action": "fetchRedisFiles()"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Fetch Files to upload",
+      "action": "getFilesToUpload()"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Go to Payment Gateways",
+      "action": "/admin#/payment-gateways/0"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "refresh Sms Gateway Status",
+      "action": "refreshSmsGatewayStatus(sms_g.id)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Save",
+      "action": "saveEmailReceiverSettings(email_receiver.enabled, email_receiver.script_name)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Save Changes",
+      "action": "editRow(setting)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Save Changes",
+      "action": "createUpdateMailDomain(domain)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Sync",
+      "action": "syncFile(file.id)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "Sync",
+      "action": "syncFile(id)"
+    },
+    {
+      "screen": "admin-tools",
+      "label": "view SMSDashboard",
+      "action": "viewSMSDashboard(sms_g.system_name, sms_g.id)"
+    },
+    {
+      "screen": "admin/add-edit-permission-policy",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "admin/add-edit-permission-policy",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "admin/add-edit-permission-policy",
+      "label": "CRUD",
+      "action": "addCrudException()"
+    },
+    {
+      "screen": "admin/add-edit-permission-policy",
+      "label": "remove Exception",
+      "action": "removeException($index)"
+    },
+    {
+      "screen": "admin/add-edit-permission-policy",
+      "label": "Save Policy",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "admin/add-edit-permission-policy",
+      "label": "URL",
+      "action": "addUrlException()"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "Add Gateway",
+      "action": "ai_gateways.push({config: {}, is_active: true})"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "Add Skill",
+      "action": "addAISkill()"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "create AIGateway",
+      "action": "createAIGateway(gw)"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "delete AIGateway",
+      "action": "deleteAIGateway(gw.id)"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "delete AISkill",
+      "action": "deleteAISkill(skill)"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "load AIRequests",
+      "action": "loadAIRequests()"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "load Models",
+      "action": "loadModels(gw); activeTab = 2"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "load Models",
+      "action": "loadModels(gw)"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "save AISkill",
+      "action": "saveAISkill(skill)"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "Save Defaults",
+      "action": "saveGatewayDefaults()"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "save Feature Models",
+      "action": "saveFeatureModels(gw)"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "save Model Config",
+      "action": "saveModelConfig(gw, model)"
+    },
+    {
+      "screen": "admin/ai-gateways",
+      "label": "set Default Model",
+      "action": "setDefaultModel(gw, model)"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "Cancel",
+      "action": "settings.openForm = false"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "Customize",
+      "action": "/admin/custom-pages/cp-editor/page.id"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "page params push",
+      "action": "page.params.push({})"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "page params splice",
+      "action": "page.params.splice($index, 1)"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "page.id ? 'Update Page' : 'Create Page'",
+      "action": "savePage()"
+    },
+    {
+      "screen": "admin/cust-page",
+      "label": "page.id ? 'Update' : 'Create'",
+      "action": "savePage()"
+    },
+    {
+      "screen": "admin/cust-pages",
+      "label": "admin",
+      "action": "/admin/custom-pages/cp-editor/page.id"
+    },
+    {
+      "screen": "admin/cust-pages",
+      "label": "Create Customer Page",
+      "action": "createPage(filters.accessPolicy)"
+    },
+    {
+      "screen": "admin/cust-pages",
+      "label": "Create External Page",
+      "action": "createPage(filters.accessPolicy)"
+    },
+    {
+      "screen": "admin/cust-pages",
+      "label": "Create Internal Page",
+      "action": "createPage(filters.accessPolicy)"
+    },
+    {
+      "screen": "admin/cust-report",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "admin/cust-report",
+      "label": "Save",
+      "action": "savePage()"
+    },
+    {
+      "screen": "admin/cust-reports",
+      "label": "Create Report",
+      "action": "createReport()"
+    },
+    {
+      "screen": "admin/cust-reports",
+      "label": "cust report",
+      "action": "/cust_report/editor/report.id"
+    },
+    {
+      "screen": "admin/cust-reports",
+      "label": "custom reports",
+      "action": "/#/custom-reports?report_id=report.id"
+    },
+    {
+      "screen": "admin/payment-gateways",
+      "label": "Add Gateway",
+      "action": "payment_gateways.push({config: {}})"
+    },
+    {
+      "screen": "admin/payment-gateways",
+      "label": "create Payment Gateway",
+      "action": "createPaymentGateway(pg)"
+    },
+    {
+      "screen": "admin/payment-gateways",
+      "label": "delete Payment Gateway",
+      "action": "deletePaymentGateway(pg.id)"
+    },
+    {
+      "screen": "admin/payment-gateways",
+      "label": "Manage Transaction Actions",
+      "action": "/admin#/customize-menu/payment_transaction"
+    },
+    {
+      "screen": "admin/payment-gateways",
+      "label": "open Payment Gateway Settings",
+      "action": "openPaymentGatewaySettings(pg)"
+    },
+    {
+      "screen": "admin/payment-gateways",
+      "label": "Save Action",
+      "action": "savePostPaymentAction()"
+    },
+    {
+      "screen": "admin/payment-gateways",
+      "label": "Save Defaults",
+      "action": "saveGatewayDefaults()"
+    },
+    {
+      "screen": "admin/permission-policies",
+      "label": "Add Policy",
+      "action": "#/permission-policy"
+    },
+    {
+      "screen": "admin/permission-policies",
+      "label": "permission policy",
+      "action": "#/permission-policy?policy_id=policy.id&allow=policy.allow_all&exc=policy.exceptions&name=policy.namepolicy.is_system ? '&system=true' : ''"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "25%",
+      "action": "applyWidthPreset(25)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "50%",
+      "action": "applyWidthPreset(50)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "75%",
+      "action": "applyWidthPreset(75)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Add column",
+      "action": "addColumn()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Align center",
+      "action": "applyAlign('center')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Align left",
+      "action": "applyAlign('left')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Align right",
+      "action": "applyAlign('right')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "c.label",
+      "action": "insertComponent(c.id)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "c.label",
+      "action": "insertLoop(c)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Clear",
+      "action": "clearPanelSearch('components')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Clear",
+      "action": "clearPanelSearch('layouts')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Clear",
+      "action": "clearPanelSearch('fields')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Clear",
+      "action": "clearPanelSearch('itemFields')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Clear",
+      "action": "clearPanelSearch('loops')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Clear",
+      "action": "clearPanelSearch('relatedData')"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Clear",
+      "action": "clearMulti()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Close",
+      "action": "closeAi()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "cls.name",
+      "action": "bulkToggleClass(cls.id)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "cls.name",
+      "action": "toggleClass(cls.id)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "create Class",
+      "action": "createClass()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Delete class",
+      "action": "deleteClass(cls)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Delete selected",
+      "action": "deleteMulti()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Diagnostics preview.diagnostics.length",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Edit style",
+      "action": "toggleClassEdit(cls.id)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Expand / collapse",
+      "action": "toggleLayer(row, $event)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Full",
+      "action": "applyWidthPreset(100)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Insert as a table with a header row of field labels",
+      "action": "insertLoopTable(c)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "l.label",
+      "action": "insertLayout(l.id)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "More",
+      "action": "toggleToolbarMenu($event)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "multiMode ? 'Done selecting' : 'Select elements'",
+      "action": "toggleMultiMode()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "multiMode ? 'Done selecting' : 'Select elements'",
+      "action": "toggleMultiMode(); toolbarMenuOpen = false"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Open preview",
+      "action": "openPreview()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "p.label",
+      "action": "addBinding(p)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Preview template",
+      "action": "previewTemplate()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Publish",
+      "action": "publish()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Redo",
+      "action": "redo()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Remove",
+      "action": "removeBinding(b)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Remove link",
+      "action": "removeLink()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Run checks",
+      "action": "runChecks()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Save draft",
+      "action": "saveDraft()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "selected.type === 'tokenChip' ? 'Remove token' : 'Remove block'",
+      "action": "deleteSelected()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "showLabels ? 'Hide labels' : 'Show labels'",
+      "action": "showLabels = !showLabels"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "showLabels ? 'Hide labels' : 'Show labels'",
+      "action": "showLabels = !showLabels; toolbarMenuOpen = false"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "showOutline ? 'Hide outlines' : 'Outline containers'",
+      "action": "showOutline = !showOutline"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "showOutline ? 'Hide outlines' : 'Outline containers'",
+      "action": "showOutline = !showOutline; toolbarMenuOpen = false"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "t.label t.type",
+      "action": "insertToken(t)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "t.label t.type",
+      "action": "insertItemToken(t)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "t.label t.type",
+      "action": "insertBindingToken(b, t)"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Template AI",
+      "action": "openAi()"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Template AI",
+      "action": "openAi(); toolbarMenuOpen = false"
+    },
+    {
+      "screen": "advanced-template-editor",
+      "label": "Undo",
+      "action": "undo()"
+    },
+    {
+      "screen": "advanced-template-preview",
+      "label": "downloadingPdf ? 'Preparing…' : 'Download PDF'",
+      "action": "downloadPdf()"
+    },
+    {
+      "screen": "advanced-template-preview",
+      "label": "Email",
+      "action": "setOutput('email')"
+    },
+    {
+      "screen": "advanced-template-preview",
+      "label": "PDF",
+      "action": "setOutput('pdf')"
+    },
+    {
+      "screen": "advanced-template-preview",
+      "label": "Refresh",
+      "action": "rerender()"
+    },
+    {
+      "screen": "advanced-template-preview",
+      "label": "sending ? 'Sending…' : 'Send draft'",
+      "action": "submit"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl archive Conversation",
+      "action": "$ctrl.archiveConversation()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl choose Files",
+      "action": "$ctrl.chooseFiles()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl close Conversation",
+      "action": "$ctrl.closeConversation()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl load Conversations",
+      "action": "$ctrl.loadConversations()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl load Messages",
+      "action": "$ctrl.loadMessages()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl new Conversation",
+      "action": "$ctrl.newConversation()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl remove Attachment",
+      "action": "$ctrl.removeAttachment(attachment)"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl scroll To Bottom",
+      "action": "$ctrl.scrollToBottom()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "$ctrl send",
+      "action": "$ctrl.send()"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Agent",
+      "action": "$ctrl.setChatMode('agent')"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "Ask",
+      "action": "$ctrl.setChatMode('ask')"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "conversation.title || ('Conversation #' + conversation.id) conversation.type || 'general' · $ctrl.formatTokens(conversation.stats.total_tokens) tokens · conversation.stats.tool_call_count tools · $ctrl.formatDate(conversation.last_message_at)",
+      "action": "$ctrl.selectConversation(conversation)"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "message.expanded ? 'Show less' : 'Show full message'",
+      "action": "$ctrl.toggleMessage(message)"
+    },
+    {
+      "screen": "ai-conversation-panel",
+      "label": "suggestion.label || suggestion.text || suggestion",
+      "action": "$ctrl.sendSuggestion(suggestion.text || suggestion)"
+    },
+    {
+      "screen": "apply-to-invoice",
+      "label": "Apply",
+      "action": "submit(data, applyInvcForm, $close)"
+    },
+    {
+      "screen": "apply-to-invoice",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "apps",
+      "label": "app",
+      "action": "/app"
+    },
+    {
+      "screen": "apps",
+      "label": "Kiosk",
+      "action": "/apps/kiosk"
+    },
+    {
+      "screen": "apps",
+      "label": "Monitor",
+      "action": "/apps/monitor"
+    },
+    {
+      "screen": "ask-for-help",
+      "label": "$close",
+      "action": "$close()"
+    },
+    {
+      "screen": "ask-for-help",
+      "label": "Submit",
+      "action": "submit"
+    },
+    {
+      "screen": "bills",
+      "label": "projectInfo.cust_id.name",
+      "action": "/#/projects/projectInfo.cust_id.id/cust/projectInfo.po ? 'true' : 'false'"
+    },
+    {
+      "screen": "bills",
+      "label": "projectInfo.name",
+      "action": "/#/general-dashboard/projects/projectInfo.id"
+    },
+    {
+      "screen": "bulk-change",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "bulk-change",
+      "label": "Update",
+      "action": "submit($close, data)"
+    },
+    {
+      "screen": "calendar",
+      "label": "$event stop Propagation",
+      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip()"
+    },
+    {
+      "screen": "calendar",
+      "label": "$event stop Propagation",
+      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip();archiveEvent(event.appointmentData)"
+    },
+    {
+      "screen": "calendar",
+      "label": "admin",
+      "action": "admin#/settings?tab=7"
+    },
+    {
+      "screen": "calendar",
+      "label": "calendarView.label",
+      "action": "toggleView(calendarView.value)"
+    },
+    {
+      "screen": "calendar",
+      "label": "child.title",
+      "action": "child.action(child)"
+    },
+    {
+      "screen": "calendar",
+      "label": "Create New event",
+      "action": "createNewEvent()"
+    },
+    {
+      "screen": "calendar",
+      "label": "Customer",
+      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip()"
+    },
+    {
+      "screen": "calendar",
+      "label": "event.appointmentData.done ? \"Not Done\" : \"Mark Done\"",
+      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip();markEventDone(event.appointmentData)"
+    },
+    {
+      "screen": "calendar",
+      "label": "getCalendarViewLabel()",
+      "action": "button"
+    },
+    {
+      "screen": "calendar",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "calendar",
+      "label": "Project",
+      "action": "$event.stopPropagation();scheduler.component.hideAppointmentTooltip()"
+    },
+    {
+      "screen": "calendar",
+      "label": "qa.title",
+      "action": "qa.action(qa)"
+    },
+    {
+      "screen": "calendar",
+      "label": "qa.title",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "calendar",
+      "label": "showAllCalendarEvents ? 'Compact events' : 'Show all events'",
+      "action": "toggleShowAllCalendarEvents()"
+    },
+    {
+      "screen": "calendar",
+      "label": "view === 'grid' ? 'Calendar' : 'Grid'",
+      "action": "toggleView(view === 'grid' ? 'month' : 'grid')"
+    },
+    {
+      "screen": "charge-cc",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "charge-cc",
+      "label": "Keep saved payment details",
+      "action": "clearReplacementPaymentDetails()"
+    },
+    {
+      "screen": "charge-cc",
+      "label": "processing ? 'Processing...' : submitLabel",
+      "action": "process(ccForm)"
+    },
+    {
+      "screen": "charge-cc",
+      "label": "Replace payment details",
+      "action": "enablePaymentDetailsReplacement()"
+    },
+    {
+      "screen": "clone-record",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "clone-record",
+      "label": "Clone",
+      "action": "doCopy()"
+    },
+    {
+      "screen": "color-theme-form",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "color-theme-form",
+      "label": "data colors push",
+      "action": "data.colors.push({})"
+    },
+    {
+      "screen": "color-theme-form",
+      "label": "data colors splice",
+      "action": "data.colors.splice($index, 1)"
+    },
+    {
+      "screen": "color-theme-form",
+      "label": "data.id ? \"Update\" : \"Add\"",
+      "action": "submit"
+    },
+    {
+      "screen": "comments",
+      "label": "$dismiss",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "comments",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "comments",
+      "label": "Cancel",
+      "action": "comment.edit = false"
+    },
+    {
+      "screen": "comments",
+      "label": "Save Comment",
+      "action": "saveComment(comment)"
+    },
+    {
+      "screen": "comments",
+      "label": "Save Private Comment",
+      "action": "saveComment(comment, true)"
+    },
+    {
+      "screen": "company-info",
+      "label": "Update Info",
+      "action": "submit"
+    },
+    {
+      "screen": "contacts",
+      "label": "bt.display_name (bt.out_of_count ? (bt.out_of_count + '/') : '' bt.count)",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "contacts",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "contacts",
+      "label": "page.customFilter",
+      "action": "customFilter()"
+    },
+    {
+      "screen": "contacts",
+      "label": "page.form",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "contacts",
+      "label": "page.upload",
+      "action": "upload()"
+    },
+    {
+      "screen": "contacts",
+      "label": "parentInfo.name",
+      "action": "/#/update/customers?id=parentInfo.id"
+    },
+    {
+      "screen": "cost-price",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "cost-price",
+      "label": "Update",
+      "action": "$close(data.listPrice)"
+    },
+    {
+      "screen": "create-invoice",
+      "label": "Add Item",
+      "action": "addItem(createInvoiceForm)"
+    },
+    {
+      "screen": "create-invoice",
+      "label": "Cancel",
+      "action": "$close()"
+    },
+    {
+      "screen": "create-invoice",
+      "label": "Create Invoice",
+      "action": "submit()"
+    },
+    {
+      "screen": "cust-rules",
+      "label": "Basic Unique",
+      "action": "addRule(selectedTable.internal_name, 'enforce_basic_unique_constraint')"
+    },
+    {
+      "screen": "cust-rules",
+      "label": "Complex Unique",
+      "action": "addRule(selectedTable.internal_name, 'enforce_unique_across')"
+    },
+    {
+      "screen": "cust-rules",
+      "label": "delete Field",
+      "action": "deleteField(rule, $index)"
+    },
+    {
+      "screen": "cust-rules",
+      "label": "Track Field",
+      "action": "addRule(selectedTable.internal_name, 'update_field_log')"
+    },
+    {
+      "screen": "cust-rules",
+      "label": "Watcher",
+      "action": "addRule(selectedTable.internal_name, 'update_field_notification')"
+    },
+    {
+      "screen": "custom-be-scripts",
+      "label": "'****' + script.token.slice(-4)",
+      "action": "copyToken(script.token)"
+    },
+    {
+      "screen": "custom-be-scripts",
+      "label": "Create Script",
+      "action": "addUpdateScript()"
+    },
+    {
+      "screen": "custom-be-scripts",
+      "label": "Reset Pool",
+      "action": "resetPool()"
+    },
+    {
+      "screen": "custom-be-scripts",
+      "label": "Running Cron Jobs",
+      "action": "openActiveCronJobsModal()"
+    },
+    {
+      "screen": "custom-be-scripts",
+      "label": "Running Scripts",
+      "action": "openActiveScriptsModal()"
+    },
+    {
+      "screen": "custom-filters",
+      "label": "add Update Filter",
+      "action": "addUpdateFilter(filter.name)"
+    },
+    {
+      "screen": "custom-filters",
+      "label": "Create Filter",
+      "action": "addUpdateFilter()"
+    },
+    {
+      "screen": "custom-filters",
+      "label": "delete Filter",
+      "action": "deleteFilter($index)"
+    },
+    {
+      "screen": "custom-filters",
+      "label": "hide Filter",
+      "action": "hideFilter(filter)"
+    },
+    {
+      "screen": "custom-reports",
+      "label": "Download",
+      "action": "execute(data, true)"
+    },
+    {
+      "screen": "custom-reports",
+      "label": "Execute",
+      "action": "execute(data, false)"
+    },
+    {
+      "screen": "custom-reports",
+      "label": "Toggle description",
+      "action": "isDescCollapsed = !isDescCollapsed"
+    },
+    {
+      "screen": "custom-reports",
+      "label": "View",
+      "action": "execute(data, false)"
+    },
+    {
+      "screen": "custom-text",
+      "label": "reset CT",
+      "action": "resetCT(ct)"
+    },
+    {
+      "screen": "custom-text",
+      "label": "Update",
+      "action": "submit(customText)"
+    },
+    {
+      "screen": "customer-dashboard",
+      "label": "update",
+      "action": "#/update/customers?id=customer.id"
+    },
+    {
+      "screen": "customer-form",
+      "label": "Add New Project automatically",
+      "action": "submit(record, 'addProject')"
+    },
+    {
+      "screen": "customer-form",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "customer-form",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "customer-form",
+      "label": "custId ? \"Update Customer\" : \"Save Customer\"",
+      "action": "submit"
+    },
+    {
+      "screen": "customer-form",
+      "label": "Go To New Project",
+      "action": "submit(record, 'goToNewProject')"
+    },
+    {
+      "screen": "customer-form",
+      "label": "Save & Go To Dashboard",
+      "action": "submit(record, 'goToDashboard')"
+    },
+    {
+      "screen": "customer-group",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "customer-group",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit(data)"
+    },
+    {
+      "screen": "customers",
+      "label": "Add Customer",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "customers",
+      "label": "admin",
+      "action": "admin#/settings?tab=1"
+    },
+    {
+      "screen": "customers",
+      "label": "bt.display_name (bt.out_of_count ? (bt.out_of_count + '/') : '' bt.count)",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "customers",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "customize-dashboard",
+      "label": "Add Section",
+      "action": "addSection(dashboard)"
+    },
+    {
+      "screen": "customize-dashboard",
+      "label": "delete Section",
+      "action": "deleteSection($index)"
+    },
+    {
+      "screen": "customize-dashboard",
+      "label": "Reset to Default",
+      "action": "resetDashboard()"
+    },
+    {
+      "screen": "customize-dashboard",
+      "label": "Save",
+      "action": "submit()"
+    },
+    {
+      "screen": "customize-dashboard",
+      "label": "section hide",
+      "action": "section.hide = !section.hide"
+    },
+    {
+      "screen": "customize-dashboard",
+      "label": "update Section",
+      "action": "updateSection(section)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Cancel",
+      "action": "cancel()"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Collapse all",
+      "action": "setAllSectionsCollapsed(true)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Copy",
+      "action": "copyToUser(from_user_id)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "create New",
+      "action": "createNew(link)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Drag to reorder",
+      "action": "button"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Expand all",
+      "action": "setAllSectionsCollapsed(false)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Link",
+      "action": "createNew()"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Link",
+      "action": "setType('link')"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "move To Root",
+      "action": "moveToRoot(child, $event)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Navigation Items",
+      "action": "activeConfigTab = 'items'"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "open Settings",
+      "action": "openSettings(link)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "open Settings",
+      "action": "openSettings(child)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "reset Left Panel",
+      "action": "resetLeftPanel()"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Save",
+      "action": "submit()"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Save Layout",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Section",
+      "action": "createSection()"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Section",
+      "action": "setType('section')"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "Settings",
+      "action": "activeConfigTab = 'settings'"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "toggle Link",
+      "action": "toggleLink(link)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "toggle Link",
+      "action": "toggleLink(child)"
+    },
+    {
+      "screen": "customize-left-panel",
+      "label": "toggle Section Collapse",
+      "action": "toggleSectionCollapse(link, $event)"
+    },
+    {
+      "screen": "customize-menu",
+      "label": "Add Action",
+      "action": "addMenu()"
+    },
+    {
+      "screen": "customize-menu",
+      "label": "add Menu",
+      "action": "addMenu(link)"
+    },
+    {
+      "screen": "customize-menu",
+      "label": "link.title",
+      "action": "link.type === 'custom-script' ? '/actions/ca-editor/' + view_name + '/' + link.action_name : 'javascript:;'"
+    },
+    {
+      "screen": "customize-menu",
+      "label": "remove Menu",
+      "action": "removeMenu(link)"
+    },
+    {
+      "screen": "customize-menu",
+      "label": "Reset Menu",
+      "action": "resetMenus()"
+    },
+    {
+      "screen": "dashboard-log-section",
+      "label": "Close",
+      "action": "$close()"
+    },
+    {
+      "screen": "delivery",
+      "label": "Apply",
+      "action": "applyTemplateOnOrder(template,$index)"
+    },
+    {
+      "screen": "delivery",
+      "label": "delivery.id ? 'Save' : 'Create Slip'",
+      "action": "generate()"
+    },
+    {
+      "screen": "delivery",
+      "label": "invoice.customer.name",
+      "action": "#/general-dashboard/customers/invoice.customer.id"
+    },
+    {
+      "screen": "delivery",
+      "label": "invoice.project.name",
+      "action": "#/general-dashboard/projects/invoice.project.id"
+    },
+    {
+      "screen": "delivery",
+      "label": "item.confirmed ? 'Cancel Confirmation' : 'Confirm'",
+      "action": "item.confirmed = !item.confirmed;"
+    },
+    {
+      "screen": "delivery-template",
+      "label": "Update Template",
+      "action": "updateTemplate()"
+    },
+    {
+      "screen": "edit-form",
+      "label": "$index || !field.width}\" class=\"btn btn-outline-secondary col py-0 px-1\">",
+      "action": "field.width = w;"
+    },
+    {
+      "screen": "edit-form",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "edit-form",
+      "label": "Learn more",
+      "action": "https://github.com/bizmanagrcrm/bmml/tree/main/conditions"
+    },
+    {
+      "screen": "edit-form",
+      "label": "Save",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "edit-project-quote",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "edit-project-quote",
+      "label": "Update",
+      "action": "$close(data)"
+    },
+    {
+      "screen": "edit-view",
+      "label": "(view.id || view.system) ? \"Update View\" : \"Create View\"",
+      "action": "submit(view, $close, viewForm)"
+    },
+    {
+      "screen": "edit-view",
+      "label": "1\" title=\"Remove sort rule\">",
+      "action": "view.orderBy.splice($index,1)"
+    },
+    {
+      "screen": "edit-view",
+      "label": "Basics",
+      "action": "viewTab = 0"
+    },
+    {
+      "screen": "edit-view",
+      "label": "Behavior",
+      "action": "viewTab = 1"
+    },
+    {
+      "screen": "edit-view",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "edit-view",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "edit-view",
+      "label": "Email",
+      "action": "viewTab = 2"
+    },
+    {
+      "screen": "edit-view",
+      "label": "Reset",
+      "action": "resetView()"
+    },
+    {
+      "screen": "edit-view",
+      "label": "Sort",
+      "action": "view.orderBy.push({column:'', order:'asc'})"
+    },
+    {
+      "screen": "email-editor",
+      "label": "Example",
+      "action": "insertExample()"
+    },
+    {
+      "screen": "email-editor",
+      "label": "Get Token",
+      "action": "openTokenPopup($event)"
+    },
+    {
+      "screen": "email-editor",
+      "label": "Raw HTML",
+      "action": "ui.raw=true"
+    },
+    {
+      "screen": "email-editor",
+      "label": "Save Template",
+      "action": "saveTemplate()"
+    },
+    {
+      "screen": "email-editor",
+      "label": "UI Builder",
+      "action": "ui.raw=false"
+    },
+    {
+      "screen": "email-template",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "email-template",
+      "label": "id ? \"Update\" : \"Add\"",
+      "action": "submit"
+    },
+    {
+      "screen": "email-templates",
+      "label": "Add Template",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "email-templates",
+      "label": "Edit",
+      "action": "#/email_templates-form/template.id"
+    },
+    {
+      "screen": "email-templates",
+      "label": "Edit (Advanced)",
+      "action": "#/advanced_templates/template.id"
+    },
+    {
+      "screen": "email-templates",
+      "label": "Edit Template",
+      "action": "#/email_templates/template.id"
+    },
+    {
+      "screen": "emails",
+      "label": "Compose",
+      "action": "compose()"
+    },
+    {
+      "screen": "emails",
+      "label": "Refresh",
+      "action": "refresh()"
+    },
+    {
+      "screen": "emails",
+      "label": "Send Reminder",
+      "action": "sendReminder(selectedItem.email)"
+    },
+    {
+      "screen": "emails",
+      "label": "Sort",
+      "action": "sort()"
+    },
+    {
+      "screen": "employee-form",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "employee-form",
+      "label": "empId ? \"Update\" : \"Add\"",
+      "action": "submit"
+    },
+    {
+      "screen": "employee-form",
+      "label": "Reset Password",
+      "action": "resetEmployeePassword(employee)"
+    },
+    {
+      "screen": "employees",
+      "label": "Add Employee",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "employees",
+      "label": "Create new User (old)",
+      "action": "/admin/create"
+    },
+    {
+      "screen": "employees",
+      "label": "Invite User to BizManage",
+      "action": "inviteUser()"
+    },
+    {
+      "screen": "employees",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "employees",
+      "label": "Who is now using the system?",
+      "action": "showLoggedIn()"
+    },
+    {
+      "screen": "event_priority",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "event_priority",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit(data)"
+    },
+    {
+      "screen": "event-type",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "event-type",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit(data)"
+    },
+    {
+      "screen": "express-invoice",
+      "label": "Add Item",
+      "action": "addItem(expressInvoiceForm)"
+    },
+    {
+      "screen": "express-invoice",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "express-invoice",
+      "label": "Cancel",
+      "action": "$close()"
+    },
+    {
+      "screen": "express-invoice",
+      "label": "Create Invoice",
+      "action": "submit(true)"
+    },
+    {
+      "screen": "express-invoice",
+      "label": "Create Proposal",
+      "action": "submit(false)"
+    },
+    {
+      "screen": "file_ext_types",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "file_ext_types",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit(data)"
+    },
+    {
+      "screen": "file-type",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "file-type",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit(data)"
+    },
+    {
+      "screen": "files",
+      "label": "admin",
+      "action": "admin#/settings?tab=6"
+    },
+    {
+      "screen": "files",
+      "label": "Cancel",
+      "action": "closeWindow(selectedFolder)"
+    },
+    {
+      "screen": "files",
+      "label": "doc.folder ? 'Open folder' : 'Open file'",
+      "action": "$event.stopPropagation(); handleDblClick(doc)"
+    },
+    {
+      "screen": "files",
+      "label": "files query",
+      "action": "files_query = ''"
+    },
+    {
+      "screen": "files",
+      "label": "fld.display_name",
+      "action": "openFolder(fld)"
+    },
+    {
+      "screen": "files",
+      "label": "projectInfo.customer.name",
+      "action": "#/general-dashboard/customers/projectInfo.cust_id"
+    },
+    {
+      "screen": "files",
+      "label": "projectInfo.name",
+      "action": "#/files?project_id=projectInfo.id&table=projects&folderId=null&parent_id=projectInfo.id"
+    },
+    {
+      "screen": "files",
+      "label": "Select",
+      "action": "closeWindow(selectedFolder)"
+    },
+    {
+      "screen": "files",
+      "label": "set View",
+      "action": "setView('grid')"
+    },
+    {
+      "screen": "files",
+      "label": "set View",
+      "action": "setView('list')"
+    },
+    {
+      "screen": "files",
+      "label": "Upload All",
+      "action": "uploadAll()"
+    },
+    {
+      "screen": "form",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "general-dashboard",
+      "label": "Configure Dashboard",
+      "action": "/admin#/cust-dashboard?viewName=dashboard.name"
+    },
+    {
+      "screen": "general-dashboard",
+      "label": "dashboard edit Link",
+      "action": "dashboard.editLink"
+    },
+    {
+      "screen": "grid-view",
+      "label": "add Contact",
+      "action": "addContact(selectedRow)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "add Event",
+      "action": "addEvent(selectedRow)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "archive",
+      "action": "archive(selectedRow)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "bt.display_name || bt.display (bt.out_of_count ? (bt.out_of_count + '/') : ''bt.count)",
+      "action": "bt.url || bt.link"
+    },
+    {
+      "screen": "grid-view",
+      "label": "child.title",
+      "action": "child.action(child)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "Close",
+      "action": "popup.show = false"
+    },
+    {
+      "screen": "grid-view",
+      "label": "comments",
+      "action": "#/comments/page.comments.table/selectedRow"
+    },
+    {
+      "screen": "grid-view",
+      "label": "Context action",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "grid-view",
+      "label": "edit",
+      "action": "edit(selectedRow)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "go To Form",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "grid-view",
+      "label": "layout.display_name || layout.internal_name",
+      "action": "openLayout(layout)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "Layouts",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "grid-view",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "grid-view",
+      "label": "page.copy",
+      "action": "copy(selectedRow)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "page.customFilter",
+      "action": "customFilter()"
+    },
+    {
+      "screen": "grid-view",
+      "label": "page.form",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "grid-view",
+      "label": "page.viewAll",
+      "action": "viewAll(selectedRow)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "qa.title",
+      "action": "qa.action(qa)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "qa.title",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "grid-view",
+      "label": "refresh Info",
+      "action": "refreshInfo(true)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "remove Qte",
+      "action": "removeQte(selectedRow)"
+    },
+    {
+      "screen": "grid-view",
+      "label": "Stop Loading",
+      "action": "stopLoadAll()"
+    },
+    {
+      "screen": "import-data",
+      "label": "Context action",
+      "action": "(field.match = field.match || []).push({});"
+    },
+    {
+      "screen": "import-data",
+      "label": "field match splice",
+      "action": "field.match.splice($index, 1);"
+    },
+    {
+      "screen": "import-data",
+      "label": "field.manual ? 'Use CSV column' : 'Use static value'",
+      "action": "field.manual = !field.manual"
+    },
+    {
+      "screen": "import-data",
+      "label": "m manual",
+      "action": "m.manual = !m.manual"
+    },
+    {
+      "screen": "import-data",
+      "label": "remove Upload File",
+      "action": "removeUploadFile()"
+    },
+    {
+      "screen": "import-data",
+      "label": "settings.currentStep === 2 ? 'Confirm & Save' : 'Continue'",
+      "action": "next()"
+    },
+    {
+      "screen": "import-data",
+      "label": "settings.currentStep === 2 ? 'Try Again' : settings.currentStep === 3 ? 'Done' : 'Cancel'",
+      "action": "settings.currentStep === 2 ? tryAgain() : exit()"
+    },
+    {
+      "screen": "import-results",
+      "label": "$dismiss",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "import-results",
+      "label": "copy Error",
+      "action": "copyError(activeError)"
+    },
+    {
+      "screen": "import-results",
+      "label": "error.title Code error.code error.count | number",
+      "action": "setActiveError(error)"
+    },
+    {
+      "screen": "import-results",
+      "label": "load",
+      "action": "load()"
+    },
+    {
+      "screen": "import-status",
+      "label": "Cancel Import",
+      "action": "cancel()"
+    },
+    {
+      "screen": "import-status",
+      "label": "Close",
+      "action": "close()"
+    },
+    {
+      "screen": "import-status",
+      "label": "Copy Link",
+      "action": "copy()"
+    },
+    {
+      "screen": "invoices",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "invoices",
+      "label": "projectInfo.cust_id.name",
+      "action": "/#/projects/projectInfo.cust_id.id/cust/projectInfo.po ? 'true' : 'false'"
+    },
+    {
+      "screen": "invoices",
+      "label": "projectInfo.name",
+      "action": "/#/general-dashboard/projects/projectInfo.id"
+    },
+    {
+      "screen": "items",
+      "label": "Add Item",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "items",
+      "label": "admin",
+      "action": "admin#/settings?tab=5"
+    },
+    {
+      "screen": "items",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "items",
+      "label": "Upload Items",
+      "action": "upload()"
+    },
+    {
+      "screen": "kanban",
+      "label": "Card Details",
+      "action": "cardDetails()"
+    },
+    {
+      "screen": "kanban",
+      "label": "Context action",
+      "action": "#"
+    },
+    {
+      "screen": "kanban",
+      "label": "Manage Columns",
+      "action": "manageColumns()"
+    },
+    {
+      "screen": "kanban-board",
+      "label": "+",
+      "action": "column.new_link"
+    },
+    {
+      "screen": "kanban-board",
+      "label": "card.title",
+      "action": "dblClickFn(card.row)"
+    },
+    {
+      "screen": "kanban-board",
+      "label": "Load More (column.cards.length/column.count)",
+      "action": "loadMore(column)"
+    },
+    {
+      "screen": "lines",
+      "label": "Add Cabinet Line",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "lines",
+      "label": "admin",
+      "action": "admin#/settings?tab=5"
+    },
+    {
+      "screen": "lines",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "manage-account",
+      "label": "Apply",
+      "action": "applyUserData(userData)"
+    },
+    {
+      "screen": "manage-account",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "manage-address",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "manage-address",
+      "label": "Submit",
+      "action": "submit(locationSettings, $close, addressForm)"
+    },
+    {
+      "screen": "manage-api",
+      "label": "API Docs",
+      "action": "https://documenter.getpostman.com/view/2111713/2s7YfScsp1"
+    },
+    {
+      "screen": "manage-api",
+      "label": "Copy API Key",
+      "action": "copyApiKey(user.api_key)"
+    },
+    {
+      "screen": "manage-api",
+      "label": "New Admin API User",
+      "action": "createApiUser('admin')"
+    },
+    {
+      "screen": "manage-api",
+      "label": "New API User",
+      "action": "createApiUser()"
+    },
+    {
+      "screen": "manage-api",
+      "label": "Show calls count",
+      "action": "loadCallsCount(user)"
+    },
+    {
+      "screen": "manage-api",
+      "label": "user.api_key ? 'Reg' : 'G'enerate API Key",
+      "action": "generateApiKey(user)"
+    },
+    {
+      "screen": "manage-field",
+      "label": "Advanced",
+      "action": "fieldTab = 'advanced'"
+    },
+    {
+      "screen": "manage-field",
+      "label": "Basics",
+      "action": "fieldTab = 'basic'"
+    },
+    {
+      "screen": "manage-field",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "manage-field",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "manage-field",
+      "label": "Display",
+      "action": "fieldTab = 'display'"
+    },
+    {
+      "screen": "manage-field",
+      "label": "Sort",
+      "action": "field.vals = field.vals.sort()"
+    },
+    {
+      "screen": "manage-field",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit(field)"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "button.create.display_name",
+      "action": "editSaveBtn(viewName, form.form_name, button.internal_name)"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "Create New Button",
+      "action": "editSaveBtn(viewName, form.form_name)"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "Create New Form",
+      "action": "createUpdateForm()"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "create Update Form",
+      "action": "createUpdateForm(form)"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "edit form",
+      "action": "#/edit-form?viewName=viewName&formName=form.form_name"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "form.id ? \"Update\" : \"Create\"",
+      "action": "submit()"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "reset Form",
+      "action": "resetForm(viewName, form.form_name)"
+    },
+    {
+      "screen": "manage-forms",
+      "label": "set Default Form",
+      "action": "setDefaultForm(viewName, form.form_name)"
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "Choose section color",
+      "action": "button"
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "customColor ? 'Pick color' : 'Custom color'",
+      "action": "customColor = !customColor"
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "customIcon ? 'Pick icon' : 'Custom icon'",
+      "action": "customIcon = !customIcon"
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "delete Section",
+      "action": "deleteSection(section)"
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "section",
+      "action": "section = {}"
+    },
+    {
+      "screen": "manage-menu-sections",
+      "label": "section.action_name ? \"Update\" : \"Add\"",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "manage-rules",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "manage-rules",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit()"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Action Sections",
+      "action": "#/manage-menu-sections?view=selectedTable.internal_name"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Actions",
+      "action": "manageMenu(selectedTable.internal_name)"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Add Field",
+      "action": "addField(selectedTable.internal_name)"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Address",
+      "action": "#/manage-address?viewName=selectedTable.internal_name"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Clear Cache",
+      "action": "clearCache(selectedTable.internal_name)"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Dashboard",
+      "action": "#/cust-dashboard?viewName=selectedTable.internal_name"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Filters",
+      "action": "#/cust-filters?viewName=selectedTable.internal_name"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Layouts",
+      "action": "manageLayouts(selectedTable.internal_name)"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Manage Forms",
+      "action": "#/manage-forms/selectedTable.internal_name?display_name=selectedTable.display_name"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Open view tools",
+      "action": "button"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Rules",
+      "action": "#/cust-rules?view=selectedTable.internal_name"
+    },
+    {
+      "screen": "manage-view",
+      "label": "Sub Views",
+      "action": "#/sub-views?view=selectedTable.internal_name"
+    },
+    {
+      "screen": "manage-view",
+      "label": "View Tools",
+      "action": "#/edit-view?viewName=selectedTable.internal_name"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Action Sections",
+      "action": "#/manage-menu-sections?view=table.internal_name"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Actions",
+      "action": "manageMenu(table.internal_name)"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Add Custom View",
+      "action": "addView()"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Address",
+      "action": "#/manage-address?viewName=table.internal_name"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Clear Cache",
+      "action": "clearCache(table.internal_name)"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Dashboard",
+      "action": "manageDashboard(table.internal_name)"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Fields And More",
+      "action": "choseView(table.internal_name)"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Filters",
+      "action": "#/cust-filters?viewName=table.internal_name"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Forms",
+      "action": "#/manage-forms/table.internal_name?display_name=table.display_name"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Layouts",
+      "action": "manageLayouts(table.internal_name)"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Open view tools",
+      "action": "button"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Rules",
+      "action": "#/cust-rules?view=table.internal_name"
+    },
+    {
+      "screen": "manage-views",
+      "label": "Sub Views",
+      "action": "#/sub-views?view=table.internal_name"
+    },
+    {
+      "screen": "manage-views",
+      "label": "View Settings",
+      "action": "manageView(table.internal_name)"
+    },
+    {
+      "screen": "manage-webhooks",
+      "label": "Add Webhook",
+      "action": "addUpdateWebhook()"
+    },
+    {
+      "screen": "map-view",
+      "label": "Context action",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "map-view",
+      "label": "go To Form",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "map-view",
+      "label": "page.customFilter",
+      "action": "customFilter()"
+    },
+    {
+      "screen": "map-view",
+      "label": "page.form",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "merge_units",
+      "label": "Merge All Units",
+      "action": "mergeUnits(true)"
+    },
+    {
+      "screen": "merge_units",
+      "label": "Merge Unit",
+      "action": "mergeUnits()"
+    },
+    {
+      "screen": "not-found",
+      "label": "Go back",
+      "action": "goBack()"
+    },
+    {
+      "screen": "order",
+      "label": "Apply",
+      "action": "applyTemplateOnOrder(template,$index)"
+    },
+    {
+      "screen": "order",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "order",
+      "label": "delete Order Item",
+      "action": "deleteOrderItem(item)"
+    },
+    {
+      "screen": "order",
+      "label": "Generate PO For All Vendors",
+      "action": "generateAll(mainForm)"
+    },
+    {
+      "screen": "order",
+      "label": "Hide All",
+      "action": "hideWhowAllTop(false)"
+    },
+    {
+      "screen": "order",
+      "label": "orderId ? 'Update PO' : 'Generate PO'",
+      "action": "generateUpdateOrder(vendor, false, orderForm)"
+    },
+    {
+      "screen": "order",
+      "label": "orderId ? 'Update PO' : 'Generate PO' & Send",
+      "action": "generateUpdateOrder(vendor, 'email', orderForm)"
+    },
+    {
+      "screen": "order",
+      "label": "Show All",
+      "action": "hideWhowAllTop(true)"
+    },
+    {
+      "screen": "order-template",
+      "label": "Update Template",
+      "action": "updateTemplate()"
+    },
+    {
+      "screen": "payment_gateway_settings/banquest-settings",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "payment_gateway_settings/banquest-settings",
+      "label": "Save",
+      "action": "submit($close, gateway)"
+    },
+    {
+      "screen": "payment_gateway_settings/cardknox-settings",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "payment_gateway_settings/cardknox-settings",
+      "label": "Save",
+      "action": "submit($close, gateway)"
+    },
+    {
+      "screen": "payment_gateway_settings/jackhenry-settings",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "payment_gateway_settings/jackhenry-settings",
+      "label": "Save",
+      "action": "submit($close, gateway)"
+    },
+    {
+      "screen": "payment_gateway_settings/stripe-settings",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "payment_gateway_settings/stripe-settings",
+      "label": "Import Payment Methods from Stripe",
+      "action": "importPaymentMethods(importer)"
+    },
+    {
+      "screen": "payment_gateway_settings/stripe-settings",
+      "label": "reconnecting ? 'Reconnecting...' : 'Reconnect Stripe Webhook'",
+      "action": "reconnectWebhook()"
+    },
+    {
+      "screen": "payment_gateway_settings/stripe-settings",
+      "label": "Save",
+      "action": "submit($close, gateway)"
+    },
+    {
+      "screen": "payment_gateway_settings/usa_epay-settings",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "payment_gateway_settings/usa_epay-settings",
+      "label": "Save",
+      "action": "submit($close, gateway)"
+    },
+    {
+      "screen": "project-dashboard",
+      "label": "archive",
+      "action": "archive()"
+    },
+    {
+      "screen": "project-dashboard",
+      "label": "complete Project",
+      "action": "completeProject()"
+    },
+    {
+      "screen": "project-dashboard",
+      "label": "projects",
+      "action": "#/projects/form/project.id?custid=project.customer.id"
+    },
+    {
+      "screen": "project-dashboard",
+      "label": "start Project",
+      "action": "startProject(project.id, project.project_status)"
+    },
+    {
+      "screen": "project-form",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "project-form",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "project-form",
+      "label": "Create",
+      "action": "submit(record, projectForm)"
+    },
+    {
+      "screen": "project-form",
+      "label": "Create & Start",
+      "action": "submit(record, projectForm, '', true)"
+    },
+    {
+      "screen": "project-form",
+      "label": "Save",
+      "action": "submit(record, projectForm)"
+    },
+    {
+      "screen": "project-form",
+      "label": "Save & Close",
+      "action": "submit(record, projectForm)"
+    },
+    {
+      "screen": "project-form",
+      "label": "Save & Continue",
+      "action": "submit(record, projectForm,'project_plan',false)"
+    },
+    {
+      "screen": "project-form",
+      "label": "Save & Go To Dashbaord",
+      "action": "submit(record, projectForm,'dashbaord',false)"
+    },
+    {
+      "screen": "project-form",
+      "label": "Save & Start & Close",
+      "action": "submit(record, projectForm, false, true)"
+    },
+    {
+      "screen": "project-form",
+      "label": "Save & Start & Go To Dashboard",
+      "action": "submit(record, projectForm, 'dashbaord', true)"
+    },
+    {
+      "screen": "project-plan",
+      "label": "Apply",
+      "action": "applyTemplate(projectTemplate)"
+    },
+    {
+      "screen": "project-plan",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "project-plan",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "project-plan",
+      "label": "Save",
+      "action": "submit(false,true)"
+    },
+    {
+      "screen": "project-plan",
+      "label": "Save & Go To Dashboard",
+      "action": "submit()"
+    },
+    {
+      "screen": "project-plan",
+      "label": "Save & Start & Dashboard",
+      "action": "submit(true)"
+    },
+    {
+      "screen": "project-plan",
+      "label": "Save & Start Project",
+      "action": "submit(true, false)"
+    },
+    {
+      "screen": "projects",
+      "label": "Add Customer",
+      "action": "#/add/customers"
+    },
+    {
+      "screen": "projects",
+      "label": "admin",
+      "action": "admin#/settings?tab=2"
+    },
+    {
+      "screen": "projects",
+      "label": "All Projects (totalProjects)",
+      "action": "updateParams({gridName : 'all_projects'})"
+    },
+    {
+      "screen": "projects",
+      "label": "Create New Project",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "projects",
+      "label": "Invoices (totalInvoices || 0)",
+      "action": "/#invoices/selectedRow.id"
+    },
+    {
+      "screen": "projects",
+      "label": "Leads (totalLeads)",
+      "action": "updateParams({gridName : 'leads_projects'})"
+    },
+    {
+      "screen": "projects",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "projects",
+      "label": "Orders (totalOrders || 0)",
+      "action": "/#orders?projectId=selectedRow.id"
+    },
+    {
+      "screen": "projects",
+      "label": "PO's (totalPos)",
+      "action": "updateParams({gridName : 'po_projects'})"
+    },
+    {
+      "screen": "projects",
+      "label": "Proposals (totalProposals || 0)",
+      "action": "/#proposals/selectedRow.id"
+    },
+    {
+      "screen": "projects",
+      "label": "Quotes (finalQuotesCount/quotesCount )",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "proposal",
+      "label": "add File",
+      "action": "addFile()"
+    },
+    {
+      "screen": "proposal",
+      "label": "add Plan",
+      "action": "addPlan(quote, plan.type)"
+    },
+    {
+      "screen": "proposal",
+      "label": "Apply",
+      "action": "applyTemplateOnProposal(template)"
+    },
+    {
+      "screen": "proposal",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "proposal",
+      "label": "Display All",
+      "action": "toggleHideAll(true)"
+    },
+    {
+      "screen": "proposal",
+      "label": "Hide All",
+      "action": "toggleHideAll(false)"
+    },
+    {
+      "screen": "proposal",
+      "label": "manage Item Fields",
+      "action": "manageItemFields(settings.quotes[quote.id].units[unit.id].cats[cat.id].lines[line.line.id].item_fields)"
+    },
+    {
+      "screen": "proposal",
+      "label": "proposal.project.customer.name",
+      "action": "#/general-dashboard/customers/proposal.project.customer.id"
+    },
+    {
+      "screen": "proposal",
+      "label": "proposal.project.name",
+      "action": "#/general-dashboard/projects/proposal.project.id"
+    },
+    {
+      "screen": "proposal",
+      "label": "proposalId ? 'Update' : 'Genrate' Proposal",
+      "action": "generateProposal()"
+    },
+    {
+      "screen": "proposal",
+      "label": "proposalId ? 'Update' : 'Genrate' Proposal & Send",
+      "action": "generateProposal('email')"
+    },
+    {
+      "screen": "proposal",
+      "label": "proposalId ? 'Update' : 'Genrate' Proposal & View",
+      "action": "generateProposal('view')"
+    },
+    {
+      "screen": "proposal",
+      "label": "Quote - #quote.id - quote.name",
+      "action": "#/general-dashboard/quotes/quote.id"
+    },
+    {
+      "screen": "proposal",
+      "label": "remove File",
+      "action": "removeFile($index)"
+    },
+    {
+      "screen": "proposal",
+      "label": "remove Plan",
+      "action": "removePlan(quote.id, $index)"
+    },
+    {
+      "screen": "proposal",
+      "label": "Reset",
+      "action": "resetPaymentPlan()"
+    },
+    {
+      "screen": "proposal",
+      "label": "settings.quotes.showInvisable ? 'Show Hidden Quotes' : 'Hide Hidden Quotes'",
+      "action": "settings.quotes.showInvisable = !settings.quotes.showInvisable"
+    },
+    {
+      "screen": "proposal-template",
+      "label": "+ Add Special Category",
+      "action": "addSpecialCategory(selectedCat)"
+    },
+    {
+      "screen": "proposal-template",
+      "label": "manage Item Fields",
+      "action": "manageItemFields(settings.item_fields)"
+    },
+    {
+      "screen": "proposal-template",
+      "label": "manage Item Fields",
+      "action": "manageItemFields(settings.special_cats[special_cat_id].item_fields)"
+    },
+    {
+      "screen": "proposal-template",
+      "label": "page layout settings collapsed all cats",
+      "action": "page_layout_settings.collapsed.all_cats = !page_layout_settings.collapsed.all_cats"
+    },
+    {
+      "screen": "proposal-template",
+      "label": "page layout settings collapsed special cats",
+      "action": "page_layout_settings.collapsed.special_cats[special_cat_id] = !page_layout_settings.collapsed.special_cats[special_cat_id]"
+    },
+    {
+      "screen": "proposal-template",
+      "label": "remove Special Category",
+      "action": "removeSpecialCategory(special_cat_id)"
+    },
+    {
+      "screen": "proposal-template",
+      "label": "Update Template",
+      "action": "updateTemplate()"
+    },
+    {
+      "screen": "proposals",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "proposals",
+      "label": "projectInfo.customer.name",
+      "action": "/#/projects/projectInfo.customer.id/cust/projectInfo.po ? 'true' : 'false'"
+    },
+    {
+      "screen": "proposals",
+      "label": "projectInfo.name",
+      "action": "/#/general-dashboard/projects/projectInfo.id"
+    },
+    {
+      "screen": "quote",
+      "label": "Add Item",
+      "action": "addItemToUnit()"
+    },
+    {
+      "screen": "quote",
+      "label": "Add Items To All Linked",
+      "action": "addItemToUnit(true)"
+    },
+    {
+      "screen": "quote",
+      "label": "Add items to this unit",
+      "action": "openItemsToUnit(unit.id)"
+    },
+    {
+      "screen": "quote",
+      "label": "Add Unit",
+      "action": "addEditUnit()"
+    },
+    {
+      "screen": "quote",
+      "label": "Apply markup To all Items",
+      "action": "applyMarkupAll()"
+    },
+    {
+      "screen": "quote",
+      "label": "Apply To all Items",
+      "action": "applyMarkup(mkup)"
+    },
+    {
+      "screen": "quote",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "quote",
+      "label": "full Screen Items",
+      "action": "fullScreenItems()"
+    },
+    {
+      "screen": "quote",
+      "label": "gridControl.items.hidden ? \"View Table\" : \"Hide Table\"",
+      "action": "toggleGridHidden(gridControl.items, 'items', selection.unit)"
+    },
+    {
+      "screen": "quote",
+      "label": "Next",
+      "action": "nextAccordion(4, $event)"
+    },
+    {
+      "screen": "quote",
+      "label": "Next",
+      "action": "nextAccordion(5, $event)"
+    },
+    {
+      "screen": "quote",
+      "label": "Next 2. Quote Information Quote Name Note Next 3. Quote Settings selection.numberToAdd Default Tax Rate % Apply To all Items",
+      "action": "nextAccordion(1, $event)"
+    },
+    {
+      "screen": "quote",
+      "label": "Next 4. Units Name Quantity Installation Sale Shipping Total Items Incorrect Items unit.name unit.qty | number : 0 unit.installation | number : 2 unit.shipping | number : 2 getItemsInUnit(unit) | number : 2 getItemsInUnitIncorrect(unit.id) | number : 2 Edit unit",
+      "action": "nextAccordion(3, $event)"
+    },
+    {
+      "screen": "quote",
+      "label": "projectInfo.cust_id.name",
+      "action": "#/general-dashboard/customers/projectInfo.cust_id.id"
+    },
+    {
+      "screen": "quote",
+      "label": "projectInfo.name",
+      "action": "#/general-dashboard/projects/projectInfo.id"
+    },
+    {
+      "screen": "quote",
+      "label": "Quick Enter",
+      "action": "quickEnter()"
+    },
+    {
+      "screen": "quote",
+      "label": "remove Def From Quote",
+      "action": "removeDefFromQuote(quote.defaults, def)"
+    },
+    {
+      "screen": "quote",
+      "label": "selection.itemInEditMode ? \"Save item\" : \"Add item\"",
+      "action": "addItemToUnit()"
+    },
+    {
+      "screen": "quote",
+      "label": "Show All Items",
+      "action": "filterApplied(false, true)"
+    },
+    {
+      "screen": "quote",
+      "label": "update Cust Project",
+      "action": "updateCustProject()"
+    },
+    {
+      "screen": "quote-result",
+      "label": "1\">Combine",
+      "action": "combineItems(selectedRows)"
+    },
+    {
+      "screen": "quote-result",
+      "label": "By Vendor",
+      "action": "#/reports/grouped/quotes/by_vendor/quote.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "Change List Price",
+      "action": "ChangeListCostPrice()"
+    },
+    {
+      "screen": "quote-result",
+      "label": "Edit Quote",
+      "action": "editQuote(quote)"
+    },
+    {
+      "screen": "quote-result",
+      "label": "Generate Order",
+      "action": "/#/order/quote.project.id?quoteId=quote.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "Generate Proposal",
+      "action": "/#/proposal/quote.project.id?quotes=quote.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "Quote Items",
+      "action": "#/reports/list/quotes/sort_by_vendor/quote.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "quote.contact.name",
+      "action": "#/contact/quote.contact.id/edit"
+    },
+    {
+      "screen": "quote-result",
+      "label": "quote.customer.employeesdata.name",
+      "action": "#/employees/form/quote.customer.employeesdata.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "quote.customer.name",
+      "action": "#/general-dashboard/customers/quote.customer.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "quote.project_status.name",
+      "action": "#/projects/change-status/quote.project.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "quote.project.name",
+      "action": "#/general-dashboard/projects/quote.project.id"
+    },
+    {
+      "screen": "quote-result",
+      "label": "Reports",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "quote-result",
+      "label": "Reverse Final",
+      "action": "unFinal()"
+    },
+    {
+      "screen": "quote-result",
+      "label": "View groupByCats ? 'By Units' : 'By Categories'",
+      "action": "changeView()"
+    },
+    {
+      "screen": "quote-result",
+      "label": "View Invoice",
+      "action": "/public/quote.invoice.url"
+    },
+    {
+      "screen": "quote-v2",
+      "label": "Apply",
+      "action": "applyDefault(quotePageSettings.quote_default)"
+    },
+    {
+      "screen": "quote-v2",
+      "label": "Cancel",
+      "action": "quotePageSettings.isSidePanelOpen = false"
+    },
+    {
+      "screen": "quote-v2",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "quote-v2",
+      "label": "quick Enter",
+      "action": "quickEnter()"
+    },
+    {
+      "screen": "quote-v2",
+      "label": "quoteItemRecord.id ? 'Update' : 'Add'",
+      "action": "saveQuoteItem(quoteItemRecord, quoteItemForm)"
+    },
+    {
+      "screen": "quote-v2",
+      "label": "Save",
+      "action": "saveQuote(data, quoteForm)"
+    },
+    {
+      "screen": "quote-v2",
+      "label": "Save Filter Group",
+      "action": "saveDefault(quoteItemRecord.vendor_name, quoteItemRecord.cat_name, quoteItemRecord.line_name)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Add Item",
+      "action": "addItemToUnit()"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Add Items To All Linked",
+      "action": "addItemToUnit(true)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Add items to this unit",
+      "action": "openItemsToUnit(unit.id)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Add Unit",
+      "action": "addEditUnit()"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Apply markup To all Items",
+      "action": "applyMarkupAll()"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Apply To all Items",
+      "action": "applyMarkup(mkup)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "full Screen Items",
+      "action": "fullScreenItems()"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "gridControl.items.hidden ? \"View Table\" : \"Hide Table\"",
+      "action": "toggleGridHidden(gridControl.items, 'items', selection.unit)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Next",
+      "action": "nextAccordion(4, $event)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Next",
+      "action": "nextAccordion(5, $event)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Next 2. Quote Information Quote Name Note Next 3. Quote Settings selection.numberToAdd Default Tax Rate % Apply To all Items",
+      "action": "nextAccordion(1, $event)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Next 4. Units Name Quantity Installation Sale Shipping Total Items Incorrect Items unit.name unit.qty | number : 0 unit.installation | number : 2 unit.shipping | number : 2 getItemsInUnit(unit) | number : 2 getItemsInUnitIncorrect(unit.id) | number : 2 Edit unit",
+      "action": "nextAccordion(3, $event)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "projectInfo.cust_id.name",
+      "action": "#/general-dashboard/customers/projectInfo.cust_id.id"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "projectInfo.name",
+      "action": "#/general-dashboard/projects/projectInfo.id"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Quick Enter",
+      "action": "quickEnter()"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "remove Def From Quote",
+      "action": "removeDefFromQuote(quote.defaults, def)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "selection.itemInEditMode ? \"Save item\" : \"Add item\"",
+      "action": "addItemToUnit()"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "Show All Items",
+      "action": "filterApplied(false, true)"
+    },
+    {
+      "screen": "quote-v3",
+      "label": "update Cust Project",
+      "action": "updateCustProject()"
+    },
+    {
+      "screen": "quotes",
+      "label": "Generate Quote",
+      "action": "generateQuote(projectInfo.id)"
+    },
+    {
+      "screen": "quotes",
+      "label": "Invoices",
+      "action": "/#invoices/selectedRow.project"
+    },
+    {
+      "screen": "quotes",
+      "label": "Load All",
+      "action": "loadAll()"
+    },
+    {
+      "screen": "quotes",
+      "label": "Orders",
+      "action": "/#orders?quote=selectedRow.id"
+    },
+    {
+      "screen": "quotes",
+      "label": "Proposals",
+      "action": "/#proposals/selectedRow.project"
+    },
+    {
+      "screen": "recycle-bin-all",
+      "label": "See Details",
+      "action": "#/recycle-bin-detail/view.internal_name"
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "Delete Forever",
+      "action": "deleteForever(rec)"
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "Delete selected.length === 0 ? 'All' : 'Selected (' + selected.length + ')'",
+      "action": "deleteAll()"
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "Restore",
+      "action": "restore(rec.group_id)"
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "Restore selected.length === 0 ? 'All' : 'Selected (' + selected.length + ')'",
+      "action": "restoreAll()"
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "Show/Hide Columns",
+      "action": "showColumnToggle = !showColumnToggle"
+    },
+    {
+      "screen": "recycle-bin-detail",
+      "label": "showOnlyNonEmpty ? 'Showing' : 'Show' Only Non-Empty",
+      "action": "toggleNonEmptyColumnsFilter()"
+    },
+    {
+      "screen": "refund",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "refund",
+      "label": "Process refund",
+      "action": "process(ccForm, payment)"
+    },
+    {
+      "screen": "reports/grouped",
+      "label": "Accordion Style",
+      "action": "viewType = 'accordion'"
+    },
+    {
+      "screen": "reports/grouped",
+      "label": "Grid Style",
+      "action": "tableStyle = 'grid'"
+    },
+    {
+      "screen": "reports/grouped",
+      "label": "List Style",
+      "action": "tableStyle = 'list'"
+    },
+    {
+      "screen": "reports/grouped",
+      "label": "Tabs Style",
+      "action": "viewType = 'tabs'"
+    },
+    {
+      "screen": "reports/list",
+      "label": "Grid Style",
+      "action": "tableStyle = 'grid'"
+    },
+    {
+      "screen": "reports/list",
+      "label": "List Style",
+      "action": "tableStyle = 'list'"
+    },
+    {
+      "screen": "requests",
+      "label": "Submit",
+      "action": "submit"
+    },
+    {
+      "screen": "script-run-logs",
+      "label": "Close",
+      "action": "$close()"
+    },
+    {
+      "screen": "script-run-logs",
+      "label": "Print to console",
+      "action": "logData(log.data)"
+    },
+    {
+      "screen": "services",
+      "label": "Connect",
+      "action": "connectToApp(service.name)"
+    },
+    {
+      "screen": "services",
+      "label": "Disconnect",
+      "action": "disconnectApp(service)"
+    },
+    {
+      "screen": "services",
+      "label": "Edit Connection",
+      "action": "editConnection(service.name)"
+    },
+    {
+      "screen": "services",
+      "label": "Install",
+      "action": "installApp(service.name)"
+    },
+    {
+      "screen": "services",
+      "label": "service.display_name service.installed ? (service.active ? 'Activated' : 'Installed') : 'Not Installed'",
+      "action": "service.$open = !service.$open"
+    },
+    {
+      "screen": "services",
+      "label": "View Logs",
+      "action": "editConnection(service.name)"
+    },
+    {
+      "screen": "settings",
+      "label": "Create new Creating…",
+      "action": "createNew(t)"
+    },
+    {
+      "screen": "settings",
+      "label": "Edit selected",
+      "action": "editSelected(t)"
+    },
+    {
+      "screen": "settings",
+      "label": "Update Settings",
+      "action": "submit"
+    },
+    {
+      "screen": "status-form",
+      "label": "add Emp St",
+      "action": "addEmpSt()"
+    },
+    {
+      "screen": "status-form",
+      "label": "Cancel",
+      "action": "goBack()"
+    },
+    {
+      "screen": "status-form",
+      "label": "go Back",
+      "action": "goBack()"
+    },
+    {
+      "screen": "status-form",
+      "label": "remove Emp St",
+      "action": "removeEmpSt($index)"
+    },
+    {
+      "screen": "status-form",
+      "label": "update ? \"Update\" : \"Add\"",
+      "action": "submit"
+    },
+    {
+      "screen": "sub-views",
+      "label": "update View",
+      "action": "updateView(v)"
+    },
+    {
+      "screen": "templates/bmng-grid",
+      "label": "Context action",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "templates/bulk-apply",
+      "label": "Apply",
+      "action": "$close(number)"
+    },
+    {
+      "screen": "templates/bulk-apply",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/bulk-edit",
+      "label": "Apply",
+      "action": "$close(data)"
+    },
+    {
+      "screen": "templates/bulk-edit",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/button-settings-popup",
+      "label": "Cancel",
+      "action": "$close()"
+    },
+    {
+      "screen": "templates/button-settings-popup",
+      "label": "form selected btn condition use Advanced",
+      "action": "form.selected_btn.condition.useAdvanced = !form.selected_btn.condition.useAdvanced"
+    },
+    {
+      "screen": "templates/button-settings-popup",
+      "label": "form.selected_btn.system ? 'Restore' : 'Delete'",
+      "action": "deleteBtn(form.selected_btn)"
+    },
+    {
+      "screen": "templates/button-settings-popup",
+      "label": "Learn more",
+      "action": "https://github.com/bizmanagrcrm/bmml/tree/main/conditions"
+    },
+    {
+      "screen": "templates/button-settings-popup",
+      "label": "Save",
+      "action": "submit()"
+    },
+    {
+      "screen": "templates/cancel-invoice",
+      "label": "Back",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/cancel-invoice",
+      "label": "Cancel & Backup & Edit",
+      "action": "$close('copy')"
+    },
+    {
+      "screen": "templates/cancel-invoice",
+      "label": "Cancel Invoiceinvoices.length > 1 ? 's' : ''",
+      "action": "$close('cancel')"
+    },
+    {
+      "screen": "templates/change-status",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/change-status",
+      "label": "Mark as complete",
+      "action": "markAsComplete(employeeTask)"
+    },
+    {
+      "screen": "templates/change-status",
+      "label": "project.nextStatus.special ? 'Apply Special Status' : 'Change Status to' project.nextStatus.full_status.name",
+      "action": "updateStatus(project.nextStatus)"
+    },
+    {
+      "screen": "templates/chat",
+      "label": "chat minamize chat",
+      "action": "chat.minamize_chat = !chat.minamize_chat"
+    },
+    {
+      "screen": "templates/chat",
+      "label": "close Chat",
+      "action": "closeChat()"
+    },
+    {
+      "screen": "templates/chat",
+      "label": "Join",
+      "action": "joinGroup()"
+    },
+    {
+      "screen": "templates/chat",
+      "label": "open Chat Window",
+      "action": "openChatWindow()"
+    },
+    {
+      "screen": "templates/chat",
+      "label": "submit",
+      "action": "submit"
+    },
+    {
+      "screen": "templates/choose",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/color-picker",
+      "label": "Clear",
+      "action": "setColor('')"
+    },
+    {
+      "screen": "templates/color-picker",
+      "label": "clr.name",
+      "action": "setColor(clr.color)"
+    },
+    {
+      "screen": "templates/combine-items",
+      "label": "(it.id). it.name",
+      "action": "$close(it.id)"
+    },
+    {
+      "screen": "templates/combine-items",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/components/dashboard-btns",
+      "label": "$ctrl.getBtnTxt(group.title, $ctrl.object) $ctrl.getGroupMenus(group.action_name).length",
+      "action": "$ctrl.toggleMobileGroup(group, $event)"
+    },
+    {
+      "screen": "templates/components/dashboard-btns",
+      "label": "$ctrl.getBtnTxt(menu.title, $ctrl.object)",
+      "action": "$ctrl.runAction(menu, $event)"
+    },
+    {
+      "screen": "templates/components/dashboard-btns",
+      "label": "$ctrl.getBtnTxt(menu.title, $ctrl.object) $ctrl.getSubMenus(menu).length",
+      "action": "$ctrl.toggleMobileGroup(menu, $event)"
+    },
+    {
+      "screen": "templates/components/dashboard-btns",
+      "label": "$ctrl.getBtnTxt(subItem.name || subItem.title || subItem.display_name, subItem)",
+      "action": "$ctrl.runAction(menu, $event, subItem)"
+    },
+    {
+      "screen": "templates/components/dashboard-btns",
+      "label": "$ctrl.getBtnTxt(subItem.title, $ctrl.object)",
+      "action": "$ctrl.runAction(subItem, $event)"
+    },
+    {
+      "screen": "templates/components/dashboard-btns",
+      "label": "Actions $ctrl.getMobileActionCount()",
+      "action": "button"
+    },
+    {
+      "screen": "templates/confirm",
+      "label": "btn.text",
+      "action": "$close(btn.value)"
+    },
+    {
+      "screen": "templates/confirm",
+      "label": "confirm.no || 'No'",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/confirm",
+      "label": "confirm.no || 'No'",
+      "action": "$close('no')"
+    },
+    {
+      "screen": "templates/confirm",
+      "label": "confirm.yes || 'Yes'",
+      "action": "$close({result : 'yes', dontShowAgain : confirm.dontShowAgain})"
+    },
+    {
+      "screen": "templates/copy-links",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/copy-links",
+      "label": "Copy To Clipboard",
+      "action": "copy($close)"
+    },
+    {
+      "screen": "templates/copy-links",
+      "label": "url.display_name",
+      "action": "url.url"
+    },
+    {
+      "screen": "templates/copy-quote",
+      "label": "backup ? 'Backup' : 'Copy'",
+      "action": "$close(data)"
+    },
+    {
+      "screen": "templates/copy-quote",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/copy-value",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/copy-value",
+      "label": "Copy To Clipboard",
+      "action": "copy($close)"
+    },
+    {
+      "screen": "templates/customer-group",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/customer-group",
+      "label": "Submit",
+      "action": "$close(data.cg)"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "!someLogsSelected(history_sections) ? 'Select Logs To View' : 'View Selected Logs'",
+      "action": "openLogWindow(history_sections)"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "Context action",
+      "action": "#"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "Context action",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "set Clm Class",
+      "action": "setClmClass('4')"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "set Clm Class",
+      "action": "setClmClass('6')"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "set Clm Class",
+      "action": "setClmClass('12')"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "View All",
+      "action": "section.link"
+    },
+    {
+      "screen": "templates/dashboard",
+      "label": "View All",
+      "action": "button"
+    },
+    {
+      "screen": "templates/dashboard-fields",
+      "label": "$ctrl.getValue(field.value, field.type)",
+      "action": "#/field.value ? field.value : field.link"
+    },
+    {
+      "screen": "templates/dashboard-fields",
+      "label": "$ctrl.getValue(field.value, field.type)",
+      "action": "field.link"
+    },
+    {
+      "screen": "templates/dashboard-fields",
+      "label": "$ctrl.getValue(field.value, field.type)",
+      "action": "$ctrl.getValue(field.value, field.type)"
+    },
+    {
+      "screen": "templates/dashboard-fields",
+      "label": "update",
+      "action": "#/update/field.table?id=$ctrl.data[field.internal_name + '__id']"
+    },
+    {
+      "screen": "templates/dashboard-fields",
+      "label": "val -",
+      "action": "#/general-dashboard/field.table/$ctrl.data[field.internal_name + '__id'][$index]"
+    },
+    {
+      "screen": "templates/edit-layout",
+      "label": "Add",
+      "action": "addCustomColumn()"
+    },
+    {
+      "screen": "templates/edit-layout",
+      "label": "Add",
+      "action": "addCardField()"
+    },
+    {
+      "screen": "templates/edit-layout",
+      "label": "Add",
+      "action": "addTooltipField()"
+    },
+    {
+      "screen": "templates/edit-layout",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/edit-layout",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/edit-layout",
+      "label": "layout.id ? 'Update' : 'Create'",
+      "action": "save(layout, layoutForm, $close)"
+    },
+    {
+      "screen": "templates/email",
+      "label": "Apply",
+      "action": "applyTemplate(template)"
+    },
+    {
+      "screen": "templates/email",
+      "label": "Bcc",
+      "action": "bccDisplayed = !bccDisplayed;"
+    },
+    {
+      "screen": "templates/email",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/email",
+      "label": "Cc",
+      "action": "ccDisplayed = !ccDisplayed;"
+    },
+    {
+      "screen": "templates/email",
+      "label": "emailObj.sendButton || 'Send'",
+      "action": "submit"
+    },
+    {
+      "screen": "templates/email",
+      "label": "Manual Dropdown",
+      "action": "manualFrom = !manualFrom"
+    },
+    {
+      "screen": "templates/event",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/event",
+      "label": "Clear end time",
+      "action": "event.ev_end_time = ''"
+    },
+    {
+      "screen": "templates/event",
+      "label": "Clear start time",
+      "action": "event.ev_time = ''"
+    },
+    {
+      "screen": "templates/event",
+      "label": "Save Event",
+      "action": "saveOpenEvent(event, eventForm)"
+    },
+    {
+      "screen": "templates/event",
+      "label": "type.name",
+      "action": "eventTypeSelscted(event, type)"
+    },
+    {
+      "screen": "templates/filters",
+      "label": "Apply Filter",
+      "action": "$close(data)"
+    },
+    {
+      "screen": "templates/filters",
+      "label": "Configure filters",
+      "action": "configureFiltersUrl"
+    },
+    {
+      "screen": "templates/filters",
+      "label": "settings date",
+      "action": "settings.date[filter.name] = !settings.date[filter.name]"
+    },
+    {
+      "screen": "templates/group-proposal-items",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/group-proposal-items",
+      "label": "Save",
+      "action": "submit($close)"
+    },
+    {
+      "screen": "templates/invite-user-form",
+      "label": "$close",
+      "action": "$close()"
+    },
+    {
+      "screen": "templates/invite-user-form",
+      "label": "Close",
+      "action": "$close()"
+    },
+    {
+      "screen": "templates/invite-user-form",
+      "label": "Send Invite",
+      "action": "invite(selectedUser.id, email, role, fullname, copyLayoutFromUserId)"
+    },
+    {
+      "screen": "templates/invoice-export",
+      "label": "Apply",
+      "action": "$close(data)"
+    },
+    {
+      "screen": "templates/invoice-export",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/conversations",
+      "label": "deselect Conversation",
+      "action": "deselectConversation()"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/conversations",
+      "label": "get Conversations",
+      "action": "getConversations()"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/conversations",
+      "label": "mark As Read Unread",
+      "action": "markAsReadUnread(selectedItem, false)"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/conversations",
+      "label": "new Conversation",
+      "action": "newConversation()"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/conversations",
+      "label": "submit",
+      "action": "submit"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "configAllExpanded ? 'Collapse all' : 'Expand all'",
+      "action": "setAllConfigSections(!configAllExpanded)"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "Create SMS usage product",
+      "action": "/admin#/usage/1?createProduct=sms"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "formatConfigKey(item.key)",
+      "action": "toggleConfigItem(item)"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "load Gateway Usage Stats",
+      "action": "loadGatewayUsageStats()"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "Refresh",
+      "action": "refreshGateway()"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "Setup Receive Webhook",
+      "action": "setupReceiveWebhook()"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "showSensitive ? 'Hide' : 'Show' sensitive",
+      "action": "showSensitive = !showSensitive"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/general",
+      "label": "toggle Config Item",
+      "action": "toggleConfigItem(item)"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/insights",
+      "label": "daysd",
+      "action": "setInsightsRange(days)"
+    },
+    {
+      "screen": "templates/jt-sms-dashboard/insights",
+      "label": "Refresh Insights",
+      "action": "loadInsights(true)"
+    },
+    {
+      "screen": "templates/kanban-card-details",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/kanban-card-details",
+      "label": "Update",
+      "action": "complete()"
+    },
+    {
+      "screen": "templates/kanban-manage-columns",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/kanban-manage-columns",
+      "label": "Update",
+      "action": "complete()"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "$event stop Propagation",
+      "action": "$event.stopPropagation(); toggleUserGroup(group)"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "$event stop Propagation",
+      "action": "$event.stopPropagation(); beginRename(session)"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "Cancel",
+      "action": "cancelRename()"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "Cancel",
+      "action": "$event.stopPropagation(); cancelTerminateSession()"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "Confirm",
+      "action": "$event.stopPropagation(); terminateSession(session)"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "refresh",
+      "action": "refresh()"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "Save",
+      "action": "saveSessionName(session)"
+    },
+    {
+      "screen": "templates/logged-users",
+      "label": "Terminate",
+      "action": "$event.stopPropagation(); askTerminateSession(session)"
+    },
+    {
+      "screen": "templates/manage-clms",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/manage-clms",
+      "label": "Hide All",
+      "action": "doAll()"
+    },
+    {
+      "screen": "templates/manage-clms",
+      "label": "Show All",
+      "action": "doAll(true)"
+    },
+    {
+      "screen": "templates/manage-clms",
+      "label": "View All",
+      "action": "viewAll()"
+    },
+    {
+      "screen": "templates/manage-clms",
+      "label": "View Hidden",
+      "action": "viewVisible()"
+    },
+    {
+      "screen": "templates/manage-clms",
+      "label": "View Visible",
+      "action": "viewVisible(true)"
+    },
+    {
+      "screen": "templates/manage-layouts",
+      "label": "Add Layout",
+      "action": "addLayout()"
+    },
+    {
+      "screen": "templates/manage-layouts",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/manage-layouts",
+      "label": "edit Layout",
+      "action": "editLayout(layout)"
+    },
+    {
+      "screen": "templates/manage-layouts",
+      "label": "Open",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/manage-layouts",
+      "label": "remove Layout",
+      "action": "removeLayout(layout)"
+    },
+    {
+      "screen": "templates/new-folder",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/new-folder",
+      "label": "Create",
+      "action": "$close(name)"
+    },
+    {
+      "screen": "templates/prompt",
+      "label": "prompt.cancelText || 'Cancel'",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/prompt",
+      "label": "prompt.okText || 'Ok'",
+      "action": "$close(prompt.value)"
+    },
+    {
+      "screen": "templates/qbo-integration-settings",
+      "label": "action.label",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "templates/qbo-integration-settings",
+      "label": "Save Changes",
+      "action": "$ctrl.saveChanges()"
+    },
+    {
+      "screen": "templates/qbo-integration-settings",
+      "label": "Sync Company Info",
+      "action": "$ctrl.syncCompanyData($ctrl.serviceName, $ctrl, 'info')"
+    },
+    {
+      "screen": "templates/quote-quick-enter",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/quote-quick-enter",
+      "label": "Enter",
+      "action": "enter(data, $close)"
+    },
+    {
+      "screen": "templates/rename",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/rename",
+      "label": "Ok",
+      "action": "$close(name)"
+    },
+    {
+      "screen": "templates/reset-user-password",
+      "label": "$dismiss",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/reset-user-password",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/reset-user-password",
+      "label": "Reset Password",
+      "action": "submit"
+    },
+    {
+      "screen": "templates/result-accordion",
+      "label": "heading",
+      "action": "Opens or submits the current screen"
+    },
+    {
+      "screen": "templates/session-relogin",
+      "label": "Close",
+      "action": "$dismiss('cancel')"
+    },
+    {
+      "screen": "templates/session-relogin",
+      "label": "Send another code",
+      "action": "resendCode()"
+    },
+    {
+      "screen": "templates/session-relogin",
+      "label": "Sign in Verify",
+      "action": "submit"
+    },
+    {
+      "screen": "templates/session-relogin",
+      "label": "Use a different account",
+      "action": "backToLogin()"
+    },
+    {
+      "screen": "templates/smart-form/form-btns",
+      "label": "button",
+      "action": "button"
+    },
+    {
+      "screen": "templates/smart-form/form-btns",
+      "label": "button.display_name",
+      "action": "submit(record, basicForm, button)"
+    },
+    {
+      "screen": "templates/smart-form/form-btns",
+      "label": "defaultBtn ? defaultBtn.display_name : '----'",
+      "action": "submit(record, basicForm, defaultBtn)"
+    },
+    {
+      "screen": "templates/smart-form/form-btns",
+      "label": "defaultBtn.display_name",
+      "action": "submit(record, basicForm, defaultBtn)"
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "$ctrl",
+      "action": "$ctrl[cf.field_name + '_opened'] = !$ctrl[cf.field_name + '_opened']"
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "$ctrl add New Value",
+      "action": "$ctrl.addNewValue(cf, $ctrl.record)"
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "$ctrl download File",
+      "action": "$ctrl.downloadFile($ctrl.record[cf.field_name])"
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "$ctrl encrypt Decrypt",
+      "action": "$ctrl.encryptDecrypt(cf, $ctrl.formController)"
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "$ctrl open Form",
+      "action": "$ctrl.openForm(cf, $ctrl.record)"
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "$ctrl open Form Url",
+      "action": "$ctrl.openFormUrl(cf, $ctrl.record)"
+    },
+    {
+      "screen": "templates/smart-form/smart-form",
+      "label": "config forms here",
+      "action": "$ctrl.getFormConfigUrl()"
+    },
+    {
+      "screen": "templates/sms",
+      "label": "Apply",
+      "action": "applyTemplate(template)"
+    },
+    {
+      "screen": "templates/sms",
+      "label": "Cancel",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "templates/sms",
+      "label": "smsObj.sendButton || 'Send'",
+      "action": "submit"
+    },
+    {
+      "screen": "templates/theme-switcher",
+      "label": "Theme",
+      "action": "button"
+    },
+    {
+      "screen": "templates/theme-switcher",
+      "label": "theme.label",
+      "action": "setTheme(theme)"
+    },
+    {
+      "screen": "templates/view-email-body",
+      "label": "Close",
+      "action": "$dismiss()"
+    },
+    {
+      "screen": "units",
+      "label": "add Event",
+      "action": "addEvent(selectedRow)"
+    },
+    {
+      "screen": "units",
+      "label": "add Quote",
+      "action": "addQuote()"
+    },
+    {
+      "screen": "units",
+      "label": "Add Unit",
+      "action": "goToForm()"
+    },
+    {
+      "screen": "units",
+      "label": "comments",
+      "action": "#/comments/units/selectedRow"
+    },
+    {
+      "screen": "units",
+      "label": "edit",
+      "action": "edit(selectedRow)"
+    },
+    {
+      "screen": "units",
+      "label": "go To Files",
+      "action": "goToFiles(selectedRow)"
+    },
+    {
+      "screen": "units",
+      "label": "projectInfo.customer.name",
+      "action": "/#/projects/projectInfo.cust_id/cust/projectInfo.po ? 'true' : 'false'"
+    },
+    {
+      "screen": "units",
+      "label": "projectInfo.name",
+      "action": "/#/general-dashboard/projects/projectInfo.id"
+    },
+    {
+      "screen": "units",
+      "label": "remove Unit",
+      "action": "removeUnit(selectedRow)"
+    },
+    {
+      "screen": "units",
+      "label": "update Status",
+      "action": "updateStatus(info.status, selectedRow)"
+    },
+    {
+      "screen": "upload-items",
+      "label": "delete Import",
+      "action": "deleteImport(file)"
+    },
+    {
+      "screen": "upload-items",
+      "label": "file.file.display_name",
+      "action": "/files/download/file.file.id"
+    },
+    {
+      "screen": "upload-items",
+      "label": "item upload",
+      "action": "item.upload()"
+    },
+    {
+      "screen": "upload-items",
+      "label": "items",
+      "action": "/#/items/all?import=file.id"
+    },
+    {
+      "screen": "upload-items",
+      "label": "msg",
+      "action": "msg(item.successMsg, true)"
+    },
+    {
+      "screen": "upload-items",
+      "label": "msg",
+      "action": "msg(item.errMsg)"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "Cancel",
+      "action": "cancelProductForm()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "delete Product",
+      "action": "deleteProduct(p)"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "edit Product",
+      "action": "editProduct(p)"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "editingProduct ? 'Update' : 'Create' Product",
+      "action": "saveProduct()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "load Breakdown",
+      "action": "loadBreakdown()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "Load More",
+      "action": "loadMoreTransactions()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "load Transactions",
+      "action": "loadTransactions()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "New Product",
+      "action": "showProductForm()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "p.sub_balances.length sub-balancep.sub_balances.length > 1 ? 's' : ''",
+      "action": "p._expanded = !p._expanded"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "recalculate",
+      "action": "recalculate(p)"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "Refresh",
+      "action": "loadOverview()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "Resync",
+      "action": "resync()"
+    },
+    {
+      "screen": "usage-dashboard",
+      "label": "Top Up",
+      "action": "doTopUp(p)"
+    }
+  ]
+}

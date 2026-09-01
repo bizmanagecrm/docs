@@ -1,0 +1,131 @@
+{
+  "generatedFrom": "routes/restapi and mounted public API routes",
+  "count": 25,
+  "endpoints": [
+    {
+      "method": "ALL",
+      "endpoint": "/restapi/open-ping",
+      "purpose": "Check whether the server is reachable; no API key required."
+    },
+    {
+      "method": "ALL",
+      "endpoint": "/restapi/ping",
+      "purpose": "Check an authenticated API connection."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/crud/:table/:op",
+      "purpose": "Run an allowed CRUD operation using the API user permissions."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/projects/update-status/:project/:status",
+      "purpose": "Change a project status."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/save-payment-method",
+      "purpose": "Save a reusable payment method through the configured gateway."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/charge-payment-method",
+      "purpose": "Charge a saved payment method."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/payments/gateways",
+      "purpose": "List payment gateways available to the API user."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/create-subscription",
+      "purpose": "Create a subscription."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/payments/cancel-subscription/:id",
+      "purpose": "Cancel a subscription."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/payments/resume-subscription/:id",
+      "purpose": "Resume a subscription."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/import-subscription",
+      "purpose": "Import an existing gateway subscription."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/payments/update-subscription-payment-method/:id",
+      "purpose": "Replace a subscription payment method."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/sms/send",
+      "purpose": "Queue an SMS message."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/sms/conversations",
+      "purpose": "List SMS conversations."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/sms/conversation/:conversation_key",
+      "purpose": "Read one SMS conversation."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/sms/gateways",
+      "purpose": "List configured SMS gateways."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/ai/ask",
+      "purpose": "Generate a text answer."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/ai/generate-json",
+      "purpose": "Generate schema-constrained JSON."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/ai/tools/run",
+      "purpose": "Run an AI request with approved read-only CRM tools."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/ai/files",
+      "purpose": "Upload a temporary text-like file for AI use."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/ai/requests",
+      "purpose": "Read AI request logs allowed to the API user."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/ai/skills/relevant",
+      "purpose": "Find AI skills relevant to a request."
+    },
+    {
+      "method": "GET",
+      "endpoint": "/restapi/users/invite-user/:id",
+      "purpose": "Send an invitation to an existing user record."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/secure/encrypt",
+      "purpose": "Encrypt a value using the instance encryption service."
+    },
+    {
+      "method": "POST",
+      "endpoint": "/restapi/secure/decrypt",
+      "purpose": "Decrypt a value when the API user is authorized."
+    }
+  ]
+}
