@@ -1,4 +1,5 @@
 (() => {
+  const assetVersion = new URL(document.currentScript.src).search;
   const docs = window.BIZMANAGE_DOCS;
   const article = document.querySelector('#article');
   const nav = document.querySelector('#nav');
@@ -109,7 +110,7 @@
 
   async function loadCatalogs() {
     try {
-      const [actions, api] = await Promise.all([fetch('/data/actions.json').then((r) => r.json()), fetch('/data/api.json').then((r) => r.json())]);
+      const [actions, api] = await Promise.all([fetch(`/data/actions.json${assetVersion}`).then((r) => r.json()), fetch(`/data/api.json${assetVersion}`).then((r) => r.json())]);
       catalogData.actions = actions.actions || []; catalogData.api = api.endpoints || [];
       hydrateCatalogs();
     } catch (error) { console.warn('Catalogs unavailable', error); }
